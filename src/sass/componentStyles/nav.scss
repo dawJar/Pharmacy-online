@@ -1,0 +1,38 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+@import "../animations.scss";
+
+nav.navbar {
+  border-radius: 0;
+  background-color: $navBackgroundColor;
+  min-height: $navHeight;
+
+  div.navbar-header {
+    a {
+      @include navLinkStyle($navFontSizeHeader);
+    }
+    span.icon-bar {
+        background-color: $navFontColorActive;
+    }
+  }
+
+  ul.navbar-nav {
+    float: right;
+    .active {
+      border-bottom: solid 2px $navFontColorActive;
+      a {
+        color: $navFontColorActive !important;
+      }
+    }
+    li:last-child {
+      margin-right: 30px;
+    }
+  }
+
+  ul.navbar-nav > li > a {
+    @include navLinkStyle($navFontSizeLink);
+    @include underlineBlock($navFontColorActive);
+  }
+
+
+}

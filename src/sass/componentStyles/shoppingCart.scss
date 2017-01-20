@@ -1,0 +1,9 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+@import "../animations.scss";
+
+span.shopping-cart {
+  @include navLinkStyle($navSizeShoppingCart);
+  @include growElement($navSizeShoppingCartHover);
+  float: right;
+}

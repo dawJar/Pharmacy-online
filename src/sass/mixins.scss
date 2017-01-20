@@ -1,0 +1,15 @@
+@import "./variables.scss";
+
+@mixin navLinkStyle($fontSize) {
+  position: relative;
+  min-height: $navHeight;
+  padding: 0 48px;
+  line-height: $navHeight;
+  transition: all 0.4s ease-in-out 0s;
+  color: $navFontColor;
+  font-size: $fontSize;
+  &:hover {
+    color: $navFontColorActive;
+    background-color: $navBackgroundColor;
+  }
+}
