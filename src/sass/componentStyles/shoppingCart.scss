@@ -3,7 +3,20 @@
 @import "../animations.scss";
 
 span.shopping-cart {
-  @include navLinkStyle($navSizeShoppingCart);
   @include growElement($navSizeShoppingCartHover);
-  float: right;
+  display: none;
+
+  @include mQ($smallDevice) {
+    float: right;
+    @include mQ($smallDevice, $mediumDevice) {
+      width: 15%;
+    };
+    @include navBucketStyle($navHeightSmall, $navSizeShoppingCart, $navPaddingSmall);
+  };
+  @include mQ($mediumDevice) {
+    @include navBucketStyle($navHeightMedium, $navSizeShoppingCart, $navPaddingMedium);
+  };
+  @include mQ($largeDevice) {
+    @include navBucketStyle($navHeightLarge, $navSizeShoppingCart, $navPaddingLarge);
+  };
 }

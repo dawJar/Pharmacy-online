@@ -1,15 +1,56 @@
 @import "./variables.scss";
 
-@mixin navLinkStyle($fontSize) {
-  position: relative;
-  min-height: $navHeight;
-  padding: 0 48px;
-  line-height: $navHeight;
-  transition: all 0.4s ease-in-out 0s;
-  color: $navFontColor;
-  font-size: $fontSize;
-  &:hover {
-    color: $navFontColorActive;
-    background-color: $navBackgroundColor;
-  }
+// NAVBAR
+@mixin navLinkBasic($height, $fontSize, $padding) {
+    display: block;
+    position: relative;
+    min-height: $height;
+    padding: 0 $padding;
+    line-height: $height;
+    transition: all 0.4s ease-in-out 0s;
+    color: $navFontColor;
+    font-size: $fontSize;
+}
+
+@mixin navLinkStyle($height, $fontSize, $padding) {
+    @include navLinkBasic($height, $fontSize, $padding);
+    @include navLinkHover(true);
+}
+
+@mixin navBucketStyle($height, $fontSize, $padding) {
+    @include navLinkBasic($height, $fontSize, $padding);
+    @include navLinkHover(false);
+}
+
+@mixin navLinkHover($link) {
+    &:hover {
+        color: $navFontColorActive;
+        @if $link == true {
+            background-color: $navBackgroundColor;
+        }
+    }
+}
+
+@mixin navActiveClass {
+    .active {
+        border: 0;
+        @content;
+        a {
+            color: $navFontColorActive !important;
+        }
+    }
+}
+// END NAVBAR
+
+@mixin mQ($args...) {
+    @if length($args) == 1{
+        @media screen and (min-width: nth($args, 1)) {
+             @content;
+        }
+    }
+    @else if length($args) {
+         @media screen and (min-width: nth($args, 1)) and (max-width: nth($args, 2)){
+            @content;
+        }
+    }
 }

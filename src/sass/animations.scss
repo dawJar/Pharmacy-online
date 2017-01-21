@@ -20,6 +20,7 @@
 
 @mixin growElement($growScale) {
   &:hover {
+    background-color: rbg(0, 0, 0, 0);
     transform: scale($growScale);
   }
 }
