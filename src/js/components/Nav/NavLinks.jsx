@@ -1,36 +1,63 @@
 import React, {Component} from 'react';
 
 import ShoppingCart from './ShoppingCart';
+import NavLink from './NavLink';
 
 export default class NavLinks extends Component {
 
-    getMonth() {
-        const months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    constructor(props) {
+        super(props);
+        this.onClickLink = this.onClickLink.bind(this);
+        this.state = {
+            activeLink: 0
+        };
+    }
 
-        const whichMonth = months[Date.getMonth()];
-
-        return whichMonth;
+    onClickLink(index) {
+        this.setState({
+            activeLink: index
+        });
     }
 
     render() {
+        const {activeLink} = this.state;
+        const links = this.props.default.map((x, i) => {
+            return <NavLink key={i} index={x.index} linkPath={x.linkPath} linkName={x.linkName}
+                onClickLink={this.onClickLink} isActive={activeLink === i} />
+        });
+        // console.log(activeLink);
+        // console.log(links);
+
         return (
             <div className="collapse navbar-collapse" id="myNavbar">
                 <ShoppingCart />
                 <ul className="nav navbar-nav">
-                    <li className="active">
-                        <a href="#">{ this.getMonth } sale!</a>
-                    </li>
-                    <li>
-                        <a href="#">Categories</a>
-                    </li>
-                    <li>
-                        <a href="#">Search</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
+                    { links }
                 </ul>
             </div>
         );
     }
+}
+
+NavLinks.defaultProps = {
+    default: [{
+        index: 0,
+        linkPath: "/",
+        linkName: "Sale!"
+    },
+    {
+        index: 1,
+        linkPath: "/categories",
+        linkName: "Categories"
+    },
+    {
+        index: 2,
+        linkPath: "/search",
+        linkName: "Search"
+    },
+    {
+        index: 3,
+        linkPath: "/about",
+        linkName: "About"
+    },]
 }
