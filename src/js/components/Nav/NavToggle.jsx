@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 export default class NavToggle extends Component {
     render() {
@@ -9,7 +10,7 @@ export default class NavToggle extends Component {
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand hidden-sm" href="#">WebSiteName</a>
+                <Link to="/" className="navbar-brand hidden-sm">WebSiteName</Link>
             </div>
         );
     }

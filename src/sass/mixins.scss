@@ -11,17 +11,14 @@
     color: $navFontColor;
     font-size: $fontSize;
 }
-
 @mixin navLinkStyle($height, $fontSize, $padding) {
     @include navLinkBasic($height, $fontSize, $padding);
     @include navLinkHover(true);
 }
-
 @mixin navBucketStyle($height, $fontSize, $padding) {
     @include navLinkBasic($height, $fontSize, $padding);
     @include navLinkHover(false);
 }
-
 @mixin navLinkHover($link) {
     &:hover {
         color: $navFontColorActive;
@@ -30,18 +27,41 @@
         }
     }
 }
-
 @mixin navActiveClass {
     .active {
         border: 0;
         @content;
+        * { color: $navFontColorActive !important; }
+    }
+    .active-glyph {
+        @content;
+        * { color: $navFontColorActive !important; }
+    }
+}
+@mixin navUlStyle($width, $widthLast, $underlineColor) {
+    @include navActiveClass {
+        border-bottom: solid 2px $navFontColorActive;
+    };
+    li {
+        width: $width;
         a {
-            color: $navFontColorActive !important;
+            &:link, &:visited, &:active {
+                background-color: $navBackgroundColor;
+            }
+        }
+        @include underlineBlock($underlineColor);
+        &:last-child {
+            border: 0;
+            width: $widthLast;
+            &:last-child {
+                @include underlineBlock($transparent);
+            }
         }
     }
 }
 // END NAVBAR
 
+// MEDIA QUERIES
 @mixin mQ($args...) {
     @if length($args) == 1{
         @media screen and (min-width: nth($args, 1)) {

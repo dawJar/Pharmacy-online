@@ -7,16 +7,20 @@ span.shopping-cart {
   display: none;
 
   @include mQ($smallDevice) {
-    float: right;
-    @include mQ($smallDevice, $mediumDevice) {
-      width: 15%;
-    };
     @include navBucketStyle($navHeightSmall, $navSizeShoppingCart, $navPaddingSmall);
   };
   @include mQ($mediumDevice) {
-    @include navBucketStyle($navHeightMedium, $navSizeShoppingCart, $navPaddingMedium);
+    margin: 0 auto;
+    @include navBucketStyle($navHeightMedium, $navSizeShoppingCart, 0);
   };
   @include mQ($largeDevice) {
-    @include navBucketStyle($navHeightLarge, $navSizeShoppingCart, $navPaddingLarge);
+    @include navBucketStyle($navHeightLarge, $navSizeShoppingCart, 0);
+  };
+}
+
+span#bucket {
+  display: inline;
+  @include mQ($smallDevice) {
+    display: none;
   };
 }

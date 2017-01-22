@@ -1,7 +1,9 @@
 // MAIN
 $mainBackgroundColor: #E2E3DF;
+$transparent: rgba(0, 0, 0, 0);
 
 // NAVBAR
+$navCountLinks: 5;
 $navBackgroundColor: #fff;
 $navFontColor: #2E3233;
 $navFontColorActive: #7BB480;
@@ -27,11 +29,13 @@ $navFontColorActive: #7BB480;
   $navSizeShoppingCartHover: 1.4;
 // margin left header
   $navHeaderMarginLeft: 18px;
-// small dev
-  $navCountLinks: 4;
-  $navBucketWidth: (100% / ($navCountLinks + 1)) - 5%;
-  $navListLinksContainer: 100% - $navBucketWidth;
-  $navWidthLinkSmall: (100% - $navBucketWidth) / $navCountLinks;
+// nav link width
+  $navWidthLinkSmallLast: (100% / $navCountLinks) - 10%;
+  $navWidthLinkSmall: (100% - $navWidthLinkSmallLast) / ($navCountLinks - 1);
+  $navWidthLinkMedium: 130px;
+  $navWidthLinkMediumLast: $navWidthLinkMedium - 40px;
+  $navWidthLinkLarge: 180px;
+  $navWidthLinkLargeLast: $navWidthLinkLarge - 60px;
 // END NAVBAR
 
 // MEDIA QUERY BREAKPOINTS

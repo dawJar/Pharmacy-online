@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
-import ShoppingCart from './ShoppingCart';
+import '../../../sass/componentStyles/shoppingCart.scss';
+
 import NavLink from './NavLink';
 
 export default class NavLinks extends Component {
@@ -21,18 +22,25 @@ export default class NavLinks extends Component {
 
     render() {
         const {activeLink} = this.state;
-        const links = this.props.default.map((x, i) => {
+        const {temporary, shoppingCart} = this.props;
+        const links = temporary.map((x, i) => {
             return <NavLink key={i} index={x.index} linkPath={x.linkPath} linkName={x.linkName}
-                onClickLink={this.onClickLink} isActive={activeLink === i} />
+                onClickLink={this.onClickLink} isActive={activeLink === x.index} />
         });
         // console.log(activeLink);
         // console.log(links);
 
         return (
             <div className="collapse navbar-collapse" id="myNavbar">
-                <ShoppingCart />
                 <ul className="nav navbar-nav">
                     { links }
+                    <NavLink key={Date.now()} index={shoppingCart.index}
+                        linkPath={shoppingCart.linkPath} linkName={shoppingCart.linkName}
+                        onClickLink={this.onClickLink} isActive={activeLink === shoppingCart.index}
+                        activeClassName="active-glyph">
+                        <span className="glyphicon glyphicon-shopping-cart shopping-cart"></span>
+                        <span id="bucket">Bucket</span>
+                    </NavLink>
                 </ul>
             </div>
         );
@@ -40,7 +48,7 @@ export default class NavLinks extends Component {
 }
 
 NavLinks.defaultProps = {
-    default: [{
+    temporary: [{
         index: 0,
         linkPath: "/",
         linkName: "Sale!"
@@ -59,5 +67,10 @@ NavLinks.defaultProps = {
         index: 3,
         linkPath: "/about",
         linkName: "About"
-    },]
+    }],
+    shoppingCart: {
+        index: 4,
+        linkPath: "/shopping-cart",
+        linkName: "ShoppingCart"
+    },
 }

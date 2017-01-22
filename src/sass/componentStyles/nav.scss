@@ -5,10 +5,10 @@
 nav.navbar {
     border-radius: 0;
     background-color: $navBackgroundColor;
+
     // HEADER, TOGGLE BTN
     div.navbar-header {
         a {
-            box-sizing: border-box;
             margin-left: $navHeaderMarginLeft;
             @include navBucketStyle($navHeightXS, $navFontSizeHeaderXS, 0);
             @include mQ($mediumDevice) {
@@ -18,45 +18,35 @@ nav.navbar {
                  @include navBucketStyle($navHeightLarge, $navFontSizeHeaderLarge, $navPaddingLarge);
             };
         }
-
         span.icon-bar {
             background-color: $navFontColorActive;
         }
     }
     // LINKS
     ul.navbar-nav {
-        a {
-            color: $navFontColor;
-            @include navLinkHover(true);
-        }
+        box-sizing: border-box !important;
+        text-align: center;
         @include navActiveClass {
             border: solid 2px $navFontColorActive;
         };
         @include mQ($smallDevice, $mediumDevice - 1) {
-            width: 85%;
-            li {
-                width: 23.5%;
-            }
-            @include navActiveClass {
-                border-bottom: solid 2px $navFontColorActive;
-            };
+            width: 100%;
+            @include navUlStyle($navWidthLinkSmall, $navWidthLinkSmallLast, $navFontColorActive);
         };
         @include mQ($mediumDevice) {
             float: right;
-            li:last-child {
-                margin-right: 30px;
-            }
-            @include navActiveClass {
-                border-bottom: solid 2px $navFontColorActive;
-            };
+            @include navUlStyle($navWidthLinkMedium, $navWidthLinkMediumLast, $navFontColorActive);
         };
-        @include mQ($largeDevice) {};
+        @include mQ($largeDevice) {
+            @include navUlStyle($navWidthLinkLarge, $navWidthLinkLargeLast, $navFontColorActive);
+        };
     }
 
     ul.navbar-nav > li > a {
+        color: $navFontColor;
+        @include navLinkHover(true);
         @include mQ($smallDevice) {
-             @include navLinkStyle($navHeightSmall, $navFontSizeLinkSmall, $navPaddingSmall);
-            @include underlineBlock($navFontColorActive);
+            @include navLinkStyle($navHeightSmall, $navFontSizeLinkSmall, 0);
         };
         @include mQ($mediumDevice) {
              @include navLinkStyle($navHeightMedium, $navFontSizeLinkMedium, $navPaddingMedium);
@@ -65,11 +55,12 @@ nav.navbar {
              @include navLinkStyle($navHeightLarge, $navFontSizeLinkLarge, $navPaddingLarge);
         };
     }
-    // SMALL-MEDIUM DEV
-    @include mQ($smallDevice, $mediumDevice - 1) {
-        div.navbar-collapse {
+    // NAV CONTAINER SMALL DEV ++
+    @include mQ($smallDevice) {
+        div.navbar-collapse, div.container-fuild {
             text-align: center;
             margin: 0 auto;
+            padding: 0;
         }
     };
 }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
+
 export default class NavLink extends Component {
 
     constructor(props) {
@@ -9,18 +10,18 @@ export default class NavLink extends Component {
     }
 
     handleClickLink() {
-        // console.log(this.props.index);
         this.props.onClickLink(this.props.index);
     }
 
     render() {
-        const {index, linkName, linkPath, isActive} = this.props;
+        const {index, isActive, activeClassName, linkName, linkPath, children} = this.props;
+
         return (
-            <li className={isActive ? "active" : ""}>
-                <Link to={linkPath}
-                    onClick={this.handleClickLink}>
-                    {linkName}
-                </Link>
+            <li className={isActive ? activeClassName || "active" : ""}>
+              <Link to={linkPath}
+                  onClick={this.handleClickLink}>
+                  {children || linkName}
+              </Link>
             </li>
         );
     }
