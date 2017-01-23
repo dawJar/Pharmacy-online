@@ -4,6 +4,7 @@ import '../../../sass/componentStyles/shoppingCart.scss';
 
 import NavLink from './NavLink';
 
+
 export default class NavLinks extends Component {
 
     constructor(props) {
@@ -33,7 +34,9 @@ export default class NavLinks extends Component {
         return (
             <div className="collapse navbar-collapse" id="myNavbar">
                 <ul className="nav navbar-nav">
+
                     { links }
+
                     <NavLink key={Date.now()} index={shoppingCart.index}
                         linkPath={shoppingCart.linkPath} linkName={shoppingCart.linkName}
                         onClickLink={this.onClickLink} isActive={activeLink === shoppingCart.index}
@@ -45,32 +48,4 @@ export default class NavLinks extends Component {
             </div>
         );
     }
-}
-
-NavLinks.defaultProps = {
-    temporary: [{
-        index: 0,
-        linkPath: "/",
-        linkName: "Sale!"
-    },
-    {
-        index: 1,
-        linkPath: "/categories",
-        linkName: "Categories"
-    },
-    {
-        index: 2,
-        linkPath: "/search",
-        linkName: "Search"
-    },
-    {
-        index: 3,
-        linkPath: "/about",
-        linkName: "About"
-    }],
-    shoppingCart: {
-        index: 4,
-        linkPath: "/shopping-cart",
-        linkName: "ShoppingCart"
-    },
 }
