@@ -1,12 +1,10 @@
-export const SET_INDEX = 'set_index';
-export const ADD_DRUG = 'add_drug';
+import * as types from '../constants/ActionTypes';
 
-// let currentIndex = 0;
-
-export const setIndex = (index) => {
+export const setIndex = (navIndex) => {
   return {
-    type: SET_INDEX,
-    // id: currentIndex,
-    index
+    type: types.SET_NAV_INDEX,
+    navIndex
   };
 };
+
+window.setIndex = setIndex;

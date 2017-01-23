@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import index from './index';
+import navigation from './navigation';
+
 
 const reducersApp = combineReducers({
-  index,
+  navigation,
 });
 
 export default reducersApp;

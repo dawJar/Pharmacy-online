@@ -9,27 +9,35 @@ export default class NavLinks extends Component {
 
     constructor(props) {
         super(props);
-        this.onClickLink = this.onClickLink.bind(this);
+        this.handleOnClickLink = this.handleOnClickLink.bind(this);
+
+        const { navIndex } = this.props.navigation;
         this.state = {
-            activeLink: 0
+            navIndex: navIndex
         };
     }
 
-    onClickLink(index) {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.state.navIndex !== nextProps.navigation.navIndex;
+    }
+
+    componentWillUpdate(nextProps, nextState) {
         this.setState({
-            activeLink: index
+            navIndex: nextProps.navigation.navIndex
         });
     }
 
+    handleOnClickLink(index) {
+        this.props.actions.setIndex(index);
+    }
+
     render() {
-        const {activeLink} = this.state;
+        const {navIndex} = this.state;
         const {temporary, shoppingCart} = this.props;
         const links = temporary.map((x, i) => {
             return <NavLink key={i} index={x.index} linkPath={x.linkPath} linkName={x.linkName}
-                onClickLink={this.onClickLink} isActive={activeLink === x.index} />
+                onClickLink={this.handleOnClickLink} isActive={navIndex === x.index} />
         });
-        // console.log(activeLink);
-        // console.log(links);
 
         return (
             <div className="collapse navbar-collapse" id="myNavbar">
@@ -39,11 +47,14 @@ export default class NavLinks extends Component {
 
                     <NavLink key={Date.now()} index={shoppingCart.index}
                         linkPath={shoppingCart.linkPath} linkName={shoppingCart.linkName}
-                        onClickLink={this.onClickLink} isActive={activeLink === shoppingCart.index}
+                        onClickLink={this.handleOnClickLink} isActive={navIndex === shoppingCart.index}
                         activeClassName="active-glyph">
+
                         <span className="glyphicon glyphicon-shopping-cart shopping-cart"></span>
                         <span id="bucket">Bucket</span>
+
                     </NavLink>
+                    
                 </ul>
             </div>
         );

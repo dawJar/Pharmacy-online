@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 
 import reducersApp from './reducers/reducers';
 
-import App from './components/App';
+import App from './containers/App';
 import Sale from './components/Tabs/Sale';
 import Categories from './components/Tabs/Categories';
 import Search from './components/Tabs/Search';
