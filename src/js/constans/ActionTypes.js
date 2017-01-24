@@ -1,1 +1,5 @@
 export const SET_NAV_INDEX = 'SET_NAV_INDEX';
+
+export const RECIEVED_ERROR = 'RECIEVED_ERROR';
+export const REQUEST_DATA = 'REQUEST_DATA';
+export const RECIEVED_DATA = 'RECIEVED_DATA';
