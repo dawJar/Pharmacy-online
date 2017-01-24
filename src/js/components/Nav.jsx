@@ -14,8 +14,8 @@ export default class Nav extends Component {
         return (
             <nav className="navbar">
                 <div className="container-fluid">
-                    <NavToggle/>
-                    <NavLinks {...this.props} />
+                    <NavToggle { ...this.props } />
+                    <NavLinks { ...this.props } />
                 </div>
             </nav>
         );

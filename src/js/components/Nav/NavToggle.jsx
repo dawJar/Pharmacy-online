@@ -1,17 +1,29 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+
+import ToggleBtn from './ToggleBtn';
 
 export default class NavToggle extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handleOnClick = this.handleOnClick.bind(this);
+    }
+
+    handleOnClick() {
+        this.props.actions.setIndex(0);
+    }
+
     render() {
         return (
             <div className="navbar-header">
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                </button>
-                <Link to="/" className="navbar-brand hidden-sm">WebSiteName</Link>
+                <ToggleBtn />
+                <Link to="/" className="navbar-brand hidden-sm" onClick={this.handleOnClick}>WebSiteName</Link>
             </div>
         );
     }
+}
+
+NavToggle.propTypes = {
+    actions: PropTypes.object.isRequired
 }

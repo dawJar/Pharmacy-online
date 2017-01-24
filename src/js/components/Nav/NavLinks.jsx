@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import '../../../sass/componentStyles/shoppingCart.scss';
 
@@ -54,9 +54,14 @@ export default class NavLinks extends Component {
                         <span id="bucket">Bucket</span>
 
                     </NavLink>
-                    
+
                 </ul>
             </div>
         );
     }
+}
+
+NavLinks.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  actions: PropTypes.object.isRequired
 }
