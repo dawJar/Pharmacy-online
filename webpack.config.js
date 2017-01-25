@@ -10,7 +10,7 @@ console.log("target event is " + TARGET);
 var common = {
   cache: true,
   debug: true,
-  entry: './src/js/index.jsx',
+  entry: './src/js/index.js',
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

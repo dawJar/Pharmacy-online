@@ -10,14 +10,14 @@ import '../../sass/style.scss';
 import Nav from '../components/Nav.jsx';
 
 
- class App extends Component {
+class App extends Component {
     constructor(props) {
       super(props);
     }
 
     render() {
         const { children, navigation, actions } = this.props;
-        // console.log(this.props);
+        console.log(this.props);
         return (
             <div>
                 <Nav navigation={ navigation } actions={ actions } />
