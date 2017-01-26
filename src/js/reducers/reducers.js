@@ -18,14 +18,10 @@ const getDrug = (state, id) => fromDrugsReducer.getDrug(state.drugs, id)
 
 // export const getTotal = state => getAddedIds(state) => getDrug(state, id).price
 
-  // getAddedIds(state)
-  //   .reduce((total, id) =>
-  //     total + getDrug(state, id).price * getQuantity(state, id),
-  //     0
-  //   )
-  //   .toFixed(2)
+// getAddedIds(state).reduce((total, id) =>
+//     total + getDrug(state, id).price
 
-export const getCartProducts = state =>
+export const getCartDrugs = state =>
   getAddedIds(state).map(id => ({
     ...getDrug(state, id),
     quantity: getQuantity(state, id)

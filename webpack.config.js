@@ -41,6 +41,9 @@ var common = {
     }, {
       test: /\.(eot|ttf|svg|gif|png)$/,
       loader: "file-loader"
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
     }]
   },
   plugins: [

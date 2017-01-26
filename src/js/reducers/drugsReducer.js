@@ -1,28 +1,27 @@
 import { combineReducers } from 'redux';
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes';
+import { RECEIVE_DRUGS, ADD_TO_CART } from '../constants/ActionTypes';
 
-const drugs = (state, action) => {
-  switch (action.type) {
-    case ADD_TO_CART:
-      return {
-        ...state
-        // inventory: state.inventory - 1
-      }
-    default:
-      return state
-  }
-}
+// const drugs = (state, action) => {
+//   switch (action.type) {
+//     case ADD_TO_CART:
+//       return {
+//         ...state
+//         // inventory: state.inventory - 1
+//       }
+//     default:
+//       return state
+//   }
+// }
 
 const byId = (state = {}, action) => {
   switch (action.type) {
-    case RECEIVE_PRODUCTS:
+    case RECEIVE_DRUGS:
       return {
         ...state,
-        ...action.drugs
-        // ...action.drugs.reduce((obj, drug) => {
-        //   obj[drug.id] = drug
-        //   return obj
-        // }, {})
+        ...action.drugs.reduce((obj, drug) => {
+          obj[drug.id] = drug
+          return obj
+        }, {})
       }
     default:
       const { drugId } = action
@@ -38,9 +37,8 @@ const byId = (state = {}, action) => {
 
 const visibleIds = (state = [], action) => {
   switch (action.type) {
-    case RECEIVE_PRODUCTS:
-      // return action.drugs.map(drug => drug.id)
-      return action.drugs
+    case RECEIVE_DRUGS:
+      return action.drugs.map(drug => drug.id)
     default:
       return state
   }
@@ -51,8 +49,6 @@ export default combineReducers({
   visibleIds
 })
 
-export const getDrug = (state, id) =>
-  state.byId[id]
+export const getDrug = (state, id) => state.byId[id]
 
-export const getVisibleProducts = state =>
-  state.visibleIds.map(id => getDrug(state, id))
+export const getVisibleDrugs = state => state.visibleIds.map(id => getDrug(state, id))
