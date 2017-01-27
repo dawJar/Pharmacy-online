@@ -17,7 +17,6 @@ class App extends Component {
 
     render() {
         const { children, navigation, actions } = this.props;
-        console.log(this.props);
         return (
             <div>
                 <Nav navigation={ navigation } actions={ actions } />

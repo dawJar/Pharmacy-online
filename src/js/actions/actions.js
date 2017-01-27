@@ -9,14 +9,14 @@ export const setIndex = (navIndex) => {
 };
 
 // FETCH DATA
-const receiveDrugs = drugs => {
+const receiveDrugs = (drugs) => {
   return {
     type: types.RECEIVE_DRUGS,
     drugs
   }
 };
 
-export const getAllDrugs = () => dispatch => {
+export const getAllDrugs = () => (dispatch) => {
   shop.getDrugs(drugs => {
     dispatch(receiveDrugs(drugs))
   })

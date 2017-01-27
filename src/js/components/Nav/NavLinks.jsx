@@ -32,8 +32,8 @@ export default class NavLinks extends Component {
     }
 
     render() {
-        const {navIndex} = this.state;
-        const {temporary, shoppingCart} = this.props;
+        const { navIndex } = this.state;
+        const { temporary, shoppingCart } = this.props;
         const links = temporary.map((x, i) => {
             return <NavLink key={i} index={x.index} linkPath={x.linkPath} linkName={x.linkName}
                 onClickLink={this.handleOnClickLink} isActive={navIndex === x.index} />
