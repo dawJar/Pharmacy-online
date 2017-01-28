@@ -10,40 +10,50 @@ class DrugList extends Component {
     super(props);
     this.onClickBtn = this.onClickBtn.bind(this);
     this.state = {
+      drugsArray: [],
       visibleDrugOnSale: 0,
-
+      drugsCount: 0,
     }
   }
 
   onClickBtn (direction) {
-    let currentVisibleDrug = this.state.visibleDrugOnSale;
+    let currentDrug = this.state.visibleDrugOnSale;
+    let count = this.state.drugsCount - 1;
 
-    if (direction === 'left' && currentVisibleDrug !== 0)
-      currentVisibleDrug -= 1;
-    else if (direction === 'right')
-      currentVisibleDrug += 1;
+    if (direction === 'left' && currentDrug > 0)
+      currentDrug -= 1;
+    else if (direction === 'right' && currentDrug < count)
+      currentDrug += 1;
 
-    this.setState({ visibleDrugOnSale: currentVisibleDrug });
+    this.setState({
+      visibleDrugOnSale: currentDrug
+    });
   }
 
   makeDrugList (onSale, drugList) {
     let drugsToShow = drugList;
 
-    if (onSale) {
+    if (onSale)
       drugsToShow = drugList.filter((drug) => (drug.onSale))
-    }
 
+    return drugsToShow.map((drug) => <Drug key={ drug.id } { ...drug } />);
+  }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
 
-    drugsToShow = drugsToShow.map((drug) => <Drug key={ drug.id } { ...drug } />);
-
-    return drugsToShow;
+  componentWillReceiveProps(nextProps) {
+    let drugs = this.makeDrugList(nextProps.showOnSale, nextProps.drugs);
+    this.setState({
+      drugsArray: drugs,
+      drugsCount: drugs.length
+    });
   }
 
   render () {
-    const { visibleDrugOnSale } = this.state;
+    const { visibleDrugOnSale, drugsArray } = this.state;
     const { drugs, showOnSale } = this.props;
-    const selectedDrugs = this.makeDrugList(showOnSale, drugs);
 
     return (
       <div className="panel-group">
@@ -52,7 +62,7 @@ class DrugList extends Component {
           <ButtonNextPrev direction="left" onClickBtn={ this.onClickBtn } />
 
           <div className="col-xs-10">
-            { selectedDrugs[visibleDrugOnSale] }
+            { drugsArray[visibleDrugOnSale] }
           </div>
 
           <ButtonNextPrev direction="right" onClickBtn={ this.onClickBtn } />
