@@ -8,13 +8,12 @@ class Drug extends Component {
 
     render() {
         const {
-            drugId,
+            id,
             drugCompany,
             drugDescription,
             drugExpiration,
             drugName,
             drugPrice,
-            drugProcedure,
             fdaCode
         } = this.props;
         return (
@@ -24,16 +23,9 @@ class Drug extends Component {
                         <h3>{drugName}</h3>
                         <p>company: {drugCompany}</p>
                         <p>price: {drugPrice}</p>
-                        <p className="panel-title">
-                            <a data-toggle="collapse pull-right" href={"#collapse"+drugId}>more...</a>
-                        </p>
-                    </div>
-                    <div id={"collapse"+drugId} className="panel-collapse collapse">
                         <p>fda-code: {fdaCode}</p>
                         <p>expiration: {drugExpiration}</p>
                         <p>description: {drugDescription}</p>
-                        <p>usage: {drugProcedure}</p>
-                        <div className="panel-footer">Footer</div>
                     </div>
                 </div>
             </div>

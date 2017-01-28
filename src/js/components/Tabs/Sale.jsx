@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 
-import Drug from './Drug';
+import DrugContainer from '../../containers/DrugContainer';
+import DrugList from '../DrugList';
+import Drug from '../Drug';
 
-class Sale extends Component {
+export default class Sale extends Component {
 
     constructor(props) {
         super(props);
@@ -12,7 +14,16 @@ class Sale extends Component {
 
         return (
             <div className="container-fluid">
-               sale
+                <div className="panel panel-success">
+                    <div className="panel-heading">
+                        Panel heading
+                    </div>
+                    <div className="panel-body">
+                        <DrugContainer drugStyle="sale">
+                            <DrugList />
+                        </DrugContainer>
+                    </div>
+                </div>
             </div>
         );
     }

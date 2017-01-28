@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import ToggleBtn from './ToggleBtn';
 
+
 export default class NavToggle extends Component {
 
     constructor(props) {
@@ -11,7 +12,8 @@ export default class NavToggle extends Component {
     }
 
     handleOnClick() {
-        this.props.actions.setIndex(0);
+        const DEFAULT_INDEX = 0;
+        this.props.actions.setIndex(DEFAULT_INDEX);
     }
 
     render() {
