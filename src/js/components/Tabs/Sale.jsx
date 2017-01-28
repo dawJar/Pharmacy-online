@@ -20,7 +20,7 @@ export default class Sale extends Component {
                     </div>
                     <div className="panel-body">
                         <DrugContainer drugStyle="sale">
-                            <DrugList />
+                            <DrugList showOnSale={true} />
                         </DrugContainer>
                     </div>
                 </div>

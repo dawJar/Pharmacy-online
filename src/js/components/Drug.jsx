@@ -9,6 +9,7 @@ class Drug extends Component {
     render() {
         const {
             id,
+            onSale,
             drugCompany,
             drugDescription,
             drugExpiration,
@@ -21,6 +22,7 @@ class Drug extends Component {
                 <div className="panel panel-default">
                     <div className="panel-heading">
                         <h3>{drugName}</h3>
+                        <p>onsale: {(onSale) ? 'sale' : 'gtfo'}</p>
                         <p>company: {drugCompany}</p>
                         <p>price: {drugPrice}</p>
                         <p>fda-code: {fdaCode}</p>
