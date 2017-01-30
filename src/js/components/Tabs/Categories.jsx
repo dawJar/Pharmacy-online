@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Categories extends Component {
-  render () {
-    return (
+const Categories = () => (
     <h1>cat</h1>
-    );
-  }
-}
+);
 
 export default Categories;

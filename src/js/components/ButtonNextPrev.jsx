@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React, { PropTypes, Component } from 'react';
 
 class ButtonNextPrev extends Component {
 
@@ -14,7 +14,7 @@ class ButtonNextPrev extends Component {
   render () {
     const { direction } = this.props;
     return (
-      <div className="col-xs-1 " onClick={ this.handleClick }>
+      <div className="col-xs-1" onClick={ this.handleClick }>
         <span className={ "glyphicon glyphicon-menu-" + direction }></span>
       </div>
     );

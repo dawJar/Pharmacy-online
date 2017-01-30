@@ -1,30 +1,13 @@
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
-import DrugContainer from '../../containers/DrugContainer';
-import DrugList from '../DrugList';
-import Drug from '../Drug';
+import Jumbotron from '../Jumbotron';
+import PanelSale from '../PanelSale';
 
-export default class Sale extends Component {
+const Sale = () => (
+    <div className="container-fluid">
+        <Jumbotron/>
+        <PanelSale/>
+    </div>
+);
 
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-
-        return (
-            <div className="container-fluid">
-                <div className="panel panel-success">
-                    <div className="panel-heading">
-                        Panel heading
-                    </div>
-                    <div className="panel-body">
-                        <DrugContainer drugStyle="sale">
-                            <DrugList showOnSale={true} />
-                        </DrugContainer>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
+export default Sale;
