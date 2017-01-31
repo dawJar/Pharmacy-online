@@ -5,18 +5,18 @@ import ButtonNextPrev from './ButtonNextPrev';
 
 export default class DrugList extends Component {
 
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.onClickBtn = this.onClickBtn.bind(this);
         this.state = {
             drugsArray: [],
             visibleDrugOnSale: 0,
-            drugsCount: 0
+            drugsCount: 0,
+            drugsPerPage: 4
         }
-
     }
 
-    onClickBtn(direction) {
+    onClickBtn (direction) {
         let currentDrug = this.state.visibleDrugOnSale;
         let count = this.state.drugsCount - 1;
 
@@ -28,44 +28,53 @@ export default class DrugList extends Component {
         this.setState({visibleDrugOnSale: currentDrug});
     }
 
-    makeDrugList(onSale, drugList) {
+    makeDrugList (onSale, drugList, drugsPerPage) {
         let drugsToShow = drugList;
 
-        if (onSale)
-            drugsToShow = drugList.filter((drug) => (drug.onSale))
+        if (onSale) {
+            drugsToShow = drugList.filter((drug) => (drug.onSale));
+        }
+        else {
+            drugsToShow = drugList.slice(0, drugsPerPage);
+        }
 
         return drugsToShow.map((drug) => <Drug key={drug.id} { ...drug }/>);
     }
 
-    setStateWithData(sale, revievedDrugs) {
-        let drugs = this.makeDrugList(sale, revievedDrugs);
-        this.setState({drugsArray: drugs, drugsCount: drugs.length});
+    setStateWithData (sale, revievedDrugs, drugsPerPage) {
+        let drugs = this.makeDrugList(sale, revievedDrugs, drugsPerPage);
+        this.setState({
+            drugsArray: drugs,
+            drugsCount: drugs.length,
+            drugsPerPage: drugsPerPage
+        });
     }
 
-    componentWillMount() {
-        this.setStateWithData(this.props.showOnSale, this.props.drugs);
+    componentWillMount () {
+        this.setStateWithData(this.props.showOnSale, this.props.drugs, this.props.drugsPage);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setStateWithData(nextProps.showOnSale, nextProps.drugs);
+    componentWillReceiveProps (nextProps) {
+        this.setStateWithData(nextProps.showOnSale, nextProps.drugs, nextProps.drugsPage);
     }
 
     render() {
-        const {visibleDrugOnSale, drugsArray} = this.state;
-        const {drugs, showOnSale} = this.props;
-        // console.log(this.state);
+        const { visibleDrugOnSale, drugsArray } = this.state;
+        const { drugs, showOnSale, drugsPage } = this.props;
 
         return (
             <div className="panel-group">
                 <div className="row">
 
-                    <ButtonNextPrev direction="left" onClickBtn={this.onClickBtn}/>
+                    { (showOnSale) ? <ButtonNextPrev direction="left" onClickBtn={this.onClickBtn}/> : null }
 
-                    <div className="col-xs-10">
-                        {drugsArray[visibleDrugOnSale]}
+                    <div className={ showOnSale ? "col-xs-10" : "col-xs-12"}>
+                        { (showOnSale) ? drugsArray[visibleDrugOnSale] :
+                            drugsArray
+                        }
                     </div>
 
-                    <ButtonNextPrev direction="right" onClickBtn={this.onClickBtn}/>
+                    { (showOnSale) ? <ButtonNextPrev direction="right" onClickBtn={this.onClickBtn}/> : null }
                 </div>
             </div>
         );

@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 
 import Jumbotron from '../Jumbotron';
-import PanelSale from '../PanelSale';
+import PanelDrugs from '../PanelDrugs';
 
 const Sale = () => (
     <div className="container-fluid">
         <Jumbotron/>
-        <PanelSale/>
+        <PanelDrugs showOnSale={ true } btnShowMore={ false } heading="Sale!" />
     </div>
 );
 

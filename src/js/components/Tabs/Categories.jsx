@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+
+import Jumbotron from '../Jumbotron';
+import PanelDrugs from '../PanelDrugs';
 
 const Categories = () => (
-    <h1>cat</h1>
+    <div className="container-fluid">
+        <PanelDrugs showOnSale={ false } btnShowMore={ true } heading="All" />
+    </div>
 );
 
 export default Categories;
