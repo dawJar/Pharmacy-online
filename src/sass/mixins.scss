@@ -15,7 +15,7 @@
     @include navLinkBasic($height, $fontSize, $padding);
     @include navLinkHover(true);
 }
-@mixin navBucketStyle($height, $fontSize, $padding) {
+@mixin navBasketStyle($height, $fontSize, $padding) {
     @include navLinkBasic($height, $fontSize, $padding);
     @include navLinkHover(false);
 }

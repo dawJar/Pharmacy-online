@@ -5,42 +5,49 @@ import '../../sass/componentStyles/nav.scss';
 import NavToggle from './Nav/NavToggle';
 import NavLinks from './Nav/NavLinks';
 
-const Nav = (props) => (
+const CategoriesNav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
-            <NavToggle { ...props }/>
-            <NavLinks { ...props } showBasket={ true } />
+            <NavLinks { ...props } showBasket={ false } />
         </div>
     </nav>
 );
 
-Nav.defaultProps = {
+CategoriesNav.defaultProps = {
     linksData: [
         {
             linkPath: "/sale",
-            linkName: "Sale!"
+            linkName: "All"
         },
         {
             linkPath: "/categories",
-            linkName: "Categories"
+            linkName: "Health & Body"
         },
         {
             linkPath: "/search",
-            linkName: "Search"
+            linkName: "Infections"
         },
         {
             linkPath: "/about",
-            linkName: "About"
+            linkName: "Vitamins"
+        },
+        {
+            linkPath: "/search",
+            linkName: "Skincare"
+        },
+        {
+            linkPath: "/search",
+            linkName: "Pain relief"
+        },
+        {
+            linkPath: "/search",
+            linkName: "Other"
         }
     ],
-    basket: {
-        linkPath: "/shopping-cart",
-        linkName: "ShoppingCart"
-    },
     linkActiveStyle: {
-        color: '#7BB480',
+        color: 'red',
         backgroundColor: 'rgba(0, 0, 0, 0)'
     }
 }
 
-export default Nav;
+export default CategoriesNav;

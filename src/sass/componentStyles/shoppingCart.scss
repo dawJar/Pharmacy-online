@@ -7,18 +7,18 @@ span.shopping-cart {
   display: none;
 
   @include mQ($smallDevice) {
-    @include navBucketStyle($navHeightSmall, $navSizeShoppingCart, $navPaddingSmall);
+    @include navBasketStyle($navHeightSmall, $navSizeShoppingCart, $navPaddingSmall);
   };
   @include mQ($mediumDevice) {
     margin: 0 auto;
-    @include navBucketStyle($navHeightMedium, $navSizeShoppingCart, 0);
+    @include navBasketStyle($navHeightMedium, $navSizeShoppingCart, 0);
   };
   @include mQ($largeDevice) {
-    @include navBucketStyle($navHeightLarge, $navSizeShoppingCart, 0);
+    @include navBasketStyle($navHeightLarge, $navSizeShoppingCart, 0);
   };
 }
 
-span#bucket {
+span#basket {
   display: inline;
   @include mQ($smallDevice) {
     display: none;

@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import '../../../sass/componentStyles/shoppingCart.scss';
 
 import NavLink from './NavLink';
+import Basket from '../Basket';
 
 
 export default class NavLinks extends Component {
@@ -11,32 +12,31 @@ export default class NavLinks extends Component {
         super(props);
         this.handleOnClickLink = this.handleOnClickLink.bind(this);
 
-        const { navIndex } = this.props.navigation;
-        this.state = {
-            navIndex: navIndex
-        };
+        // const { navIndex } = this.props.navigation;
+        // this.state = {
+        //     navIndex: navIndex
+        // };
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return this.state.navIndex !== nextProps.navigation.navIndex;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-        this.setState({
-            navIndex: nextProps.navigation.navIndex
-        });
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return this.state.navIndex !== nextProps.navigation.navIndex;
+    // }
+    //
+    // componentWillUpdate(nextProps, nextState) {
+    //     this.setState({
+    //         navIndex: nextProps.navigation.navIndex
+    //     });
+    // }
 
     handleOnClickLink(index) {
         this.props.actions.setIndex(index);
     }
 
     render() {
-        const { navIndex } = this.state;
-        const { temporary, shoppingCart } = this.props;
-        const links = temporary.map((x, i) => {
-            return <NavLink key={i} index={x.index} linkPath={x.linkPath} linkName={x.linkName}
-                onClickLink={this.handleOnClickLink} isActive={navIndex === x.index} />
+        // const { navIndex } = this.state;
+        const { showBasket, linksData, linkActiveStyle, basket } = this.props;
+        const links = linksData.map((link, i) => {
+            return <NavLink key={i} data={ link } linkActiveStyle={ linkActiveStyle } onClickLink={ this.handleOnClickLink } />
         });
 
         return (
@@ -45,15 +45,8 @@ export default class NavLinks extends Component {
 
                     { links }
 
-                    <NavLink key={Date.now()} index={shoppingCart.index}
-                        linkPath={shoppingCart.linkPath} linkName={shoppingCart.linkName}
-                        onClickLink={this.handleOnClickLink} isActive={navIndex === shoppingCart.index}
-                        activeClassName="active-glyph">
+                    { (showBasket) ? <Basket data={ basket } linkActiveStyle={ linkActiveStyle } onClickLink={this.handleOnClickLink} /> : null }
 
-                        <span className="glyphicon glyphicon-shopping-cart shopping-cart"></span>
-                        <span id="bucket">Bucket</span>
-
-                    </NavLink>
 
                 </ul>
             </div>
@@ -61,7 +54,7 @@ export default class NavLinks extends Component {
     }
 }
 
-NavLinks.propTypes = {
-  navigation: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
-}
+// NavLinks.propTypes = {
+//   navigation: PropTypes.object.isRequired,
+//   actions: PropTypes.object.isRequired
+// }

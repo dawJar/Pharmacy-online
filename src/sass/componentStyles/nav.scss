@@ -10,12 +10,12 @@ nav.navbar {
     div.navbar-header {
         a {
             margin-left: $navHeaderMarginLeft;
-            @include navBucketStyle($navHeightXS, $navFontSizeHeaderXS, 0);
+            @include navBasketStyle($navHeightXS, $navFontSizeHeaderXS, 0);
             @include mQ($mediumDevice) {
-                 @include navBucketStyle($navHeightMedium, $navFontSizeHeaderMedium, $navPaddingMedium);
+                 @include navBasketStyle($navHeightMedium, $navFontSizeHeaderMedium, $navPaddingMedium);
             };
             @include mQ($largeDevice) {
-                 @include navBucketStyle($navHeightLarge, $navFontSizeHeaderLarge, $navPaddingLarge);
+                 @include navBasketStyle($navHeightLarge, $navFontSizeHeaderLarge, $navPaddingLarge);
             };
         }
         span.icon-bar {

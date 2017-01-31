@@ -1,26 +1,28 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router';
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 
 export default class NavLink extends Component {
 
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleClickLink = this.handleClickLink.bind(this);
     }
 
-    handleClickLink() {
+    handleClickLink () {
         this.props.onClickLink(this.props.index);
     }
 
-    render() {
-        const {index, isActive, activeClassName, linkName, linkPath, children} = this.props;
+    render () {
+        const { data, linkActiveStyle, children } = this.props;
+        const { index, linkName, linkPath } = data;
+        // console.log(linkActiveStyle);
 
         return (
-            <li className={isActive ? activeClassName || "active" : ""}>
-              <Link to={linkPath}
+            <li>
+              <Link to={ linkPath } activeStyle={ linkActiveStyle }
                   onClick={this.handleClickLink}>
-                  {children || linkName}
+                  { children || linkName }
               </Link>
             </li>
         );

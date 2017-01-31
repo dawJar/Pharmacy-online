@@ -40,6 +40,7 @@ export default class Root extends Component {
             <Router history={browserHistory}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Sale}/>
+                    <Route path="/sale" component={Sale}/>
                     <Route path="/categories" component={Categories}/>
                     <Route path="/search" component={Search}/>
                     <Route path="/about" component={About}/>
