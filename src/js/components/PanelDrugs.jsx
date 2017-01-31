@@ -21,7 +21,6 @@ class PanelDrugs extends Component {
         this.setState({
             drugsPerPage: drugs
         });
-        console.log('click' + drugs);
     }
 
     render () {
