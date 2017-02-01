@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import navigation from './navigationReducer';
 import drugs, * as fromDrugsReducer from './drugsReducer';
 import cart, * as dromCartReducer from './cartReducer';
 
 
 export default combineReducers({
-  navigation,
   drugs,
   cart
 });

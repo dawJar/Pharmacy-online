@@ -16,11 +16,11 @@ class App extends Component {
     }
 
     render() {
-        const { children, navigation, actions } = this.props;
-        
+        const { children, actions } = this.props;
+
         return (
             <div>
-                <Nav navigation={ navigation } actions={ actions } />
+                <Nav actions={ actions } />
                 { children }
             </div>
         );
@@ -28,19 +28,13 @@ class App extends Component {
 }
 
 App.propTypes = {
-  navigation: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 }
-
-const mapStateToProps = (state) => ({
-  navigation: state.navigation
-})
 
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(AppActions, dispatch)
 })
 
 export default connect(
-  mapStateToProps,
   mapDispatchToProps
 )(App)

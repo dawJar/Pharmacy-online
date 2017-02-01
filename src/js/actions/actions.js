@@ -1,13 +1,6 @@
 import * as types from '../constants/ActionTypes';
 import shop from '../api/shop'
 
-export const setIndex = (navIndex) => {
-  return {
-    type: types.SET_NAV_INDEX,
-    navIndex
-  };
-};
-
 // FETCH DATA
 const receiveDrugs = (drugs) => {
   return {
