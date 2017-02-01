@@ -6,11 +6,7 @@ export default class NavLink extends Component {
 
     constructor (props) {
         super(props);
-        this.handleClickLink = this.handleClickLink.bind(this);
-    }
-
-    handleClickLink () {
-        this.props.onClickLink(this.props.index);
+        // this.handleClickLink = this.handleClickLink.bind(this);
     }
 
     render () {
@@ -20,8 +16,7 @@ export default class NavLink extends Component {
 
         return (
             <li>
-              <Link to={ linkPath } activeStyle={ linkActiveStyle }
-                  onClick={this.handleClickLink}>
+              <Link to={ linkPath } activeStyle={ linkActiveStyle }>
                   { children || linkName }
               </Link>
             </li>

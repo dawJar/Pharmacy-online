@@ -9,7 +9,7 @@ const Nav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
             <NavToggle { ...props }/>
-            <NavLinks { ...props } showBasket={ true } />
+            <NavLinks { ...props } showBasket={ true } showAsSidebar={ false } />
         </div>
     </nav>
 );

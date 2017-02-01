@@ -12,7 +12,8 @@ export default class DrugList extends Component {
             drugsArray: [],
             visibleDrugOnSale: 0,
             drugsCount: 0,
-            drugsPerPage: 4
+            drugsPerPage: 4,
+            drugFilter: null
         }
     }
 
@@ -28,34 +29,41 @@ export default class DrugList extends Component {
         this.setState({visibleDrugOnSale: currentDrug});
     }
 
-    makeDrugList (onSale, drugList, drugsPerPage) {
+    makeDrugList (onSale, drugList, drugsPerPage, drugFilter) {
         let drugsToShow = drugList;
 
         if (onSale) {
-            drugsToShow = drugList.filter((drug) => (drug.onSale));
-        }
-        else {
-            drugsToShow = drugList.slice(0, drugsPerPage);
+            drugsToShow = drugsToShow.filter(drug => drug.onSale);
+        } else {
+            if (this.state.drugFilter !== 'all')
+                drugsToShow = drugsToShow.filter(drug => drug.drugCategory === drugFilter);
+            drugsToShow = drugsToShow.slice(0, drugsPerPage);
         }
 
         return drugsToShow.map((drug) => <Drug key={drug.id} { ...drug }/>);
     }
 
-    setStateWithData (sale, revievedDrugs, drugsPerPage) {
-        let drugs = this.makeDrugList(sale, revievedDrugs, drugsPerPage);
+    checkCurrentFilter (drugFilter, currDrugsPerPage) {
+        return (this.state.drugFilter !== drugFilter) ? 4 : currDrugsPerPage;
+    }
+
+    setStateWithData (sale, revievedDrugs, drugsPerPage, drugFilter) {
+        let setDrugsPerPage = this.checkCurrentFilter(drugFilter, drugsPerPage);
+        let drugs = this.makeDrugList(sale, revievedDrugs, setDrugsPerPage, drugFilter);
         this.setState({
             drugsArray: drugs,
             drugsCount: drugs.length,
-            drugsPerPage: drugsPerPage
+            drugsPerPage: setDrugsPerPage,
+            drugFilter: drugFilter
         });
     }
 
     componentWillMount () {
-        this.setStateWithData(this.props.showOnSale, this.props.drugs, this.props.drugsPage);
+        this.setStateWithData(this.props.showOnSale, this.props.drugs, this.props.drugsPage, this.props.drugFilter);
     }
 
     componentWillReceiveProps (nextProps) {
-        this.setStateWithData(nextProps.showOnSale, nextProps.drugs, nextProps.drugsPage);
+        this.setStateWithData(nextProps.showOnSale, nextProps.drugs, nextProps.drugsPage, nextProps.drugFilter);
     }
 
     render() {

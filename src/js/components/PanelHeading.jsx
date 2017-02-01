@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PanelHeading = ({ heading }) => (
+const PanelHeading = ({ heading, params }) => (
     <div className="panel-heading">
-        { heading }
+        { heading || 'all' }
     </div>
 )
 

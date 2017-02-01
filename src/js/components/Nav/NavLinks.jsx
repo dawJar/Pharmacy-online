@@ -10,7 +10,7 @@ export default class NavLinks extends Component {
 
     constructor(props) {
         super(props);
-        this.handleOnClickLink = this.handleOnClickLink.bind(this);
+        // this.handleOnClickLink = this.handleOnClickLink.bind(this);
 
         // const { navIndex } = this.props.navigation;
         // this.state = {
@@ -28,24 +28,25 @@ export default class NavLinks extends Component {
     //     });
     // }
 
-    handleOnClickLink(index) {
-        this.props.actions.setIndex(index);
-    }
+    // handleOnClickLink(index) {
+    //     this.props.actions.setIndex(index);
+    // }
 
     render() {
         // const { navIndex } = this.state;
-        const { showBasket, linksData, linkActiveStyle, basket } = this.props;
+        const { showAsSidebar, showBasket, linksData, linkActiveStyle, basket } = this.props;
+
         const links = linksData.map((link, i) => {
-            return <NavLink key={i} data={ link } linkActiveStyle={ linkActiveStyle } onClickLink={ this.handleOnClickLink } />
+            return <NavLink key={i} data={ link } linkActiveStyle={ linkActiveStyle } />
         });
 
         return (
-            <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav">
+            <div className={ (showAsSidebar) ? "sidebar-wrapper" : "collapse navbar-collapse" } id="myNavbar">
+                <ul className={ (showAsSidebar) ? "sidebar-nav" : "nav navbar-nav"}>
 
                     { links }
 
-                    { (showBasket) ? <Basket data={ basket } linkActiveStyle={ linkActiveStyle } onClickLink={this.handleOnClickLink} /> : null }
+                    { (showBasket) ? <Basket data={ basket } linkActiveStyle={ linkActiveStyle } /> : null }
 
 
                 </ul>

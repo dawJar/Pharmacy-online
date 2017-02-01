@@ -12,6 +12,7 @@ class Drug extends Component {
             onSale,
             drugCompany,
             drugDescription,
+            drugCategory,
             drugExpiration,
             drugName,
             drugPrice,
@@ -24,9 +25,7 @@ class Drug extends Component {
                 <p>onsale: {(onSale) ? 'sale' : 'gtfo'}</p>
                 <p>company: {drugCompany}</p>
                 <p>price: {drugPrice}</p>
-                <p>fda-code: {fdaCode}</p>
-                <p>expiration: {drugExpiration}</p>
-                <p>description: {drugDescription}</p>
+                <p>category: {drugCategory}</p>
             </div>
 
         );
