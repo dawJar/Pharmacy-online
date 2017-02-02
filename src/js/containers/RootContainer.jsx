@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Router, Route, IndexRoute, Redirect, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 
 import store from '../store/configureStore';
@@ -27,6 +27,7 @@ const RootContainer = () => (
                 <Route path="/about" component={ About }/>
                 <Route path="/shopping-cart" component={ ShoppingCart }/>
             </Route>
+            <Redirect from="*" to="/" />
         </Router>
     </Provider>
 );
