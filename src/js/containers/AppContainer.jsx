@@ -1,6 +1,6 @@
-import React, {Component, PropTypes} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import * as AppActions from '../actions/actions';
 
 import 'bootstrap';
@@ -9,11 +9,16 @@ import '../../sass/style.scss';
 
 import Nav from '../components/Nav.jsx';
 
-const AppContainer = ({children, actions}) => (
-    <div>
-        <Nav actions={actions}/> {children}
-    </div>
-);
+const AppContainer = ({ children, ...otherProps }) => {
+    const childrenToShow = React.cloneElement(children, { ...otherProps });
+
+    return (
+      <div>
+          <Nav { ...otherProps }/>
+          { childrenToShow }
+      </div>
+    );
+}
 
 AppContainer.propTypes = {
     actions: PropTypes.object.isRequired

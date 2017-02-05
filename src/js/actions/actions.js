@@ -1,5 +1,18 @@
 import * as types from '../constants/ActionTypes';
-import shop from '../api/shop'
+import shop from '../api/shop';
+
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
+}
+
+export const setVisibilityFilter = (currentFilter) => {
+  return {
+    type: types.SET_VISIBILITY_FILTER,
+    currentFilter
+  }
+}
 
 // FETCH DATA
 const receiveDrugs = (drugs) => {

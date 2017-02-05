@@ -18,24 +18,29 @@ Nav.defaultProps = {
     linksData: [
         {
             linkPath: "/sale",
-            linkName: "Sale!"
+            linkName: "Sale!",
+            linkFilter: "SHOW_SALE"
         },
         {
             linkPath: "/categories",
-            linkName: "Categories"
+            linkName: "Categories",
+            linkFilter: "SHOW_HEALTH_BODY"
         },
         {
             linkPath: "/search",
-            linkName: "Search"
+            linkName: "Search",
+            linkFilter: "SHOW_ALL"
         },
         {
             linkPath: "/about",
-            linkName: "About"
+            linkName: "About",
+            linkFilter: "SHOW_SALE"
         }
     ],
     basket: {
         linkPath: "/shopping-cart",
-        linkName: "ShoppingCart"
+        linkName: "ShoppingCart",
+        linkFilter: "SHOW_SALE"
     },
     linkActiveStyle: {
         color: '#7BB480',

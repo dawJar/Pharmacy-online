@@ -11,21 +11,22 @@ export default class Categories extends Component {
     }
 
     render () {
-        const { children, params } = this.props;
+        const { children, params, ...restProps } = this.props;
         const { category } = params;
         const childrenToRender = React.cloneElement(children, {
             key: Date.now(),
             showOnSale: false,
-            btnShowMore: true
+            btnShowMore: true,
+            ...restProps
         });
-        // console.log(this.props.params.category);
+        // console.log(this.props);
 
         return (
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-xs-12 col-sm-2">
 
-                        <CategoriesNav />
+                        <CategoriesNav { ...restProps } />
 
                     </div>
                     <div className="col-xs-12 col-sm-10">

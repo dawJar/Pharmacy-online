@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import drugs, * as fromDrugsReducer from './drugsReducer';
-import cart, * as dromCartReducer from './cartReducer';
+import { visibilityFilter, visibleDrugs } from './drugsReducer';
+// import cart, * as dromCartReducer from './cartReducer';
 
 
 export default combineReducers({
-  drugs,
-  cart
+  visibilityFilter,
+  visibleDrugs
+  // cart
 });
 
 // export default rootReducer;

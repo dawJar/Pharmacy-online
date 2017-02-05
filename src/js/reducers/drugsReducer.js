@@ -1,54 +1,31 @@
 import { combineReducers } from 'redux';
-import { RECEIVE_DRUGS, ADD_TO_CART } from '../constants/ActionTypes';
+import { RECEIVE_DRUGS, ADD_TO_CART, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes';
 
-// const drugs = (state, action) => {
-//   switch (action.type) {
-//     case ADD_TO_CART:
-//       return {
-//         ...state
-//         // inventory: state.inventory - 1
-//       }
-//     default:
-//       return state
-//   }
-// }
+const { SHOW_ALL } = VisibilityFilters;
 
-const byId = (state = {}, action) => {
-  switch (action.type) {
-    case RECEIVE_DRUGS:
-      return {
-        ...state,
-        ...action.drugs.reduce((obj, drug) => {
-          obj[drug.id] = drug
-          return obj
-        }, {})
-      }
-    default:
-      const { drugId } = action
-      if (drugId) {
-        return {
-          ...state,
-          [drugId]: drugs(state[drug], action)
-        }
-      }
-      return state
-  }
+
+export const visibilityFilter = (state = SHOW_ALL, action) => {
+    switch (action.type) {
+      case SET_VISIBILITY_FILTER:
+        return action.currentFilter;
+      default:
+        return state;
+    }
 }
 
-const visibleIds = (state = [], action) => {
-  switch (action.type) {
-    case RECEIVE_DRUGS:
-      return action.drugs.map(drug => drug.id)
-    default:
-      return state
-  }
+export const visibleDrugs = (state = [], action) => {
+    switch (action.type) {
+      case RECEIVE_DRUGS:
+        return action.drugs;
+      default:
+        return state;
+    }
 }
 
 export default combineReducers({
-  byId,
-  visibleIds
-})
+    visibleDrugs,
+    visibilityFilter
+});
 
-export const getDrug = (state, id) => state.byId[id]
-
-export const getVisibleDrugs = state => state.visibleIds.map(id => getDrug(state, id))
+export const getVisibleDrugs = state => state.visibleDrugs;
+export const getVisibleFilter = state => state.visibilityFilter;

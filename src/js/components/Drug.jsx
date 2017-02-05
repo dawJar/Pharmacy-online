@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class Drug extends Component {
 
@@ -21,11 +21,11 @@ class Drug extends Component {
         } = this.props;
         return (
             <div className={ addClassNames }>
-                <h3>{drugName}</h3>
-                <p>onsale: {(onSale) ? 'sale' : 'gtfo'}</p>
-                <p>company: {drugCompany}</p>
-                <p>price: {drugPrice}</p>
-                <p>category: {drugCategory}</p>
+                <h3>{ drugName }</h3>
+                <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
+                <p>company: { drugCompany }</p>
+                <p>price: { drugPrice }</p>
+                <p>category: { drugCategory }</p>
             </div>
 
         );
