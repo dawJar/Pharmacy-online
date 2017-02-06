@@ -17,16 +17,14 @@ class NavLinks extends Component {
     }
 
     handleClickSetFilter (recievedFilter) {
-        // console.log(this.props);
-        // debugger;
         this.props.dispatch(setVisibilityFilter(recievedFilter));
     }
 
     render() {
-        const { showAsSidebar, showBasket, linksData, linkActiveStyle, basket } = this.props;
+        const { showAsSidebar, showBasket, linksData, basket, ...otherProps } = this.props;
 
-        const links = linksData.map((link, i) => {
-            return <NavLink onClickSetFilter={ this.handleClickSetFilter } key={i} data={ link } linkActiveStyle={ linkActiveStyle } />
+        const links = linksData.map((li, i) => {
+            return <NavLink onClickSetFilter={ this.handleClickSetFilter } key={i} data={ li } { ...otherProps } />
         });
 
         return (
@@ -35,7 +33,7 @@ class NavLinks extends Component {
 
                     { links }
 
-                    { (showBasket) ? <Basket onClickSetFilter={ this.handleClickSetFilter } data={ basket } linkActiveStyle={ linkActiveStyle } /> : null }
+                    { (showBasket) ? <Basket onClickSetFilter={ this.handleClickSetFilter } data={ basket } { ...otherProps } /> : null }
 
                 </ul>
             </div>
@@ -43,14 +41,5 @@ class NavLinks extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         handleClickSetFilter: (recievedFilter) => {
-//             dispatch(setVisibilityFilter(recievedFilter))
-//         }
-//     }
-// }
 
-export default connect(
-  // mapDispatchToProps
-)(NavLinks);
+export default connect()(NavLinks);

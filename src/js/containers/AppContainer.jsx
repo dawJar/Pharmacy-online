@@ -11,7 +11,7 @@ import Nav from '../components/Nav.jsx';
 
 const AppContainer = ({ children, ...otherProps }) => {
     const childrenToShow = React.cloneElement(children, { ...otherProps });
-
+    // console.log(currentFilter);
     return (
       <div>
           <Nav { ...otherProps }/>
@@ -24,8 +24,15 @@ AppContainer.propTypes = {
     actions: PropTypes.object.isRequired
 }
 
+const mapStateToProps = (state) => ({
+    currentFilter: state.visibilityFilter
+})
+
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(AppActions, dispatch)
 })
 
-export default connect(mapDispatchToProps)(AppContainer)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(AppContainer)

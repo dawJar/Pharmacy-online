@@ -24,9 +24,10 @@ class PanelDrugs extends Component {
     }
 
     render () {
-        const { btnShowMore, showOnSale, drugFilter, heading, params, ...otherProps } = this.props;
+        const { btnShowMore, heading, params, ...otherProps } = this.props;
         const { drugsPerPage } = this.state;
         // console.log(this.props.params);
+        // console.log('showonsale ' + this.props);
 
         return (
             <div className="panel panel-success">
@@ -34,8 +35,8 @@ class PanelDrugs extends Component {
                 <PanelHeading heading={ heading || params.category } />
 
                 <div className="panel-body">
-                    <DrugContainer drugStyle="sale">
-                        <DrugList drugFilter={ showOnSale ? null : params.category } showOnSale={ showOnSale } { ...otherProps } drugsPage={ drugsPerPage } />
+                    <DrugContainer>
+                        <DrugList drugsPage={ drugsPerPage } { ...otherProps } />
                     </DrugContainer>
 
                     { (btnShowMore) ? <ButtonShowMore onClickShowMore={ this.handleShowMore } /> : null }

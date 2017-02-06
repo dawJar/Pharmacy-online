@@ -4,7 +4,7 @@ import { setVisibilityFilter } from '../../actions/actions';
 import { Link } from 'react-router';
 
 
-class NavLink extends Component {
+export default class NavLink extends Component {
 
     constructor (props) {
         super(props);
@@ -28,7 +28,3 @@ class NavLink extends Component {
         );
     }
 }
-
-
-
-export default NavLink;

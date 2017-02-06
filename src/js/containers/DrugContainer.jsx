@@ -1,25 +1,22 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions/actions';
-// import { getVisibleDrugs, getVisibleFilter } from '../reducers/drugsReducer';
+// import { visibleDrugs } from '../reducers/drugsReducer';
 
 // import Drug from '../components/Drug';
 
 const DrugContainer = ({
-    children,
-    drugStyle,
-    drugs,
-    filters,
-    // ...rest
-}) => {
-    console.log(filters);
-    return (
-        <div>
-            {
-                (drugStyle === 'sale') ? React.cloneElement(children, { drugs }) : null
-            }
-        </div>
-    );
+        children,
+        drugs,
+        currentFilter
+    }) => {
+        return (
+            <div>
+                {
+                    React.cloneElement(children, { drugs })
+                }
+            </div>
+        );
 };
 
 DrugContainer.propTypes = {
@@ -39,8 +36,8 @@ DrugContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    drugs: state.visibleDrugs,
-    filters: state.visibilityFilter
+    drugs: state.fetchDrugs,
+    // currentFilter: state.visibilityFilter
 })
 
 export default connect(

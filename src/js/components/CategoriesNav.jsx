@@ -8,12 +8,14 @@ import NavLinks from './Nav/NavLinks';
 const CategoriesNav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
-            <NavLinks { ...props } showBasket={ false } showAsSidebar={ true } />
+            <NavLinks { ...props } />
         </div>
     </nav>
 );
 
 CategoriesNav.defaultProps = {
+    showBasket: false,
+    showAsSidebar: true,
     linksData: [
         {
             linkName: "Health & Body",

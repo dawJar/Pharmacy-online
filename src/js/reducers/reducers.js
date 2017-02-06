@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
-import { visibilityFilter, visibleDrugs } from './drugsReducer';
+import { visibilityFilter, fetchDrugs } from './drugsReducer';
 // import cart, * as dromCartReducer from './cartReducer';
 
 
 export default combineReducers({
   visibilityFilter,
-  visibleDrugs
+  fetchDrugs
   // cart
 });
+
 
 // export default rootReducer;
 

@@ -8,13 +8,16 @@ import NavLinks from './Nav/NavLinks';
 const Nav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
-            <NavToggle { ...props }/>
-            <NavLinks { ...props } showBasket={ true } showAsSidebar={ false } />
+            <NavToggle />
+            {/* <NavLinks { ...props } showBasket={ true } showAsSidebar={ false } /> */}
+            <NavLinks { ...props } />
         </div>
     </nav>
 );
 
 Nav.defaultProps = {
+    showBasket: true,
+    showAsSidebar: false,
     linksData: [
         {
             linkPath: "/sale",

@@ -1,19 +1,20 @@
 import { combineReducers } from 'redux';
 import { RECEIVE_DRUGS, ADD_TO_CART, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes';
 
-const { SHOW_ALL } = VisibilityFilters;
+// const { SHOW_ALL } = VisibilityFilters;
 
 
-export const visibilityFilter = (state = SHOW_ALL, action) => {
+export const visibilityFilter = (state = 'on_sale', action) => {
     switch (action.type) {
       case SET_VISIBILITY_FILTER:
-        return action.currentFilter;
+        let arrayFilter = setFilterToRecivedFilter(action.currentFilter)
+        return arrayFilter;
       default:
         return state;
     }
 }
 
-export const visibleDrugs = (state = [], action) => {
+export const fetchDrugs = (state = [], action) => {
     switch (action.type) {
       case RECEIVE_DRUGS:
         return action.drugs;
@@ -23,9 +24,40 @@ export const visibleDrugs = (state = [], action) => {
 }
 
 export default combineReducers({
-    visibleDrugs,
+    fetchDrugs,
     visibilityFilter
 });
 
-export const getVisibleDrugs = state => state.visibleDrugs;
-export const getVisibleFilter = state => state.visibilityFilter;
+const setFilterToRecivedFilter = (currFilter) => {
+    switch (currFilter) {
+        case 'SHOW_HEALTH_BODY':
+            return 'health&body';
+        case 'SHOW_INFECTIONS':
+            return 'infections';
+        case 'SHOW_VITAMINS':
+            return 'vitamins';
+        case 'SHOW_SKINCARE':
+            return 'skincare';
+        case 'SHOW_PAINKILLERS':
+            return 'painkillers';
+        case 'SHOW_OTHER':
+            return 'other';
+        case 'SHOW_ON_SALE':
+            return 'on_sale';
+        default:
+            return 'all'
+    }
+}
+//
+// export const visibleDrugs = state => state.fetchDrugs.filter(drug => {
+//     if (state.visibilityFilter === 'on_sale') {
+//         return drug.onSale;
+//     } else if (state.visibilityFilter === 'all') {
+//         return drug;
+//     } else {
+//         return state.visibilityFilter === drug.drugCategory;
+//     }
+// });
+
+// export const getVisibleDrugs = state => state.visibleDrugs;
+// export const getVisibleFilter = state => state.visibilityFilter;
