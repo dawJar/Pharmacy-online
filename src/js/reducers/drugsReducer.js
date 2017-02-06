@@ -48,16 +48,3 @@ const setFilterToRecivedFilter = (currFilter) => {
             return 'all'
     }
 }
-//
-// export const visibleDrugs = state => state.fetchDrugs.filter(drug => {
-//     if (state.visibilityFilter === 'on_sale') {
-//         return drug.onSale;
-//     } else if (state.visibilityFilter === 'all') {
-//         return drug;
-//     } else {
-//         return state.visibilityFilter === drug.drugCategory;
-//     }
-// });
-
-// export const getVisibleDrugs = state => state.visibleDrugs;
-// export const getVisibleFilter = state => state.visibilityFilter;

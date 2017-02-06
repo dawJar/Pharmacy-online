@@ -22,7 +22,7 @@ Nav.defaultProps = {
         {
             linkPath: "/sale",
             linkName: "Sale!",
-            linkFilter: "SHOW_SALE"
+            linkFilter: "SHOW_ON_SALE"
         },
         {
             linkPath: "/categories",

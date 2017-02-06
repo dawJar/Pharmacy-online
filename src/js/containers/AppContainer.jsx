@@ -10,6 +10,7 @@ import '../../sass/style.scss';
 import Nav from '../components/Nav.jsx';
 
 const AppContainer = ({ children, ...otherProps }) => {
+    // console.log(currentFilter);
     const childrenToShow = React.cloneElement(children, { ...otherProps });
     // console.log(currentFilter);
     return (
@@ -25,7 +26,7 @@ AppContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    currentFilter: state.visibilityFilter
+    currentFilter: state.drugsReducer.visibilityFilter
 })
 
 const mapDispatchToProps = (dispatch) => ({

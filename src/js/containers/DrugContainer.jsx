@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../actions/actions';
-// import { visibleDrugs } from '../reducers/drugsReducer';
+import { getVisibleDrugs } from '../reducers/reducers';
 
 // import Drug from '../components/Drug';
 
@@ -10,6 +10,7 @@ const DrugContainer = ({
         drugs,
         currentFilter
     }) => {
+        // console.log();
         return (
             <div>
                 {
@@ -36,9 +37,11 @@ DrugContainer.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    drugs: state.fetchDrugs,
-    // currentFilter: state.visibilityFilter
-})
+    drugs: getVisibleDrugs(
+        state.drugsReducer.fetchDrugs,
+        state.drugsReducer.visibilityFilter
+    )
+});
 
 export default connect(
     mapStateToProps,
