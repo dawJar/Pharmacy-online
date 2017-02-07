@@ -6,31 +6,20 @@ import Drug from './Drug';
 import PanelHeading from './PanelHeading';
 import ButtonShowMoreContainer from '../containers/ButtonShowMoreContainer';
 
-class PanelDrugs extends Component {
+const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
+    <div className="panel panel-success">
 
-    constructor (props) {
-        super(props);
-    }
+        <PanelHeading heading={ heading || params.category } />
 
-    render () {
-        const { btnShowMore, heading, params, ...otherProps } = this.props;
+        <div className="panel-body">
+            <DrugContainer>
+                {/* <DrugList drugsPage={ drugsPerPage } { ...otherProps } /> */}
+                <DrugList { ...otherProps } />
+            </DrugContainer>
 
-        return (
-            <div className="panel panel-success">
-
-                <PanelHeading heading={ heading || params.category } />
-
-                <div className="panel-body">
-                    <DrugContainer>
-                        {/* <DrugList drugsPage={ drugsPerPage } { ...otherProps } /> */}
-                        <DrugList { ...otherProps } />
-                    </DrugContainer>
-
-                    { (btnShowMore) ? <ButtonShowMoreContainer { ...otherProps } /> : null }
-                </div>
-            </div>
-        );
-    }
-}
+            { (btnShowMore) ? <ButtonShowMoreContainer { ...otherProps } /> : null }
+        </div>
+    </div>
+);
 
 export default PanelDrugs;

@@ -4,37 +4,31 @@ import CategoriesNav from '../CategoriesNav';
 import Jumbotron from '../Jumbotron';
 import PanelDrugs from '../PanelDrugs';
 
-export default class Categories extends Component {
+const Categories = ({ children, params, ...otherProps }) => {
 
-    constructor (props) {
-        super(props);
-    }
+    const { category } = params;
+    const childrenToRender = React.cloneElement(children, {
+                                              btnShowMore: true,
+                                               ...otherProps
+                                             });
 
-    render () {
-        const { children, params, ...otherProps } = this.props;
-        const { category } = params;
-        const childrenToRender = React.cloneElement(children, {
-                                                  btnShowMore: true,
-                                                   ...otherProps
-                                                 });
+    return (
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-xs-12 col-sm-2">
 
-        return (
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-2">
+                    <CategoriesNav { ...otherProps } />
 
-                        <CategoriesNav { ...otherProps } />
+                </div>
+                <div className="col-xs-12 col-sm-10">
 
-                    </div>
-                    <div className="col-xs-12 col-sm-10">
+                    {/* PanelDrugs component */}
+                    { (category !== undefined) ?  childrenToRender : null }
 
-                        {/* PanelDrugs component */}
-                        { (category !== undefined) ?  childrenToRender : null }
-
-                    </div>
                 </div>
             </div>
-        );
-    }
-
+        </div>
+    );
 }
+
+export default Categories;
