@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { setDrugsPerPage } from '../actions/actions';
 
-class ButtonShowMore extends Component {
+class ButtonShowMoreContainer extends Component {
 
   constructor (props) {
     super(props);
@@ -24,4 +24,4 @@ class ButtonShowMore extends Component {
 
 }
 
-export default connect()(ButtonShowMore);
+export default connect()(ButtonShowMoreContainer);

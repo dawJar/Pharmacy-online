@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { setVisibilityFilter } from '../../actions/actions';
+import { setVisibilityFilter } from '../actions/actions';
 
-import '../../../sass/componentStyles/shoppingCart.scss';
+import '../../sass/componentStyles/shoppingCart.scss';
 
-import NavLink from './NavLink';
-import Basket from '../Basket';
+import NavLink from '../components/Nav/NavLink';
+import Basket from '../components/Basket';
 
 // TODO: CHANGE TO CONTENER!!
-class NavLinks extends Component {
+class NavLinksContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -42,4 +42,4 @@ class NavLinks extends Component {
 }
 
 
-export default connect()(NavLinks);
+export default connect()(NavLinksContainer);

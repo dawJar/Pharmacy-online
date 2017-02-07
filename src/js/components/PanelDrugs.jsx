@@ -4,24 +4,13 @@ import DrugContainer from '../containers/DrugContainer';
 import DrugList from './DrugList';
 import Drug from './Drug';
 import PanelHeading from './PanelHeading';
-import ButtonShowMore from './ButtonShowMore';
+import ButtonShowMoreContainer from '../containers/ButtonShowMoreContainer';
 
 class PanelDrugs extends Component {
 
     constructor (props) {
         super(props);
-        // this.handleShowMore = this.handleShowMore.bind(this);
-        // this.state = {
-        //     drugsPerPage: 4
-        // }
     }
-
-    // handleShowMore () {
-    //     let drugs = this.state.drugsPerPage + 4;
-    //     this.setState({
-    //         drugsPerPage: drugs
-    //     });
-    // }
 
     render () {
         const { btnShowMore, heading, params, ...otherProps } = this.props;
@@ -37,7 +26,7 @@ class PanelDrugs extends Component {
                         <DrugList { ...otherProps } />
                     </DrugContainer>
 
-                    { (btnShowMore) ? <ButtonShowMore { ...otherProps } /> : null }
+                    { (btnShowMore) ? <ButtonShowMoreContainer { ...otherProps } /> : null }
                 </div>
             </div>
         );
