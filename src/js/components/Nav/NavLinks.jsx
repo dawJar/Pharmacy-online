@@ -8,7 +8,7 @@ import '../../../sass/componentStyles/shoppingCart.scss';
 import NavLink from './NavLink';
 import Basket from '../Basket';
 
-
+// TODO: CHANGE TO CONTENER!!
 class NavLinks extends Component {
 
     constructor(props) {

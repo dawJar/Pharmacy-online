@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { RECEIVE_DRUGS, ADD_TO_CART, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes';
+import { RECEIVE_DRUGS, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes';
 
 // const { SHOW_ALL } = VisibilityFilters;
 

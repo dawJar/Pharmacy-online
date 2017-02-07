@@ -8,7 +8,7 @@ class ButtonNextPrev extends Component {
   }
 
   handleClick () {
-    this.props.onClickBtn(this.props.direction);
+    this.props.onClickPrevNext(this.props.direction);
   }
 
   render () {

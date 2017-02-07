@@ -1,23 +1,48 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions/actions';
-import { getVisibleDrugs } from '../reducers/reducers';
+import { setCurrentVisibleDrug } from '../actions/actions';
+import { getVisibleDrugs, drugListReducer } from '../reducers/reducers';
 
 // import Drug from '../components/Drug';
 
-const DrugContainer = ({
-        children,
-        drugs,
-        currentFilter
-    }) => {
-        // console.log();
+class DrugContainer extends Component {
+
+    constructor (props) {
+        super(props);
+        this.handleClickPrevNext = this.handleClickPrevNext.bind(this);
+    }
+
+    handleClickPrevNext (direction) {
+        let { drugs, drugIndex } = this.props;
+        let countDrugs = drugs.length - 1;
+        let newDrugIndex = drugIndex;
+
+        if (direction === 'left' && drugIndex > 0) {
+            newDrugIndex -= 1;
+        } else if (direction === 'right' && drugIndex < countDrugs) {
+            newDrugIndex += 1;
+        }
+
+        this.props.dispatch(setCurrentVisibleDrug(newDrugIndex));
+    }
+
+    render () {
+        const { children, drugs, drugIndex, ...otherProps } = this.props;
+
         return (
             <div>
                 {
-                    React.cloneElement(children, { drugs })
+                    React.cloneElement(children, {
+                                            onClickPrevNext: this.handleClickPrevNext,
+                                            test: 'test',
+                                            drugs,
+                                            drugIndex,
+                                            ...otherProps
+                                        })
                 }
             </div>
         );
+    }
 };
 
 DrugContainer.propTypes = {
@@ -40,8 +65,11 @@ const mapStateToProps = state => ({
     drugs: getVisibleDrugs(
         state.drugsReducer.fetchDrugs,
         state.drugsReducer.visibilityFilter
-    )
+    ),
+    drugIndex: state.drugListReducer.setCurrentVisibleDrug.drugIndex,
+    drugsLength: state.drugListReducer.setCurrentVisibleDrug.drugsLength
 });
+
 
 export default connect(
     mapStateToProps,

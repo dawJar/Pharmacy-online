@@ -11,3 +11,5 @@ export const VisibilityFilters = {
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
+
+export const SET_CURRENT_VISIBLE_DRUG = 'SET_CURRENT_VISIBLE_DRUG';
