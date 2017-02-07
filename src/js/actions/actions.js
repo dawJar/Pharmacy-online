@@ -21,6 +21,12 @@ export const setCurrentVisibleDrug = (drugIndex) => {
   }
 }
 
+export const setDrugsPerPage = () => {
+  return {
+    type: types.SET_DRUGS_PER_PAGE
+  }
+}
+
 // FETCH DATA
 const receiveDrugs = (drugs) => {
   return {

@@ -13,3 +13,4 @@ export const VisibilityFilters = {
 }
 
 export const SET_CURRENT_VISIBLE_DRUG = 'SET_CURRENT_VISIBLE_DRUG';
+export const SET_DRUGS_PER_PAGE = 'SET_DRUGS_PER_PAGE';

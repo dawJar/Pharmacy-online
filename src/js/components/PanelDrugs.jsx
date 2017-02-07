@@ -10,24 +10,21 @@ class PanelDrugs extends Component {
 
     constructor (props) {
         super(props);
-        this.handleShowMore = this.handleShowMore.bind(this);
-        this.state = {
-            drugsPerPage: 4
-        }
+        // this.handleShowMore = this.handleShowMore.bind(this);
+        // this.state = {
+        //     drugsPerPage: 4
+        // }
     }
 
-    handleShowMore () {
-        let drugs = this.state.drugsPerPage + 4;
-        this.setState({
-            drugsPerPage: drugs
-        });
-    }
+    // handleShowMore () {
+    //     let drugs = this.state.drugsPerPage + 4;
+    //     this.setState({
+    //         drugsPerPage: drugs
+    //     });
+    // }
 
     render () {
         const { btnShowMore, heading, params, ...otherProps } = this.props;
-        const { drugsPerPage } = this.state;
-        // console.log(this.props.params);
-        // console.log('showonsale ' + this.props);
 
         return (
             <div className="panel panel-success">
@@ -36,10 +33,11 @@ class PanelDrugs extends Component {
 
                 <div className="panel-body">
                     <DrugContainer>
-                        <DrugList drugsPage={ drugsPerPage } { ...otherProps } />
+                        {/* <DrugList drugsPage={ drugsPerPage } { ...otherProps } /> */}
+                        <DrugList { ...otherProps } />
                     </DrugContainer>
 
-                    { (btnShowMore) ? <ButtonShowMore onClickShowMore={ this.handleShowMore } /> : null }
+                    { (btnShowMore) ? <ButtonShowMore { ...otherProps } /> : null }
                 </div>
             </div>
         );

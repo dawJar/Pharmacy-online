@@ -1,6 +1,8 @@
 import React, { PropTypes, Component } from 'react';
+import { connect } from 'react-redux';
+import { setDrugsPerPage } from '../actions/actions';
 
-export default class ButtonShowMore extends Component {
+class ButtonShowMore extends Component {
 
   constructor (props) {
     super(props);
@@ -8,7 +10,7 @@ export default class ButtonShowMore extends Component {
   }
 
   handleOnClick () {
-    this.props.onClickShowMore();
+    this.props.dispatch(setDrugsPerPage());
   }
 
   render () {
@@ -21,3 +23,5 @@ export default class ButtonShowMore extends Component {
   }
 
 }
+
+export default connect()(ButtonShowMore);

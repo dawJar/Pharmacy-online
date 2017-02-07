@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { setCurrentVisibleDrug } from '../actions/actions';
 import { getVisibleDrugs, drugListReducer } from '../reducers/reducers';
 
-// import Drug from '../components/Drug';
 
 class DrugContainer extends Component {
 
@@ -34,7 +33,6 @@ class DrugContainer extends Component {
                 {
                     React.cloneElement(children, {
                                             onClickPrevNext: this.handleClickPrevNext,
-                                            test: 'test',
                                             drugs,
                                             drugIndex,
                                             ...otherProps
@@ -67,7 +65,8 @@ const mapStateToProps = state => ({
         state.drugsReducer.visibilityFilter
     ),
     drugIndex: state.drugListReducer.setCurrentVisibleDrug.drugIndex,
-    drugsLength: state.drugListReducer.setCurrentVisibleDrug.drugsLength
+    drugsLength: state.drugListReducer.setCurrentVisibleDrug.drugsLength,
+    drugsPerPage: state.drugListReducer.setCurrentVisibleDrug.drugsPerPage
 });
 
 

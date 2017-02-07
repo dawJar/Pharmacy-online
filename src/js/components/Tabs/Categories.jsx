@@ -13,7 +13,10 @@ export default class Categories extends Component {
     render () {
         const { children, params, ...otherProps } = this.props;
         const { category } = params;
-        const childrenToRender = React.cloneElement(children, { /* key: Date.now(),*/ ...otherProps });
+        const childrenToRender = React.cloneElement(children, {
+                                                  btnShowMore: true,
+                                                   ...otherProps
+                                                 });
 
         return (
             <div className="container-fluid">
