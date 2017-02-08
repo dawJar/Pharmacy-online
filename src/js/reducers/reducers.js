@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import drugsReducer, * as fromDrugsReducer from './drugsReducer';
 import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
@@ -10,7 +11,7 @@ export default combineReducers({
   cartReducer
 });
 
-
+// GET FILTERED ARRAY OF DRUG OBJECTS
 export const getVisibleDrugs = (drugs, toFilter, addedDrugIds) => {
   if (toFilter === 'on_sale') {
      return drugs.filter(drug => drug.onSale === true)

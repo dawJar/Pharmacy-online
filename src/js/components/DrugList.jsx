@@ -3,10 +3,14 @@ import React, {Component, PropTypes} from 'react';
 import Drug from './Drug';
 import ButtonNextPrev from './ButtonNextPrev';
 
-const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, onClickPrevNext }) => {
+const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, onClickPrevNext }) => {
 
+    let checkFilter = (currentFilter === 'shopping_cart') ? true : false;
     let drugOnSale = drugs.map((drug) => <Drug key={drug.id} { ...drug }/>);
-    let drugsToShow = drugs.slice(0, drugsPerPage).map((drug) => <Drug key={drug.id} { ...drug }/>);
+    let drugsToShow = drugs.slice(0, (checkFilter) ? drugs.length : drugsPerPage)
+                            .map((drug) => <Drug key={drug.id}
+                                                showAsShoppingCart={ checkFilter }
+                                                { ...drug }  />);
 
     return (
         <div className="panel-group">

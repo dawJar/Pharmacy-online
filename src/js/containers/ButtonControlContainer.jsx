@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
-import { setDrugsPerPage, addToCart } from '../actions/actions';
+import { setDrugsPerPage, addToCart, removeFromCart } from '../actions/actions';
 
 import * as constants from '../constants/AppConstants';
 
@@ -25,7 +25,11 @@ class ButtonControlContainer extends Component {
         break;
 
       case constants.BTN_CONTROL.DETAILS:
-        console.log(drugId);
+        console.log(drugId - 1);
+        break;
+
+      case constants.BTN_CONTROL.REMOVE:
+        dispatch(removeFromCart(drugId - 1));
         break;
     }
   }

@@ -6,9 +6,11 @@ import { RECEIVE_DRUGS, SET_VISIBILITY_FILTER, VisibilityFilters } from '../cons
 
 export const visibilityFilter = (state = 'on_sale', action) => {
     switch (action.type) {
+
       case SET_VISIBILITY_FILTER:
         let arrayFilter = setFilterToRecivedFilter(action.currentFilter)
         return arrayFilter;
+
       default:
         return state;
     }

@@ -12,7 +12,8 @@ const Drug = ({
       drugName,
       drugPrice,
       fdaCode,
-      addClassNames
+      addClassNames,
+      ...otherProps
   }) => (
     <div className={ addClassNames }>
         <h3>{ drugName }</h3>
@@ -21,7 +22,7 @@ const Drug = ({
         <p>price: { drugPrice }</p>
         <p>category: { drugCategory }</p>
 
-        <ButtonGroup drugId={ id } />
+        <ButtonGroup drugId={ id } { ...otherProps } />
 
     </div>
 );

@@ -27,7 +27,6 @@ class DrugContainer extends Component {
 
     render () {
         const { children, drugs, drugIndex, ...otherProps } = this.props;
-        console.log(drugs);
 
         return (
             <div>
@@ -78,7 +77,6 @@ const mapStateToProps = state => {
         drugsPerPage: drugsPerPage
     }
 }
-
 
 export default connect(
     mapStateToProps,

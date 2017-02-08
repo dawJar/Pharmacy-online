@@ -14,20 +14,27 @@ class ButtonGroup extends Component {
     render() {
 
         // let { drugId } = this.props;
+        let { showAsShoppingCart } = this.props;
+        let btnProps = [
+          { btnValue: 'Remove', control: constants.BTN_CONTROL.REMOVE },
+          { btnValue: 'Details', control: constants.BTN_CONTROL.DETAILS },
+          { btnValue: 'Add to cart', control: constants.BTN_CONTROL.ADD_TO_CART }
+        ];
 
         return (
-            <div className="btn-group" role="group" aria-label="...">
+            <div className="btn-group" role="group">
 
                 <ButtonControlContainer { ...this.props }
-                    control={ constants.BTN_CONTROL.DETAILS } >
-                    Details
+                    control={ (showAsShoppingCart) ? btnProps[0].control : btnProps[1].control } >
+                    { (showAsShoppingCart) ? btnProps[0].btnValue : btnProps[1].btnValue }
                 </ButtonControlContainer>
 
-                <ButtonControlContainer { ...this.props }
-                    control={ constants.BTN_CONTROL.ADD_TO_CART } >
-                    Add to cart
-                </ButtonControlContainer>
-
+                { (showAsShoppingCart) ? null :
+                     <ButtonControlContainer { ...this.props }
+                        control={ constants.BTN_CONTROL.ADD_TO_CART } >
+                        Add to cart
+                     </ButtonControlContainer>
+                }
             </div>
         );
     }
