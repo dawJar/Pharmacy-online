@@ -13,7 +13,6 @@ class ButtonGroup extends Component {
 
     render() {
 
-        // let { drugId } = this.props;
         let { showAsShoppingCart } = this.props;
         let btnProps = [
           { btnValue: 'Remove', control: constants.BTN_CONTROL.REMOVE },

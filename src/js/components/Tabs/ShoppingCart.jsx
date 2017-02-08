@@ -5,6 +5,7 @@ import NavLinkContainer from '../../containers/NavLinkContainer';
 
 const ShoppingCart = ({
     countItems,
+    totalPrice,
     linksData,
     ...otherProps
 }) => {
@@ -33,6 +34,12 @@ const ShoppingCart = ({
               <PanelDrugs showOnSale={false}
                 heading="Basket"
                 { ...otherProps }/> : null
+            }
+            {
+              (emptyPanel) ?
+              <div>
+                <p>total: { totalPrice }</p>
+              </div> : null
             }
         </div>
     )

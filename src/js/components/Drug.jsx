@@ -22,7 +22,7 @@ const Drug = ({
         <p>price: { drugPrice }</p>
         <p>category: { drugCategory }</p>
 
-        <ButtonGroup drugId={ id } { ...otherProps } />
+        <ButtonGroup drugId={ id } drugPrice={ drugPrice } { ...otherProps } />
 
     </div>
 );

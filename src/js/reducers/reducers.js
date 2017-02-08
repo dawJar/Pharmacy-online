@@ -3,12 +3,14 @@ import { combineReducers } from 'redux';
 import drugsReducer, * as fromDrugsReducer from './drugsReducer';
 import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
+import cartDataReducer from './cartDataReducer';
 
 
 export default combineReducers({
   drugsReducer,
   drugListReducer,
-  cartReducer
+  cartReducer,
+  cartDataReducer
 });
 
 // GET FILTERED ARRAY OF DRUG OBJECTS

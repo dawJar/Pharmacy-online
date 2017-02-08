@@ -21,10 +21,11 @@ export const setCurrentVisibleDrug = (drugIndex) => {
   }
 }
 
-export const addToCart = (drugId) => {
+export const addToCart = (drugId, drugPrice) => {
   return {
     type: types.ADD_TO_CART,
-    drugId
+    drugId,
+    drugPrice
   }
 }
 
@@ -34,10 +35,11 @@ export const setDrugsPerPage = () => {
   }
 }
 
-export const removeFromCart = (drugId) => {
+export const removeFromCart = (drugId, drugPrice) => {
   return {
     type: types.REMOVE_FROM_CART,
-    drugId
+    drugId,
+    drugPrice
   }
 }
 

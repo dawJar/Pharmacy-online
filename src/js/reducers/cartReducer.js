@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/ActionTypes';
 
 const initialState = {
-  countItems: 0,
   addedIds: [],
   quantityById: {}
 };
@@ -42,22 +41,7 @@ export const quantityById = (state = initialState.quantityById, action) => {
   }
 }
 
-export const countItems = (state = initialState.countItems, action) => {
-  switch (action.type) {
-
-    case ADD_TO_CART:
-      return state + 1;
-
-    case REMOVE_FROM_CART:
-      return state - 1;
-
-    default:
-      return state;
-  }
-}
-
 export default combineReducers({
     addedIds,
-    quantityById,
-    countItems
+    quantityById
 });

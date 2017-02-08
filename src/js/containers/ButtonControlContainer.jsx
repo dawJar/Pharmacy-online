@@ -12,7 +12,7 @@ class ButtonControlContainer extends Component {
   }
 
   handleClick () {
-    let { control, dispatch, drugId } = this.props;
+    let { control, dispatch, drugId, drugPrice } = this.props;
 
     switch (control) {
 
@@ -21,7 +21,7 @@ class ButtonControlContainer extends Component {
         break;
 
       case constants.BTN_CONTROL.ADD_TO_CART:
-        dispatch(addToCart(drugId - 1));
+        dispatch(addToCart(drugId - 1, drugPrice));
         break;
 
       case constants.BTN_CONTROL.DETAILS:
@@ -29,7 +29,7 @@ class ButtonControlContainer extends Component {
         break;
 
       case constants.BTN_CONTROL.REMOVE:
-        dispatch(removeFromCart(drugId - 1));
+        dispatch(removeFromCart(drugId - 1, drugPrice));
         break;
     }
   }
