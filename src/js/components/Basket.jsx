@@ -1,14 +1,15 @@
 import React from 'react';
 
-import NavLink from './Nav/NavLink';
+import NavLinkContainer from '../containers/NavLinkContainer';
+
 
 const Basket = ({ ...restProps }) => (
-  <NavLink { ...restProps } >
+  <NavLinkContainer { ...restProps } >
 
       <span className="glyphicon glyphicon-shopping-cart shopping-cart"></span>
       <span id="basket">Basket</span>
 
-  </NavLink>
+  </NavLinkContainer>
 )
 
 export default Basket;

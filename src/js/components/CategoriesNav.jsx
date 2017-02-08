@@ -3,12 +3,12 @@ import React from 'react';
 // import '../../sass/componentStyles/nav.scss';
 
 import NavToggle from './Nav/NavToggle';
-import NavLinksContainer from '../containers/NavLinksContainer';
+import NavLinks from './Nav/NavLinks';
 
 const CategoriesNav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
-            <NavLinksContainer { ...props } />
+            <NavLinks { ...props } />
         </div>
     </nav>
 );

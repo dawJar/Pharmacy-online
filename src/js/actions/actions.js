@@ -35,7 +35,6 @@ export const setDrugsPerPage = () => {
 }
 
 export const removeFromCart = (drugId) => {
-  console.log('works');
   return {
     type: types.REMOVE_FROM_CART,
     drugId

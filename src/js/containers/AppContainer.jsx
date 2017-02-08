@@ -10,9 +10,9 @@ import '../../sass/style.scss';
 import Nav from '../components/Nav.jsx';
 
 const AppContainer = ({ children, ...otherProps }) => {
-    // console.log(currentFilter);
-    const childrenToShow = React.cloneElement(children, { ...otherProps });
-    // console.log(currentFilter);
+
+    let childrenToShow = React.cloneElement(children, { ...otherProps });
+
     return (
       <div>
           <Nav { ...otherProps }/>
@@ -25,9 +25,14 @@ AppContainer.propTypes = {
     actions: PropTypes.object.isRequired
 }
 
-const mapStateToProps = (state) => ({
-    currentFilter: state.drugsReducer.visibilityFilter
-})
+const mapStateToProps = (state) => {
+    let { drugsReducer, cartReducer } = state;
+
+    return {
+      currentFilter: drugsReducer.visibilityFilter,
+      countItems: cartReducer.countItems
+    }
+}
 
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(AppActions, dispatch)

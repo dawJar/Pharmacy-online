@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/ActionTypes';
 
 const initialState = {
+  countItems: 0,
   addedIds: [],
   quantityById: {}
 };
@@ -36,19 +37,19 @@ export const quantityById = (state = initialState.quantityById, action) => {
         [drugId]: (state.drugId || 0) + 1
       }
 
-    // case REMOVE_FROM_CART:
-    //   // const { drugId } = action;
-    //   const { addedIds, quantityById } = initialState;
-    //   if (quantityById.drugId > 1) {
-    //     return {
-    //       ...state,
-    //       [drugId]: state.drugId - 1
-    //     }
-    //   }
-    //   delete quantityById.drugId;
-    //   return {
-    //     ...state
-    //   }
+    default:
+      return state;
+  }
+}
+
+export const countItems = (state = initialState.countItems, action) => {
+  switch (action.type) {
+
+    case ADD_TO_CART:
+      return state + 1;
+
+    case REMOVE_FROM_CART:
+      return state - 1;
 
     default:
       return state;
@@ -57,5 +58,6 @@ export const quantityById = (state = initialState.quantityById, action) => {
 
 export default combineReducers({
     addedIds,
-    quantityById
+    quantityById,
+    countItems
 });

@@ -5,7 +5,7 @@ import ButtonNextPrev from './ButtonNextPrev';
 
 const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, onClickPrevNext }) => {
 
-    let checkFilter = (currentFilter === 'shopping_cart') ? true : false;
+    let checkFilter = currentFilter === 'shopping_cart';
     let drugOnSale = drugs.map((drug) => <Drug key={drug.id} { ...drug }/>);
     let drugsToShow = drugs.slice(0, (checkFilter) ? drugs.length : drugsPerPage)
                             .map((drug) => <Drug key={drug.id}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setVisibilityFilter } from '../../actions/actions';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
+import { setVisibilityFilter } from '../actions/actions';
 
-export default class NavLink extends Component {
+class NavLinkContainer extends Component {
 
     constructor (props) {
         super(props);
@@ -12,7 +12,9 @@ export default class NavLink extends Component {
     }
 
     handleClick () {
-        this.props.onClickSetFilter(this.props.data.linkFilter);
+        let { data, dispatch } = this.props;
+        let { linkFilter } = data;
+        dispatch(setVisibilityFilter(data.linkFilter));
     }
 
     render () {
@@ -28,3 +30,5 @@ export default class NavLink extends Component {
         );
     }
 }
+
+export default connect()(NavLinkContainer);

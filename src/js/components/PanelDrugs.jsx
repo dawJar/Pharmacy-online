@@ -14,8 +14,8 @@ const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
         <PanelHeading heading={ heading || params.category } />
 
         <div className="panel-body">
+
             <DrugContainer>
-                {/* <DrugList drugsPage={ drugsPerPage } { ...otherProps } /> */}
                 <DrugList { ...otherProps } />
             </DrugContainer>
 
@@ -24,6 +24,7 @@ const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
                 show more...
               </ButtonControlContainer>
              : null }
+             
         </div>
     </div>
 );

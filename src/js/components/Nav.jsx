@@ -3,14 +3,15 @@ import React from 'react';
 import '../../sass/componentStyles/nav.scss';
 
 import NavToggle from './Nav/NavToggle';
-import NavLinksContainer from '../containers/NavLinksContainer';
+import NavLinks from './Nav/NavLinks';
 
 const Nav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
+
             <NavToggle />
-            {/* <NavLinksContainer { ...props } showBasket={ true } showAsSidebar={ false } /> */}
-            <NavLinksContainer { ...props } />
+            <NavLinks { ...props } />
+            
         </div>
     </nav>
 );
