@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import * as constants from '../constants/AppConstants';
+
 import DrugContainer from '../containers/DrugContainer';
 import DrugList from './DrugList';
 import Drug from './Drug';
 import PanelHeading from './PanelHeading';
-import ButtonShowMoreContainer from '../containers/ButtonShowMoreContainer';
+import ButtonControlContainer from '../containers/ButtonControlContainer';
 
 const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
     <div className="panel panel-success">
@@ -17,7 +19,11 @@ const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
                 <DrugList { ...otherProps } />
             </DrugContainer>
 
-            { (btnShowMore) ? <ButtonShowMoreContainer { ...otherProps } /> : null }
+            { (btnShowMore) ?
+              <ButtonControlContainer { ...otherProps } control={ constants.BTN_CONTROL.SHOW_MORE } >
+                show more...
+              </ButtonControlContainer>
+             : null }
         </div>
     </div>
 );

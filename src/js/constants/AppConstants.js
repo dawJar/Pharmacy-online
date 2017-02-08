@@ -1,0 +1,5 @@
+export const BTN_CONTROL = {
+  SHOW_MORE: 'SHOW_MORE',
+  ADD_TO_CART: 'ADD_TO_CART',
+  DETAILS: 'DETAILS'
+};

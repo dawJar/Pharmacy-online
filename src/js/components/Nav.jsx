@@ -37,13 +37,13 @@ Nav.defaultProps = {
         {
             linkPath: "/about",
             linkName: "About",
-            linkFilter: "SHOW_SALE"
+            linkFilter: "SHOW_ON_SALE"
         }
     ],
     basket: {
         linkPath: "/shopping-cart",
         linkName: "ShoppingCart",
-        linkFilter: "SHOW_SALE"
+        linkFilter: "SHOW_SHOPPING_CART"
     },
     linkActiveStyle: {
         color: '#7BB480',

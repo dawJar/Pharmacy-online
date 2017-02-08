@@ -44,6 +44,8 @@ const setFilterToRecivedFilter = (currFilter) => {
             return 'other';
         case 'SHOW_ON_SALE':
             return 'on_sale';
+        case 'SHOW_SHOPPING_CART':
+            return 'shopping_cart';
         default:
             return 'all'
     }

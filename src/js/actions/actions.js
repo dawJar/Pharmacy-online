@@ -21,6 +21,13 @@ export const setCurrentVisibleDrug = (drugIndex) => {
   }
 }
 
+export const addToCart = (drugId) => {
+  return {
+    type: types.ADD_TO_CART,
+    drugId
+  }
+}
+
 export const setDrugsPerPage = () => {
   return {
     type: types.SET_DRUGS_PER_PAGE

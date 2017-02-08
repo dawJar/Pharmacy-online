@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import ButtonGroup from './ButtonGroup';
+
 const Drug = ({
       id,
       onSale,
@@ -18,6 +20,9 @@ const Drug = ({
         <p>company: { drugCompany }</p>
         <p>price: { drugPrice }</p>
         <p>category: { drugCategory }</p>
+
+        <ButtonGroup drugId={ id } />
+
     </div>
 );
 

@@ -1,7 +1,11 @@
 import React from 'react';
 
-const ShoppingCart = () => (
-    <h1>ShoppingCart</h1>
+import PanelDrugs from '../PanelDrugs';
+
+const ShoppingCart = ({ ...props }) => (
+  <div className="container-fluid">
+      <PanelDrugs showOnSale={ false } heading="Basket" { ...props }/>
+  </div>
 );
 
 export default ShoppingCart;

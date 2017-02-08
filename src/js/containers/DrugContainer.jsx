@@ -27,6 +27,7 @@ class DrugContainer extends Component {
 
     render () {
         const { children, drugs, drugIndex, ...otherProps } = this.props;
+        console.log(drugs);
 
         return (
             <div>
@@ -59,15 +60,24 @@ DrugContainer.propTypes = {
     }))
 }
 
-const mapStateToProps = state => ({
-    drugs: getVisibleDrugs(
-        state.drugsReducer.fetchDrugs,
-        state.drugsReducer.visibilityFilter
-    ),
-    drugIndex: state.drugListReducer.setCurrentVisibleDrug.drugIndex,
-    drugsLength: state.drugListReducer.setCurrentVisibleDrug.drugsLength,
-    drugsPerPage: state.drugListReducer.setCurrentVisibleDrug.drugsPerPage
-});
+const mapStateToProps = state => {
+    let { drugListReducer, drugsReducer, cartReducer } = state;
+
+    let { fetchDrugs, visibilityFilter } = drugsReducer;
+    let { addedIds, quantityById } = cartReducer;
+    let { drugIndex, drugsLength, drugsPerPage } = drugListReducer.setCurrentVisibleDrug;
+
+    return {
+        drugs: getVisibleDrugs(
+            fetchDrugs,
+            visibilityFilter,
+            addedIds
+        ),
+        drugIndex: drugIndex,
+        drugsLength: drugsLength,
+        drugsPerPage: drugsPerPage
+    }
+}
 
 
 export default connect(
