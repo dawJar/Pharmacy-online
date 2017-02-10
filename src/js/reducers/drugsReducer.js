@@ -48,7 +48,9 @@ const setFilterToRecivedFilter = (currFilter) => {
             return 'on_sale';
         case 'SHOW_SHOPPING_CART':
             return 'shopping_cart';
+        case 'SHOW_ALL':
+            return 'show_all'
         default:
-            return 'all'
+            return 'show_all'
     }
 }

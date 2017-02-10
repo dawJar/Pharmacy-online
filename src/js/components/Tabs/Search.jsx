@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const Search = () => (
-    <div className="container-fluid">
-        <h1>search</h1>
-    </div>
-);
+import TypeaheadElement from '../TypeaheadElement';
+import DrugContainer from '../../containers/DrugContainer';
+import SelectedDrug from '../SelectedDrug';
+
+const Search = ({
+     params: { productID },
+     location: { query, query: { id } },
+     children,
+     ...otherProps
+    }) => {
+
+    let selectedDrug = query && id;
+    let selectedDrugId = id;
+
+    return (
+        <div className="container-fluid">
+
+            <DrugContainer>
+                <TypeaheadElement { ...otherProps } />
+            </DrugContainer>
+
+            { (selectedDrug) ?
+                <DrugContainer><SelectedDrug idToShow={ selectedDrugId } /></DrugContainer> : null
+            }
+
+        </div>
+    );
+}
 
 export default Search;

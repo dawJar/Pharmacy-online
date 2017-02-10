@@ -20,7 +20,7 @@ class NavLinkContainer extends Component {
     render () {
         const { children, linkActiveStyle, data } = this.props;
         const { linkPath, linkName } = data;
-
+        
         return (
             <li>
                 <Link to={ linkPath } activeStyle={ linkActiveStyle } onClick={ this.handleClick }>

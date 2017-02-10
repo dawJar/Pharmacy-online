@@ -40,6 +40,7 @@
     "postcss-loader": "^1.2.2",
     "react": "^15.4.2",
     "react-axios": "0.0.9",
+    "react-bootstrap-typeahead": "^1.0.0-beta5",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",

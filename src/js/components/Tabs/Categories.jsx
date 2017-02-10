@@ -6,11 +6,12 @@ import PanelDrugs from '../PanelDrugs';
 
 const Categories = ({ children, params, ...otherProps }) => {
 
-    const { category } = params;
-    const childrenToRender = React.cloneElement(children, {
+    let { category } = params;
+    let childrenToRender = React.cloneElement(children, {
                                               btnShowMore: true,
                                                ...otherProps
                                              });
+    let renderPanelDrugs = category !== undefined;
 
     return (
         <div className="container-fluid">
@@ -23,7 +24,7 @@ const Categories = ({ children, params, ...otherProps }) => {
                 <div className="col-xs-12 col-sm-10">
 
                     {/* PanelDrugs component */}
-                    { (category !== undefined) ?  childrenToRender : null }
+                    { (renderPanelDrugs) ?  childrenToRender : null }
 
                 </div>
             </div>
