@@ -4,12 +4,14 @@ import drugsReducer, * as fromDrugsReducer from './drugsReducer';
 import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
 import cartDataReducer from './cartDataReducer';
+import latestResultsReducer from './latestResultsReducer';
 
 export default combineReducers({
    drugsReducer,
    drugListReducer,
    cartReducer,
-   cartDataReducer
+   cartDataReducer,
+   latestResultsReducer
 });
 
 // GET FILTERED ARRAY OF DRUG OBJECTS

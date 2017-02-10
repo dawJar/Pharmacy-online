@@ -28,6 +28,7 @@ const TypeaheadElement = ({ drugs }) => (
                             return (
                                 <NavLinkContainer
                                     key={ index }
+                                    addId={ result.id }
                                     data={ resultData }>
                                     { result.drugName }
                                 </NavLinkContainer>

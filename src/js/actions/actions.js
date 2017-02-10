@@ -43,6 +43,13 @@ export const removeFromCart = (drugId, drugPrice) => {
   }
 }
 
+export const addIdToLatest = (addIdToLatest) => {
+  return {
+    type: types.ADD_ID_TO_LATEST,
+    addIdToLatest
+  }
+}
+
 // FETCH DATA
 const receiveDrugs = (drugs) => {
   return {

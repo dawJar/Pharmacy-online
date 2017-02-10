@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-import { setVisibilityFilter } from '../actions/actions';
+import { setVisibilityFilter, addIdToLatest } from '../actions/actions';
 
 class NavLinkContainer extends Component {
 
@@ -12,15 +12,16 @@ class NavLinkContainer extends Component {
     }
 
     handleClick () {
-        let { data, dispatch } = this.props;
+        let { data, dispatch, addId } = this.props;
         let { linkFilter } = data;
         dispatch(setVisibilityFilter(data.linkFilter));
+        (addId) ? dispatch(addIdToLatest(addId)) : null;
     }
 
     render () {
         const { children, linkActiveStyle, data } = this.props;
         const { linkPath, linkName } = data;
-        
+
         return (
             <li>
                 <Link to={ linkPath } activeStyle={ linkActiveStyle } onClick={ this.handleClick }>

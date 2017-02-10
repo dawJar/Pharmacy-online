@@ -8,6 +8,8 @@ export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const SET_CURRENT_VISIBLE_DRUG = 'SET_CURRENT_VISIBLE_DRUG';
 export const SET_DRUGS_PER_PAGE = 'SET_DRUGS_PER_PAGE';
+export const ADD_ID_TO_LATEST = 'ADD_ID_TO_LATEST';
+
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
