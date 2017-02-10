@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { setCurrentVisibleDrug } from '../actions/actions';
+import { setCurrentVisibleDrug, setVisibilityFilter } from '../actions/actions';
 import { getVisibleDrugs, drugListReducer } from '../reducers/reducers';
 
 
@@ -9,6 +9,12 @@ class DrugContainer extends Component {
     constructor (props) {
         super(props);
         this.handleClickPrevNext = this.handleClickPrevNext.bind(this);
+    }
+
+    componentWillMount() {
+        let { forceFilterAll, dispatch } = this.props;
+        if (forceFilterAll)
+            dispatch(setVisibilityFilter('SHOW_ALL'));
     }
 
     handleClickPrevNext (direction) {
@@ -60,9 +66,10 @@ DrugContainer.propTypes = {
 }
 
 const mapStateToProps = state => {
-    let { drugListReducer, drugsReducer, cartReducer } = state;
+    let { drugListReducer, drugsReducer, cartReducer, visibilityReducer } = state;
 
-    let { fetchDrugs, visibilityFilter } = drugsReducer;
+    let { visibilityFilter } = visibilityReducer;
+    let { fetchDrugs } = drugsReducer;
     let { addedIds, quantityById } = cartReducer;
     let { drugIndex, drugsLength, drugsPerPage } = drugListReducer.setCurrentVisibleDrug;
 

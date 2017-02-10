@@ -5,13 +5,15 @@ import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
 import cartDataReducer from './cartDataReducer';
 import latestResultsReducer from './latestResultsReducer';
+import visibilityReducer from './visibilityReducer';
 
 export default combineReducers({
-   drugsReducer,
-   drugListReducer,
-   cartReducer,
-   cartDataReducer,
-   latestResultsReducer
+      visibilityReducer,
+      drugsReducer,
+      drugListReducer,
+      cartReducer,
+      cartDataReducer,
+      latestResultsReducer
 });
 
 // GET FILTERED ARRAY OF DRUG OBJECTS

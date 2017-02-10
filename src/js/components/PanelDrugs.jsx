@@ -8,7 +8,12 @@ import Drug from './Drug';
 import PanelHeading from './PanelHeading';
 import ButtonControlContainer from '../containers/ButtonControlContainer';
 
-const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
+const PanelDrugs = ({
+    btnShowMore,
+    heading,
+    params,
+    ...otherProps }) => (
+
     <div className="panel panel-success">
 
         <PanelHeading heading={ heading || params.category } />
@@ -24,9 +29,10 @@ const PanelDrugs = ({ btnShowMore, heading, params, ...otherProps }) => (
                 show more...
               </ButtonControlContainer>
              : null }
-             
+
         </div>
     </div>
+
 );
 
 export default PanelDrugs;

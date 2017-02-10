@@ -22,7 +22,9 @@ const Search = ({
             </DrugContainer>
 
             { (selectedDrug) ?
-                <DrugContainer><SelectedDrug idToShow={ selectedDrugId } /></DrugContainer> : null
+                <DrugContainer forceFilterAll>
+                  <SelectedDrug idToShow={ selectedDrugId } />
+                </DrugContainer> : null
             }
 
         </div>
