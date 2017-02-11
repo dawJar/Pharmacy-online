@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 import { setVisibilityFilter, addIdToLatest } from '../actions/actions';
 
-
+// TODO: change to container!!!!
 class TypeaheadElement extends Component {
 
     constructor (props) {
@@ -13,7 +13,8 @@ class TypeaheadElement extends Component {
     }
 
     handleClickItem (recivedArr) {
-        let { dispatch, linksData } = this.props;
+        console.log(recivedArr);
+        let { dispatch } = this.props;
         let arrLength = recivedArr.length;
 
         if (arrLength === 1) {
@@ -28,8 +29,6 @@ class TypeaheadElement extends Component {
             dispatch(addIdToLatest(newId));
         }
     }
-
-
 
     setLinkData (queryId) {
         return {
@@ -55,41 +54,9 @@ class TypeaheadElement extends Component {
                     labelKey={option => `${option.drugName}`}
                     onChange={ this.handleClickItem }
                 />
-                {/* <span className="glyphicon glyphicon-search" onClick={ this.handleSearch }></span> */}
             </div>
         );
     }
 }
 
 export default connect()(TypeaheadElement);
-
-
-
-// renderMenu={(results, menuProps) => (
-//         <Menu { ...menuProps }>
-//             {results.map((result, index) => {
-//
-//                 let resultData = {
-//                     linkPath: {
-//                         pathname: '/search',
-//                         query: { id: result.id - 1 }
-//                     },
-//                     linkFilter: "SHOW_ALL"
-//                 }
-//
-//                 return (
-//                     <MenuItem
-//                         key={ index }
-//                         option={ result }
-//                         position={ index }
-//                         onBlur={ this.handleClickItem(resultData.linkPath, resultData.linkFilter, result.id) }
-//                         >
-//
-//                             { result.drugName }
-//
-//                     </MenuItem>
-//                 );
-//
-//             })}
-//         </Menu>
-// )

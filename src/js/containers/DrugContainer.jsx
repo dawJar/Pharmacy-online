@@ -11,6 +11,7 @@ class DrugContainer extends Component {
         this.handleClickPrevNext = this.handleClickPrevNext.bind(this);
     }
 
+    // force setVisibilityFilter before rendering SelectedDrug in Search component
     componentWillMount() {
         let { forceFilterAll, dispatch } = this.props;
         if (forceFilterAll)
@@ -33,7 +34,7 @@ class DrugContainer extends Component {
 
     render () {
         const { children, drugs, drugIndex, ...otherProps } = this.props;
-
+        // debugger;
         return (
             <div>
                 {
@@ -66,12 +67,14 @@ DrugContainer.propTypes = {
 }
 
 const mapStateToProps = state => {
-    let { drugListReducer, drugsReducer, cartReducer, visibilityReducer } = state;
+    let {
+        drugListReducer: { setCurrentVisibleDrug },
+        drugsReducer: { fetchDrugs },
+        cartReducer: { addedIds, quantityById },
+        visibilityReducer: { visibilityFilter }
+    } = state;
 
-    let { visibilityFilter } = visibilityReducer;
-    let { fetchDrugs } = drugsReducer;
-    let { addedIds, quantityById } = cartReducer;
-    let { drugIndex, drugsLength, drugsPerPage } = drugListReducer.setCurrentVisibleDrug;
+    let { drugIndex, drugsLength, drugsPerPage } = setCurrentVisibleDrug;
 
     return {
         drugs: getVisibleDrugs(
@@ -79,13 +82,12 @@ const mapStateToProps = state => {
             visibilityFilter,
             addedIds
         ),
-        drugIndex: drugIndex,
-        drugsLength: drugsLength,
-        drugsPerPage: drugsPerPage
+        drugIndex,
+        drugsLength,
+        drugsPerPage
     }
 }
 
 export default connect(
     mapStateToProps,
-// { addToCart }
 )(DrugContainer)

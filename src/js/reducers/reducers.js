@@ -4,7 +4,7 @@ import drugsReducer, * as fromDrugsReducer from './drugsReducer';
 import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
 import cartDataReducer from './cartDataReducer';
-import latestResultsReducer from './latestResultsReducer';
+import searchReducer from './searchReducer';
 import visibilityReducer from './visibilityReducer';
 
 export default combineReducers({
@@ -13,7 +13,7 @@ export default combineReducers({
       drugListReducer,
       cartReducer,
       cartDataReducer,
-      latestResultsReducer
+      searchReducer
 });
 
 // GET FILTERED ARRAY OF DRUG OBJECTS

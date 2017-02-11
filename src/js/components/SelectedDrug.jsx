@@ -5,7 +5,6 @@ import Drug from './Drug';
 
 
 const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => {
-  // console.log(drugs);
   return (
         <Drug { ...drugs[idToShow] } />
   );

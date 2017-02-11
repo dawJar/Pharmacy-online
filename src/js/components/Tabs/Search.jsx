@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import TypeaheadElement from '../TypeaheadElement';
 import DrugContainer from '../../containers/DrugContainer';
+import LatestResultsContainer from '../../containers/LatestResultsContainer';
+import TypeaheadElement from '../TypeaheadElement';
 import SelectedDrug from '../SelectedDrug';
 
 const Search = ({
@@ -26,6 +27,8 @@ const Search = ({
                   <SelectedDrug idToShow={ selectedDrugId } />
                 </DrugContainer> : null
             }
+
+            <LatestResultsContainer />
 
         </div>
     );
