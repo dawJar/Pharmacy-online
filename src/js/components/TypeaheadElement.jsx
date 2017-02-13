@@ -13,21 +13,24 @@ class TypeaheadElement extends Component {
     }
 
     handleClickItem (recivedArr) {
-        console.log(recivedArr);
-        let { dispatch } = this.props;
         let arrLength = recivedArr.length;
 
         if (arrLength === 1) {
-            let newId = recivedArr[0].id - 1;
-
-            let newLinkData = this.setLinkData(newId);
-            let { linkPath, linkFilter } = newLinkData;
-
-            browserHistory.push(linkPath);
-
-            dispatch(setVisibilityFilter(linkFilter));
-            dispatch(addIdToLatest(newId));
+            this.handleSearchChoice(recivedArr[0].id - 1);
         }
+    }
+
+    handleSearchChoice (newId) {
+        let newLinkData = this.setLinkData(newId);
+
+        let { dispatch } = this.props;
+        let { linkPath, linkFilter } = newLinkData;
+
+        // push path to route
+        browserHistory.push(linkPath);
+
+        dispatch(setVisibilityFilter(linkFilter));
+        dispatch(addIdToLatest(newId));
     }
 
     setLinkData (queryId) {
