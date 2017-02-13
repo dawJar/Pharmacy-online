@@ -15,7 +15,10 @@ class LatestResultsContainer extends Component {
         let { latestResults, latestResultsLength } = this.props;
         let latestResultsToRender = latestResults.map((result, i) =>
             <DrugContainer key={ i } >
-                <LatestResult resultId={ result } resultLength={ latestResultsLength } />
+                <LatestResult
+                  resultID={ result }
+                  resultLength={ latestResultsLength }
+                />
             </DrugContainer>
         )
 

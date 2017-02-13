@@ -19,7 +19,7 @@ class DrugContainer extends Component {
     }
 
     handleClickPrevNext (direction) {
-        let { drugs, drugIndex } = this.props;
+        let { drugs, drugIndex, dispatch } = this.props;
         let countDrugs = drugs.length - 1;
         let newDrugIndex = drugIndex;
 
@@ -29,7 +29,7 @@ class DrugContainer extends Component {
             newDrugIndex += 1;
         }
 
-        this.props.dispatch(setCurrentVisibleDrug(newDrugIndex));
+        dispatch(setCurrentVisibleDrug(newDrugIndex));
     }
 
     render () {

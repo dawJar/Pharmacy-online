@@ -1,24 +1,19 @@
 import React, { PropTypes } from 'react';
 
-import NavLinkContainer from '../containers/NavLinkContainer';
+import ItemContainer from '../containers/ItemContainer';
 
-const LatestResult = ({ drugs, resultId, resultLength, linksData }) => {
+const LatestResult = ({ drugs, resultID, resultLength, ...otherProps }) => {
     let newClassName = "col-sm-" + 12 / resultLength;
+    let currentDrugName = drugs[resultID].drugName;
+
     return (
         <div className={ newClassName }>
-            { drugs[resultId].drugName }
-            {/* <NavLinkContainer data={ linksData } /> */}
+            <ItemContainer productID={ resultID } { ...otherProps }>
+                { currentDrugName }
+            </ItemContainer>
         </div>
     );
 }
 
-LatestResult.defaultProps = {
-    // linksData: [
-    // {
-    //     linkName: "check again...",
-    //     linkPath: "/categories/health&body",
-    //     linkFilter: "SHOW_HEALTH_BODY"
-    // },
-}
 
 export default LatestResult;

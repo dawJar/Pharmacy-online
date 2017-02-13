@@ -9,6 +9,7 @@ export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const SET_CURRENT_VISIBLE_DRUG = 'SET_CURRENT_VISIBLE_DRUG';
 export const SET_DRUGS_PER_PAGE = 'SET_DRUGS_PER_PAGE';
 export const ADD_ID_TO_LATEST = 'ADD_ID_TO_LATEST';
+export const SET_ID_OF_ITEM_TO_SEARCH = 'SET_ID_OF_ITEM_TO_SEARCH';
 
 
 export const VisibilityFilters = {
