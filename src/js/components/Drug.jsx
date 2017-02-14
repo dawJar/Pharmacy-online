@@ -17,6 +17,7 @@ class Drug extends Component {
 
     render () {
         let { id, onSale, drugCompany, drugDescription, drugCategory, drugExpiration, drugName, drugPrice, fdaCode, addClassNames, ...otherProps } = this.props;
+
         return (
             <div className={ addClassNames }>
                 <h3>{ drugName }</h3>

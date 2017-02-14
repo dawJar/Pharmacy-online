@@ -20,8 +20,8 @@ const PanelDrugs = ({
 
         <div className="panel-body">
 
-            <DrugContainer>
-                <DrugList { ...otherProps } />
+            <DrugContainer { ...otherProps }>
+                <DrugList />
             </DrugContainer>
 
             { (btnShowMore) ?

@@ -6,14 +6,21 @@ import ButtonNextPrev from './ButtonNextPrev';
 const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, onClickPrevNext }) => {
 
     let checkFilter = (currentFilter === 'shopping_cart');
+
     // current visible drug on sale in "carousel"
-    let drugOnSale = drugs.map((drug) => <Drug key={drug.id} { ...drug }/>);
+    let drugOnSale = drugs.map((drug) => <Drug
+                                            key={drug.id}
+                                            filterIsShoppingCart={ checkFilter }
+                                            { ...drug } />);
+
     // shows 4 as default in categories with "btn show more"
     // shows all in shopping-cart depends on checkFilter
     let drugsToShow = drugs.slice(0, (checkFilter) ? drugs.length : drugsPerPage)
-                            .map((drug) => <Drug key={drug.id}
+                            .map((drug) => <Drug
+                                                key={drug.id}
+                                                filterIsShoppingCart={ checkFilter }
                                                 showAsShoppingCart={ checkFilter }
-                                                { ...drug }  />);
+                                                { ...drug } /> );
 
     return (
         <div className="panel-group">

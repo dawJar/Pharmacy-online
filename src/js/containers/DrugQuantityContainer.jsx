@@ -18,10 +18,18 @@ class DrugQuantityContainer extends Component {
     }
 
     render () {
-        let { drugID, drugPrice, quantityById, ...otherProps } = this.props;
+        let {
+          drugID,
+          drugPrice,
+          quantityById,
+          filterIsShoppingCart,
+          ...otherProps
+        } = this.props;
 
         let quantityOfDrugID = quantityById[drugID];
         let showQuantityOfCurrentDrug = (quantityById.hasOwnProperty(drugID)) ? quantityOfDrugID : 1;
+
+        // console.log(filterIsShoppingCart);
 
         // TODO: create reducer or func in cartReducer to se default
         // values for each drugs except shopping cart
@@ -31,13 +39,25 @@ class DrugQuantityContainer extends Component {
             <div className="row">
                 <ButtonNextPrev
                   onClickPrevNext={ this.handleClickNextPrev }
+                  filterIsShoppingCart={ filterIsShoppingCart }
                   direction="left"
+                  plusMinus="minus"
                   { ...otherProps } />
-                {/* <p>{ showDefaultQuantity }</p> */}
+
+                <p className="col-xs-10">
+                  { (filterIsShoppingCart) ?
+                    showQuantityOfCurrentDrug : null }
+                </p>
+
                 <ButtonNextPrev
                   onClickPrevNext={ this.handleClickNextPrev }
+                  filterIsShoppingCart={ filterIsShoppingCart }
                   direction="right"
+                  plusMinus="plus"
                   { ...otherProps } />
+
+
+            
                 <p>quantity on shopping-cart: { showQuantityOfCurrentDrug }</p>
             </div>
         );

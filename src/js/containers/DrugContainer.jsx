@@ -11,7 +11,8 @@ class DrugContainer extends Component {
         this.handleClickPrevNext = this.handleClickPrevNext.bind(this);
     }
 
-    // force setVisibilityFilter before rendering SelectedDrug in Search component
+    // force setVisibilityFilter before rendering
+    // SelectedDrug in Search component
     componentWillMount() {
         let { forceFilterAll, dispatch } = this.props;
         if (forceFilterAll)
@@ -33,8 +34,8 @@ class DrugContainer extends Component {
     }
 
     render () {
-        const { children, drugs, drugIndex, ...otherProps } = this.props;
-        // debugger;
+        let { children, drugs, drugIndex, ...otherProps } = this.props;
+
         return (
             <div>
                 {
@@ -84,7 +85,7 @@ const mapStateToProps = state => {
         ),
         drugIndex,
         drugsLength,
-        drugsPerPage
+        drugsPerPage,
     }
 }
 
