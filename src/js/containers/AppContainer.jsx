@@ -26,11 +26,13 @@ AppContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-    let { drugsReducer, cartDataReducer } = state;
+    let { drugsReducer, cartDataReducer, visibilityReducer } = state;
+
     let { countItems, totalPrice } = cartDataReducer.setCartData;
+    let { visibilityFilter } = visibilityReducer;
 
     return {
-      currentFilter: drugsReducer.visibilityFilter,
+      currentFilter: visibilityFilter,
       countItems,
       totalPrice
     }

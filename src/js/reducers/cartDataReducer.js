@@ -7,20 +7,24 @@ const initialState = {
 };
 
 export const setCartData = (state = initialState, action) => {
-  let { countItems, totalPrice } = state
+  let { drugPrice, drugQuantity } = action;
+
+// TODO: replace with temporary var
+  // let changePrice = drugPrice * drugQuantity;
+  let changePrice = drugPrice;
 
   switch (action.type) {
 
     case ADD_TO_CART:
       return {
-        countItems: countItems + 1,
-        totalPrice: totalPrice + action.drugPrice
+        countItems: state.countItems + 1,
+        totalPrice: state.totalPrice + changePrice
       };
 
     case REMOVE_FROM_CART:
       return {
-        countItems: countItems - 1,
-        totalPrice: totalPrice - action.drugPrice
+        countItems: state.countItems - 1,
+        totalPrice: state.totalPrice - changePrice
       };
 
     default:

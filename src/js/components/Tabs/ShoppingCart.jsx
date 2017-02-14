@@ -16,7 +16,7 @@ const ShoppingCart = ({
         <div className="container-fluid">
             <div>
                 <h2>
-                    {(emptyPanel) ?
+                    { (emptyPanel) ?
                       'Shopping cart:' : 'Your shopping cart is empty.'
                     }
                 </h2>
@@ -31,7 +31,8 @@ const ShoppingCart = ({
                 }
             </div>
             { (emptyPanel) ?
-              <PanelDrugs showOnSale={false}
+              <PanelDrugs
+                showOnSale={ false }
                 heading="Basket"
                 { ...otherProps }/> : null
             }

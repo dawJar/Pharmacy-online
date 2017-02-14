@@ -1,32 +1,43 @@
 import React, { Component, PropTypes } from 'react';
 
 import ButtonGroup from './ButtonGroup';
+import DrugQuantityContainer from '../containers/DrugQuantityContainer';
 
 
-const Drug = ({
-      id,
-      onSale,
-      drugCompany,
-      drugDescription,
-      drugCategory,
-      drugExpiration,
-      drugName,
-      drugPrice,
-      fdaCode,
-      addClassNames,
-      ...otherProps
-  }) => (
-    <div className={ addClassNames }>
-        <h3>{ drugName }</h3>
-        <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
-        <p>id: { id }</p>
-        {/* <p>company: { drugCompany }</p>
-        <p>price: { drugPrice }</p>
-        <p>category: { drugCategory }</p> */}
+class Drug extends Component {
 
-        <ButtonGroup drugId={ id } drugPrice={ drugPrice } { ...otherProps } />
+    constructor (props) {
+        super(props);
+        this.onClickPrevNext = this.onClickPrevNext.bind(this);
+    }
 
-    </div>
-);
+    onClickPrevNext (direction) {
+        console.log(direction);
+    }
+
+    render () {
+        let { id, onSale, drugCompany, drugDescription, drugCategory, drugExpiration, drugName, drugPrice, fdaCode, addClassNames, ...otherProps } = this.props;
+        return (
+            <div className={ addClassNames }>
+                <h3>{ drugName }</h3>
+                <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
+                <p>id: { id }</p>
+                {/* <p>company: { drugCompany }</p>
+                <p>price: { drugPrice }</p> */}
+                <p>category: { drugCategory }</p>
+
+                <DrugQuantityContainer
+                    onClickPrevNext={ this.onClickPrevNext }
+                    drugID={ id - 1 }
+                    drugPrice={ drugPrice }
+                    { ...otherProps }
+                />
+
+                <ButtonGroup drugId={ id } drugPrice={ drugPrice } { ...otherProps } />
+
+            </div>
+        );
+    }
+}
 
 export default Drug;
