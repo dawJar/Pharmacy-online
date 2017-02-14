@@ -34,18 +34,16 @@ class DrugContainer extends Component {
     }
 
     render () {
-        let { children, drugs, drugIndex, ...otherProps } = this.props;
+        let { children, ...otherProps } = this.props;
+        console.log(...otherProps);
+        let setChildrenWithProps = React.cloneElement(children, {
+                                        onClickPrevNext: this.handleClickPrevNext,
+                                        ...otherProps
+                                    })
 
         return (
             <div>
-                {
-                    React.cloneElement(children, {
-                                            onClickPrevNext: this.handleClickPrevNext,
-                                            drugs,
-                                            drugIndex,
-                                            ...otherProps
-                                        })
-                }
+                { setChildrenWithProps }
             </div>
         );
     }
@@ -86,6 +84,7 @@ const mapStateToProps = state => {
         drugIndex,
         drugsLength,
         drugsPerPage,
+        quantityById
     }
 }
 

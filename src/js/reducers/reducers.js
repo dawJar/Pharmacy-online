@@ -3,7 +3,7 @@ import {combineReducers} from 'redux';
 import drugsReducer, * as fromDrugsReducer from './drugsReducer';
 import drugListReducer from './drugListReducer';
 import cartReducer from './cartReducer';
-import cartDataReducer from './cartDataReducer';
+import totalPriceReducer from './totalPriceReducer';
 import searchReducer from './searchReducer';
 import visibilityReducer from './visibilityReducer';
 
@@ -12,7 +12,7 @@ export default combineReducers({
       drugsReducer,
       drugListReducer,
       cartReducer,
-      cartDataReducer,
+      totalPriceReducer,
       searchReducer
 });
 

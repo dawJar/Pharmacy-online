@@ -8,7 +8,11 @@ class ButtonNextPrev extends Component {
   }
 
   handleClick () {
-    this.props.onClickPrevNext(this.props.direction);
+    let { onClickPrevNext, filterIsShoppingCart, direction, plusMinus } = this.props;
+    if (filterIsShoppingCart) {
+       return onClickPrevNext(plusMinus, filterIsShoppingCart);
+    }
+    onClickPrevNext(direction);
   }
 
   render () {

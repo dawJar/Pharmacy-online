@@ -8,15 +8,27 @@ class Drug extends Component {
 
     constructor (props) {
         super(props);
-        this.onClickPrevNext = this.onClickPrevNext.bind(this);
+        // this.onClickPrevNext = this.onClickPrevNext.bind(this);
     }
 
-    onClickPrevNext (direction) {
-        console.log(direction);
-    }
+    // onClickPrevNext (direction) {
+    //     console.log(direction);
+    // }
 
     render () {
-        let { id, onSale, drugCompany, drugDescription, drugCategory, drugExpiration, drugName, drugPrice, fdaCode, addClassNames, ...otherProps } = this.props;
+        let {
+            id,
+            onSale,
+            drugCompany,
+            drugDescription,
+            drugCategory,
+            drugExpiration,
+            drugName,
+            drugPrice,
+            fdaCode,
+            addClassNames,
+            filterIsShoppingCart,
+            ...otherProps } = this.props;
 
         return (
             <div className={ addClassNames }>
@@ -27,14 +39,20 @@ class Drug extends Component {
                 <p>price: { drugPrice }</p> */}
                 <p>category: { drugCategory }</p>
 
-                <DrugQuantityContainer
-                    onClickPrevNext={ this.onClickPrevNext }
-                    drugID={ id - 1 }
+                { (filterIsShoppingCart) ?
+                    <DrugQuantityContainer
+                        filterIsShoppingCart={ filterIsShoppingCart }
+                        drugID={ id }
+                        drugPrice={ drugPrice }
+                        { ...otherProps }
+                    /> : null
+                }
+
+                <ButtonGroup
+                    drugID={ id }
                     drugPrice={ drugPrice }
                     { ...otherProps }
                 />
-
-                <ButtonGroup drugId={ id } drugPrice={ drugPrice } { ...otherProps } />
 
             </div>
         );

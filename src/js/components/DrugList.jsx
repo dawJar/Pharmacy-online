@@ -3,7 +3,15 @@ import React, {Component, PropTypes} from 'react';
 import Drug from './Drug';
 import ButtonNextPrev from './ButtonNextPrev';
 
-const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, onClickPrevNext }) => {
+const DrugList = ({
+  drugs,
+  showOnSale,
+  drugIndex,
+  drugsPerPage,
+  currentFilter,
+  onClickPrevNext,
+  ...otherProps
+}) => {
 
     let checkFilter = (currentFilter === 'shopping_cart');
 
@@ -11,7 +19,10 @@ const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, o
     let drugOnSale = drugs.map((drug) => <Drug
                                             key={drug.id}
                                             filterIsShoppingCart={ checkFilter }
-                                            { ...drug } />);
+                                            { ...drug }
+                                            { ...otherProps } />);
+
+// TODO: duplicaled showAsShoppingCart and filterIsShoppingCart
 
     // shows 4 as default in categories with "btn show more"
     // shows all in shopping-cart depends on checkFilter
@@ -20,7 +31,8 @@ const DrugList = ({ drugs, showOnSale, drugIndex, drugsPerPage, currentFilter, o
                                                 key={drug.id}
                                                 filterIsShoppingCart={ checkFilter }
                                                 showAsShoppingCart={ checkFilter }
-                                                { ...drug } /> );
+                                                { ...drug }
+                                                { ...otherProps } />);
 
     return (
         <div className="panel-group">

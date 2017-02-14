@@ -13,7 +13,7 @@ class ButtonGroup extends Component {
 
     render() {
 
-        let { showAsShoppingCart } = this.props;
+        let { showAsShoppingCart, ...otherProps } = this.props;
         let btnProps = [
           { btnValue: 'Remove', control: constants.BTN_CONTROL.REMOVE },
           { btnValue: 'Details', control: constants.BTN_CONTROL.DETAILS },
@@ -23,8 +23,11 @@ class ButtonGroup extends Component {
         return (
             <div className="btn-group" role="group">
 
-                <ButtonControlContainer { ...this.props }
-                    control={ (showAsShoppingCart) ? btnProps[0].control : btnProps[1].control } >
+                <ButtonControlContainer
+                    control={ (showAsShoppingCart) ?
+                      btnProps[0].control : btnProps[1].control }
+                    { ...otherProps }
+                >
                     { (showAsShoppingCart) ? btnProps[0].btnValue : btnProps[1].btnValue }
                 </ButtonControlContainer>
 

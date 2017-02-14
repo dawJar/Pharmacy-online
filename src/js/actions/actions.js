@@ -43,21 +43,37 @@ export const removeFromCart = (drugId, drugPrice, drugQuantity) => {
 }
 
 // increace / decreace quantity of drug in shopping-cart
-export const inreaseQuantityOfDrug = (drugId, drugQuantity) => {
+export const inreaseQuantityOfDrug = (drugId, drugPrice) => {
   return {
     type: types.INCREASE_CART_DRUG_QUANTITY,
     drugId,
-    drugQuantity
+    drugPrice
   }
 }
 
-export const decreaseQuantityOfDrug = (drugId, drugQuantity) => {
+export const decreaseQuantityOfDrug = (drugId, drugPrice) => {
   return {
     type: types.DECREASE_CART_DRUG_QUANTITY,
     drugId,
-    drugQuantity
+    drugPrice
   }
 }
+
+// export const inreaseQuantityOfDrug = (drugId, drugQuantity) => {
+//   return {
+//     type: types.INCREASE_CART_DRUG_QUANTITY,
+//     drugId,
+//     drugQuantity
+//   }
+// }
+
+// export const decreaseQuantityOfDrug = (drugId, drugQuantity) => {
+//   return {
+//     type: types.DECREASE_CART_DRUG_QUANTITY,
+//     drugId,
+//     drugQuantity
+//   }
+// }
 
 // increase quantity of visible drugs in categories
 export const setDrugsPerPage = () => {

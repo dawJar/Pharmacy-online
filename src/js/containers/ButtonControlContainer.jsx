@@ -12,7 +12,16 @@ class ButtonControlContainer extends Component {
   }
 
   handleClick () {
-    let { control, dispatch, drugId, drugPrice } = this.props;
+    let {
+      control,
+      dispatch,
+      drugID,
+      drugPrice,
+      quantityById
+    } = this.props;
+
+    let quantityOfDrugID = (quantityById !== undefined ) ?
+            quantityById[drugID - 1] : null;
 
     switch (control) {
 
@@ -21,15 +30,15 @@ class ButtonControlContainer extends Component {
         break;
 
       case constants.BTN_CONTROL.ADD_TO_CART:
-        dispatch(addToCart(drugId - 1, drugPrice));
+        dispatch(addToCart(drugID - 1, drugPrice));
         break;
 
       case constants.BTN_CONTROL.DETAILS:
-        console.log(drugId - 1);
+        console.log(drugID - 1);
         break;
 
       case constants.BTN_CONTROL.REMOVE:
-        dispatch(removeFromCart(drugId - 1, drugPrice));
+        dispatch(removeFromCart(drugID - 1, drugPrice, quantityOfDrugID));
         break;
     }
   }
@@ -44,7 +53,16 @@ class ButtonControlContainer extends Component {
       </button>
     )
   }
-
 }
 
-export default connect()(ButtonControlContainer);
+// const mapStateToProps = state => {
+//   let { cartReducer: { quantityById } } = state;
+//
+//   return {
+//       quantityById
+//   }
+// }
+
+export default connect(
+  // mapStateToProps
+)(ButtonControlContainer);

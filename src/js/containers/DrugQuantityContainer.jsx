@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+
+import * as constants from '../constants/AppConstants';
+
 import { inreaseQuantityOfDrug, decreaseQuantityOfDrug } from '../actions/actions';
 import { cartReducer } from '../reducers/reducers';
 
@@ -13,8 +16,32 @@ class DrugQuantityContainer extends Component {
         this.handleClickNextPrev = this.handleClickNextPrev.bind(this);
     }
 
-    handleClickNextPrev (direction) {
+    handleClickNextPrev (value, shoppingCart) {
+        let { dispatch, drugID, drugPrice, quantityById } = this.props;
 
+        this.incOrDecreaseValueInShoppingCart(value,
+          dispatch,
+          drugID - 1,
+          drugPrice,
+          quantityById
+        );
+    }
+
+    incOrDecreaseValueInShoppingCart (
+      incOrDec,
+      dispatch,
+      drugID,
+      drugPrice,
+      quantityById
+    ) {
+
+        // check decremetaion
+        // cant be less than one
+        if (incOrDec === constants.MINUS && quantityById[drugID] > 1) {
+            dispatch(decreaseQuantityOfDrug(drugID, drugPrice));
+        } else if (incOrDec === constants.PLUS) {
+            dispatch(inreaseQuantityOfDrug(drugID, drugPrice));
+        }
     }
 
     render () {
@@ -26,39 +53,27 @@ class DrugQuantityContainer extends Component {
           ...otherProps
         } = this.props;
 
-        let quantityOfDrugID = quantityById[drugID];
-        let showQuantityOfCurrentDrug = (quantityById.hasOwnProperty(drugID)) ? quantityOfDrugID : 1;
-
-        // console.log(filterIsShoppingCart);
-
-        // TODO: create reducer or func in cartReducer to se default
-        // values for each drugs except shopping cart
-        // let showDefaultQuantity = 1 ||
+        let quantityOfDrugID = quantityById[drugID - 1];
 
         return (
             <div className="row">
                 <ButtonNextPrev
                   onClickPrevNext={ this.handleClickNextPrev }
-                  filterIsShoppingCart={ filterIsShoppingCart }
-                  direction="left"
-                  plusMinus="minus"
+                  filterIsShoppingCart
+                  direction={ constants.LEFT }
+                  plusMinus={ constants.MINUS }
                   { ...otherProps } />
 
                 <p className="col-xs-10">
-                  { (filterIsShoppingCart) ?
-                    showQuantityOfCurrentDrug : null }
+                  { quantityOfDrugID }
                 </p>
 
                 <ButtonNextPrev
                   onClickPrevNext={ this.handleClickNextPrev }
-                  filterIsShoppingCart={ filterIsShoppingCart }
-                  direction="right"
-                  plusMinus="plus"
+                  filterIsShoppingCart
+                  direction={ constants.RIGTH }
+                  plusMinus={ constants.PLUS }
                   { ...otherProps } />
-
-
-            
-                <p>quantity on shopping-cart: { showQuantityOfCurrentDrug }</p>
             </div>
         );
     }

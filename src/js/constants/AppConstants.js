@@ -4,3 +4,8 @@ export const BTN_CONTROL = {
   DETAILS: 'DETAILS',
   REMOVE: 'REMOVE'
 };
+
+export const LEFT = 'left';
+export const RIGTH = 'right';
+export const PLUS = 'plus';
+export const MINUS = 'minus';
