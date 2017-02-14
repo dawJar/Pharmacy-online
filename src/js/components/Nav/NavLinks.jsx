@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import '../../../sass/componentStyles/shoppingCart.scss';
-NavLinkContainer
+
 import NavLinkContainer from '../../containers/NavLinkContainer';
 import Basket from '../Basket';
 

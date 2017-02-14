@@ -2,7 +2,13 @@ import React, { PropTypes } from 'react';
 
 import ItemContainer from '../containers/ItemContainer';
 
-const LatestResult = ({ drugs, resultID, resultLength, ...otherProps }) => {
+const LatestResult = ({
+  drugs,
+  resultID,
+  resultLength,
+  ...otherProps
+}) => {
+
     let newClassName = "col-sm-" + 12 / resultLength;
     let currentDrugName = drugs[resultID].drugName;
 
@@ -14,6 +20,5 @@ const LatestResult = ({ drugs, resultID, resultLength, ...otherProps }) => {
         </div>
     );
 }
-
 
 export default LatestResult;

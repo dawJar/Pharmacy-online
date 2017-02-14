@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 import Drug from './Drug';
 import ButtonNextPrev from './ButtonNextPrev';
@@ -8,12 +8,12 @@ const DrugList = ({
   showOnSale,
   drugIndex,
   drugsPerPage,
-  currentFilter,
+  visibilityFilter,
   onClickPrevNext,
   ...otherProps
 }) => {
 
-    let checkFilter = (currentFilter === 'shopping_cart');
+    let checkFilter = (visibilityFilter === 'shopping_cart');
 
     // current visible drug on sale in "carousel"
     let drugOnSale = drugs.map((drug) => <Drug
@@ -22,7 +22,7 @@ const DrugList = ({
                                             { ...drug }
                                             { ...otherProps } />);
 
-// TODO: duplicaled showAsShoppingCart and filterIsShoppingCart
+// TODO: duplicaled showAsShoppingCart and filterIsShoppingCart!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // shows 4 as default in categories with "btn show more"
     // shows all in shopping-cart depends on checkFilter

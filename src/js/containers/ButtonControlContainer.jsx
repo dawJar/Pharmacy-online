@@ -20,9 +20,6 @@ class ButtonControlContainer extends Component {
       quantityById
     } = this.props;
 
-    let quantityOfDrugID = (quantityById !== undefined ) ?
-            quantityById[drugID - 1] : null;
-
     switch (control) {
 
       case constants.BTN_CONTROL.SHOW_MORE:
@@ -33,11 +30,13 @@ class ButtonControlContainer extends Component {
         dispatch(addToCart(drugID - 1, drugPrice));
         break;
 
+// TODO: show details onClick
       case constants.BTN_CONTROL.DETAILS:
         console.log(drugID - 1);
         break;
 
       case constants.BTN_CONTROL.REMOVE:
+        let quantityOfDrugID = (quantityById !== undefined ) ? quantityById[drugID - 1] : null;
         dispatch(removeFromCart(drugID - 1, drugPrice, quantityOfDrugID));
         break;
     }
@@ -55,14 +54,4 @@ class ButtonControlContainer extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   let { cartReducer: { quantityById } } = state;
-//
-//   return {
-//       quantityById
-//   }
-// }
-
-export default connect(
-  // mapStateToProps
-)(ButtonControlContainer);
+export default connect()(ButtonControlContainer);

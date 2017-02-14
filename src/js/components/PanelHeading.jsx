@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const PanelHeading = ({ heading, params }) => (
     <div className="panel-heading">

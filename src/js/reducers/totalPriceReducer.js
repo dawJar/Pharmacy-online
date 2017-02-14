@@ -1,36 +1,37 @@
 import { combineReducers } from 'redux';
 import {
-  ADD_TO_CART,
-  REMOVE_FROM_CART,
-  INCREASE_CART_DRUG_QUANTITY,
-  DECREASE_CART_DRUG_QUANTITY
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    INCREASE_CART_DRUG_QUANTITY,
+    DECREASE_CART_DRUG_QUANTITY
 } from '../constants/ActionTypes';
 
 
 export const totalPrice = (state = 0, action) => {
-  let { drugPrice, drugQuantity } = action;
+    let { drugPrice, drugQuantity } = action;
 
-  switch (action.type) {
+    let currentState = parseFloat(state);
+    let addTotalPrice = (currentState + drugPrice).toFixed(2);
 
-    case ADD_TO_CART:
-      let addTotalPrice = (parseFloat(state) + drugPrice).toFixed(2);
-      return addTotalPrice;
+    switch (action.type) {
 
-    case REMOVE_FROM_CART:
-      let removeTotalPrice = (parseFloat(state) - (drugPrice * drugQuantity)).toFixed(2);
-      return removeTotalPrice;
+      case ADD_TO_CART:
+          return addTotalPrice;
 
-    case INCREASE_CART_DRUG_QUANTITY:
-      let incTotalPrice = (parseFloat(state) + drugPrice).toFixed(2);
-      return incTotalPrice;
+      case REMOVE_FROM_CART:
+          let removeTotalPrice = (currentState - (drugPrice * drugQuantity)).toFixed(2);
+          return removeTotalPrice;
 
-    case DECREASE_CART_DRUG_QUANTITY:
-      let substractTotalPrice = (parseFloat(state) - drugPrice).toFixed(2);
-      return substractTotalPrice;
+      case INCREASE_CART_DRUG_QUANTITY:
+          return addTotalPrice;
 
-    default:
-      return state;
-  }
+      case DECREASE_CART_DRUG_QUANTITY:
+          let substractTotalPrice = (currentState - drugPrice).toFixed(2);
+          return substractTotalPrice;
+
+      default:
+          return state;
+    }
 }
 
 export default combineReducers({

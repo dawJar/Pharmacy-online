@@ -1,62 +1,47 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import ButtonGroup from './ButtonGroup';
 import DrugQuantityContainer from '../containers/DrugQuantityContainer';
 
 
-class Drug extends Component {
+const Drug = ({
+    id,
+    onSale,
+    drugCompany,
+    drugDescription,
+    drugCategory,
+    drugExpiration,
+    drugName,
+    drugPrice,
+    fdaCode,
+    addClassNames,
+    filterIsShoppingCart,
+    ...otherProps
+}) => (
+    <div className={ addClassNames }>
+        <h3>{ drugName }</h3>
+        <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
+        <p>id: { id }</p>
+        {/* <p>company: { drugCompany }</p>
+        <p>price: { drugPrice }</p> */}
+        <p>category: { drugCategory }</p>
 
-    constructor (props) {
-        super(props);
-        // this.onClickPrevNext = this.onClickPrevNext.bind(this);
-    }
+        { (filterIsShoppingCart) ?
+            <DrugQuantityContainer
+                filterIsShoppingCart={ filterIsShoppingCart }
+                drugID={ id }
+                drugPrice={ drugPrice }
+                { ...otherProps }
+            /> : null
+        }
 
-    // onClickPrevNext (direction) {
-    //     console.log(direction);
-    // }
+        <ButtonGroup
+            drugID={ id }
+            drugPrice={ drugPrice }
+            { ...otherProps }
+        />
 
-    render () {
-        let {
-            id,
-            onSale,
-            drugCompany,
-            drugDescription,
-            drugCategory,
-            drugExpiration,
-            drugName,
-            drugPrice,
-            fdaCode,
-            addClassNames,
-            filterIsShoppingCart,
-            ...otherProps } = this.props;
-
-        return (
-            <div className={ addClassNames }>
-                <h3>{ drugName }</h3>
-                <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
-                <p>id: { id }</p>
-                {/* <p>company: { drugCompany }</p>
-                <p>price: { drugPrice }</p> */}
-                <p>category: { drugCategory }</p>
-
-                { (filterIsShoppingCart) ?
-                    <DrugQuantityContainer
-                        filterIsShoppingCart={ filterIsShoppingCart }
-                        drugID={ id }
-                        drugPrice={ drugPrice }
-                        { ...otherProps }
-                    /> : null
-                }
-
-                <ButtonGroup
-                    drugID={ id }
-                    drugPrice={ drugPrice }
-                    { ...otherProps }
-                />
-
-            </div>
-        );
-    }
-}
+    </div>
+);
 
 export default Drug;

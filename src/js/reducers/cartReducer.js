@@ -44,7 +44,6 @@ export const quantityById = (state = initialState.quantityById, action) => {
         [drugId]: (state[drugId] || 0) + (drugQuantity || 1),
       }
 
-// TODO: not checked yet
     case REMOVE_FROM_CART:
       delete state[drugId];
       return {

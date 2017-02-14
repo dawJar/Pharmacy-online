@@ -16,11 +16,13 @@ export const latestResults = (state = [], action) => {
                 }
             });
 
-            if (state.length > 3) {
+            if (state.length > 3)
                 state.shift();
-            }
 
-            return [...state, addIdToLatest]
+            return [
+              ...state,
+              addIdToLatest
+            ];
 
         default:
             return state;

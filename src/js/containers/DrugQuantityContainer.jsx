@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
 import * as constants from '../constants/AppConstants';
 
 import { inreaseQuantityOfDrug, decreaseQuantityOfDrug } from '../actions/actions';
-import { cartReducer } from '../reducers/reducers';
 
 import ButtonNextPrev from '../components/ButtonNextPrev';
 

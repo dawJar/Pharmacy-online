@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { setCurrentVisibleDrug, setVisibilityFilter } from '../actions/actions';
-import { getVisibleDrugs, drugListReducer } from '../reducers/reducers';
+import { getVisibleDrugs } from '../reducers/reducers';
 
 
 class DrugContainer extends Component {

@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
 import CategoriesNav from '../CategoriesNav';
 import Jumbotron from '../Jumbotron';
@@ -9,7 +9,7 @@ const Categories = ({ children, params, ...otherProps }) => {
     let { category } = params;
     let childrenToRender = React.cloneElement(children, {
                                               btnShowMore: true,
-                                               ...otherProps
+                                              ...otherProps
                                              });
     let renderPanelDrugs = category !== undefined;
 

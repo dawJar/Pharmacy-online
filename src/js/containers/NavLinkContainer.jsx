@@ -19,8 +19,8 @@ class NavLinkContainer extends Component {
     }
 
     render () {
-        const { children, linkActiveStyle, data } = this.props;
-        const { linkPath, linkName } = data;
+        let { children, linkActiveStyle, data } = this.props;
+        let { linkPath, linkName } = data;
 
         return (
             <li>

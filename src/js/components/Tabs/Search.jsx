@@ -10,7 +10,7 @@ const Search = ({
      location: { query, query: { id } },
      children,
      ...otherProps
-    }) => {
+}) => {
 
     let selectedDrug = query && id;
     let selectedDrugId = id;

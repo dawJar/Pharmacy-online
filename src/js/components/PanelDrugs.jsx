@@ -12,8 +12,8 @@ const PanelDrugs = ({
     btnShowMore,
     heading,
     params,
-    ...otherProps }) => (
-
+    ...otherProps
+}) => (
     <div className="panel panel-success">
 
         <PanelHeading heading={ heading || params.category } />
@@ -32,7 +32,6 @@ const PanelDrugs = ({
 
         </div>
     </div>
-
 );
 
 export default PanelDrugs;

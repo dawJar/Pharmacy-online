@@ -5,7 +5,7 @@ import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 
 import { setVisibilityFilter, addIdToLatest } from '../actions/actions';
 
-// TODO: change to container!!!!
+
 class ItemContainer extends Component {
 
     constructor (props) {
@@ -44,7 +44,7 @@ class ItemContainer extends Component {
 
     render () {
       let { children, productID } = this.props;
-      
+
       return (
         <p onClick={ this.handleClickItem } >
             { children }

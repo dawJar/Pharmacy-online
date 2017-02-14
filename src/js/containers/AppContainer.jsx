@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
     let { addedIds } = cartReducer;
 
     return {
-      currentFilter: visibilityFilter,
+      visibilityFilter,
       totalPrice,
       addedIds
     }
