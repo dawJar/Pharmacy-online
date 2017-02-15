@@ -17,6 +17,16 @@ export default combineReducers({
     visibilityFilter
 });
 
+export const setLinkData = (queryId) => {
+    return {
+        linkPath: {
+            pathname: '/search',
+            query: { id: queryId }
+        },
+        linkFilter: "SHOW_ALL"
+    }
+}
+
 const setFilterToRecivedFilter = (currFilter) => {
     switch (currFilter) {
         case 'SHOW_HEALTH_BODY':

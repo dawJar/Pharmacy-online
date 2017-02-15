@@ -1,8 +1,17 @@
 import React, { PropTypes, Component } from 'react';
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { setDrugsPerPage, addToCart, removeFromCart } from '../actions/actions';
-
 import * as constants from '../constants/AppConstants';
+
+import { setLinkData } from '../reducers/visibilityReducer';
+import {
+  setDrugsPerPage,
+  addToCart,
+  removeFromCart,
+  setVisibilityFilter,
+  addIdToLatest
+} from '../actions/actions';
+
 
 class ButtonControlContainer extends Component {
 
@@ -20,26 +29,36 @@ class ButtonControlContainer extends Component {
       quantityById
     } = this.props;
 
+    let newDrugID = drugID - 1;
+
     switch (control) {
 
       case constants.BTN_CONTROL.SHOW_MORE:
-        dispatch(setDrugsPerPage());
-        break;
+          dispatch(setDrugsPerPage());
+          break;
 
       case constants.BTN_CONTROL.ADD_TO_CART:
-        dispatch(addToCart(drugID - 1, drugPrice));
-        break;
+          dispatch(addToCart(newDrugID, drugPrice));
+          break;
 
-// TODO: show details onClick
       case constants.BTN_CONTROL.DETAILS:
-        console.log(drugID - 1);
-        break;
+          this.setQueryPath(newDrugID, dispatch);
+          dispatch(addIdToLatest(newDrugID));
+          break;
 
       case constants.BTN_CONTROL.REMOVE:
-        let quantityOfDrugID = (quantityById !== undefined ) ? quantityById[drugID - 1] : null;
-        dispatch(removeFromCart(drugID - 1, drugPrice, quantityOfDrugID));
-        break;
+          let quantityOfDrugID = (quantityById !== undefined ) ?
+              quantityById[newDrugID] : null;
+          dispatch(removeFromCart(newDrugID, drugPrice, quantityOfDrugID));
+          break;
     }
+  }
+
+  setQueryPath (drugID, dispatch) {
+      let { linkPath, linkFilter } = setLinkData(drugID);
+
+      browserHistory.push(linkPath);
+      dispatch(setVisibilityFilter(linkFilter));
   }
 
   render () {

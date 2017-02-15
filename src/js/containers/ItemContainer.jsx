@@ -3,6 +3,7 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 
+import { setLinkData } from '../reducers/visibilityReducer';
 import { setVisibilityFilter, addIdToLatest } from '../actions/actions';
 
 
@@ -15,31 +16,16 @@ class ItemContainer extends Component {
 
     handleClickItem () {
         let { productID, dispatch } = this.props;
+
         this.setQueryPath(productID, dispatch);
-        this.addToLatestResults(productID, dispatch);
-    }
-
-    setQueryPath (productID, dispatch) {
-        let newLinkData = this.setLinkData(productID);
-        let { linkPath, linkFilter } = newLinkData;
-
-        browserHistory.push(linkPath);
-
-        dispatch(setVisibilityFilter(linkFilter));
-    }
-
-    addToLatestResults (productID, dispatch) {
         dispatch(addIdToLatest(productID));
     }
 
-    setLinkData (queryId) {
-        return {
-            linkPath: {
-                pathname: '/search',
-                query: { id: queryId }
-            },
-            linkFilter: "SHOW_ALL"
-        }
+    setQueryPath (productID, dispatch) {
+        let { linkPath, linkFilter } = setLinkData(productID);
+
+        browserHistory.push(linkPath);
+        dispatch(setVisibilityFilter(linkFilter));
     }
 
     render () {
