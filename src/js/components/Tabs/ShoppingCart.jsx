@@ -5,6 +5,10 @@ import '../../../sass/componentStyles/tabContentStyle.scss';
 import PanelDrugs from '../PanelDrugs';
 import NavLinkContainer from '../../containers/NavLinkContainer';
 
+const divPaddingTop = {
+    paddingTop: 0
+}
+
 const ShoppingCart = ({
     addedIds,
     totalPrice,
@@ -17,14 +21,10 @@ const ShoppingCart = ({
     return (
         <div className="container-fluid">
             <div>
-                <h2>
-                    { (!emptyPanel) ?
-                      'Shopping cart:' : 'Your shopping cart is empty.'
-                    }
-                </h2>
                 { (!emptyPanel) ?
                     null :
                     <p>
+                        <h2>Your shopping cart is empty.</h2>
                         Check our
                         <NavLinkContainer data={ linksData } >
                             main page
@@ -36,6 +36,7 @@ const ShoppingCart = ({
               <PanelDrugs
                 showOnSale={ false }
                 heading="Basket"
+                whichPanelStyle='basket-tab'
                 { ...otherProps }/> : null
             }
             {

@@ -15,6 +15,7 @@ const Categories = ({ children, params, ...otherProps }) => {
     let { category } = params;
     let childrenToRender = React.cloneElement(children, {
                                               btnShowMore: true,
+                                              whichPanelStyle: 'categories-tab',
                                               ...otherProps
                                              });
     // let renderPanelDrugs = category !== undefined;

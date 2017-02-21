@@ -11,10 +11,11 @@ const Sale = (props) => (
         {/* <Jumbotron/> */}
 
         <PanelDrugs
-          showOnSale={ true }
-          btnShowMore={ false }
-          heading="Sale!"
-          { ...props }
+            showOnSale={ true }
+            btnShowMore={ false }
+            heading="Sale!"
+            whichPanelStyle='sale-tab'
+            { ...props }
         />
 
     </div>

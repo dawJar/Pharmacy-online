@@ -130,19 +130,19 @@ nav.navbar {
         color: $navFontColor;
         text-decoration: none;
         width: 100%;
-        @include navLinkHover(true, $sideNavFontColorActive);
+        @include navLinkHover(true, $categoriesTabColor);
         @include navLinkStyle(
             $sideNavHeightMedium,
             $sideNavFontSizeLinkMedium,
             10px,
-            $sideNavFontColorActive
+            $categoriesTabColor
         );
         @include mQ($smallDevice) {
             @include navLinkStyle(
                 $sideNavHeightSmall,
                 $sideNavFontSizeLinkSmall,
                 0,
-                $sideNavFontColorActive
+                $categoriesTabColor
             );
         };
         @include mQ($mediumDevice) {
@@ -150,7 +150,7 @@ nav.navbar {
                 $sideNavHeightMedium,
                 $sideNavFontSizeLinkMedium,
                 0,
-                $sideNavFontColorActive
+                $categoriesTabColor
             );
         };
         @include mQ($largeDevice) {
@@ -158,7 +158,7 @@ nav.navbar {
                 $sideNavHeightLarge,
                 $sideNavFontSizeLinkLarge,
                 0,
-                $sideNavFontColorActive
+                $categoriesTabColor
             );
         };
     }

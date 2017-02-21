@@ -17,14 +17,16 @@ const PanelDrugs = ({
     whichPanelStyle,
     ...otherProps
 }) => {
-    
+
     // TODO: IMPLEMENT STYLE TYPE FOR EACH CATEGORY TAB!!!!
-    let panelStyle = 'panel panel-default ' + whichPanelStyle;
 
     return (
-        <div className={ panelStyle } >
+        <div className='panel panel-default' >
 
-            <PanelHeading heading={ heading || params.category } />
+            <PanelHeading
+                heading={ heading || params.category }
+                whichPanelStyle={ whichPanelStyle }
+            />
 
             <div className="panel-body">
 

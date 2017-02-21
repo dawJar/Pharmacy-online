@@ -1,17 +1,18 @@
 // MAIN
-$mainBackgroundColor: #E2E3DF;
+$mainBackgroundColor: #fff;
 $transparent: rgba(0, 0, 0, 0);
 $divideLineWidth: 1px;
-$divideLineColor: #eee;
+$divideLineColor: #BBBBBB;
 
 // NAVBAR
 $navCountLinks: 5;
 $navBackgroundColor: #fff;
 $navFontColor: #2E3233;
 $navFontColorActive: #7BB480;
-$sideNavFontColorActive: #A740FF;
-// $sideNavFontColorActive: #4514CC;
-// $sideNavFontColorActive: #B22909;
+$saleTabColor: #B22909;
+$categoriesTabColor: #A740FF;
+$basketTabColor: #1957FF;
+// $basketTabColor: #4514CC;
 // nav height
   $navHeightXS: 50px;
   $navHeightSmall: 65px;

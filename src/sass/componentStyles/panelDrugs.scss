@@ -1,27 +1,38 @@
 @import "../variables.scss";
 
+@mixin panelDrugHeading($color, $bgColor) {
+    color: $color;
+    background-color: transparentize($bgColor, 0);
+    border-radius: 0;
+    border: $divideLineWidth solid $color;
+}
+
 div.panel {
     border-radius: 0;
     border: 0;
     border-left: $divideLineWidth solid $divideLineColor;
-    // background-color: #fff;
 
-    div.panel-default {
-
+    div.sale-tab {
+        @include panelDrugHeading(
+            $saleTabColor,
+            $mainBackgroundColor
+        );
     }
 
-    div.panel-heading {
-        color: $sideNavFontColorActive;
-        background-color: #fff !important;
-        // background-color: $sideNavFontColorActive;
-
-        // background-color: transparentize(
-        //         lighten($sideNavFontColorActive, 10),
-        //          0.3
-        // );
-        border-radius: 0;
-        border: 1px solid $sideNavFontColorActive;
-        // border-bottom: $divideLineWidth solid $divideLineColor;
+    div.categories-tab {
+        margin-left: -$divideLineWidth;
+        @include panelDrugHeading(
+            $categoriesTabColor,
+            $mainBackgroundColor
+        );
     }
+
+    div.basket-tab {
+        @include panelDrugHeading(
+            $basketTabColor,
+            $mainBackgroundColor
+        );
+    }
+
 
 }
