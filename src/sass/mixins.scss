@@ -61,40 +61,6 @@
 }
 // END NAVBAR
 
-
-// SIDEBAR NAV
-
-// @mixin sideNavActiveClass {
-//     .active {
-//         border: 0;
-//         @content;
-//         * { color: red !important; }
-//     }
-// }
-// @mixin sideNavUlStyle($width) {
-//     @include sideNavActiveClass {
-//         border-bottom: solid 2px red;
-//     };
-//     li {
-//         width: $width;
-//         a {
-//             &:link, &:visited, &:active {
-//                 background-color: $navBackgroundColor;
-//             }
-//         }
-//     }
-// }
-// @mixin sideNavActiveClass {
-//     .active {
-//         border: 0;
-//         @content;
-//         * { color: $sideNavFontColorActive !important; }
-//     }
-// }
-
-// END SIDEBAR NAV
-
-
 // MEDIA QUERIES
 @mixin mQ($args...) {
     @if length($args) == 1{
