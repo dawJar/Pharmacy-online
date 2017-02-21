@@ -109,33 +109,24 @@ nav.navbar {
             padding: 0;
         }
     };
-    // LINKS SIDE CATEGORIES NAV
+
+    // SIDE CATEGORIES NAV
     ul.sidebar-nav {
         box-sizing: border-box !important;
         text-align: left;
-        // @include sideNavUlStyle($navWidthLinkSmall);
-
-        // @include navActiveClass {
-        //     border: solid 2px ;
-        // };
-
-        // @include mQ($smallDevice, $mediumDevice - 1) {
-        //     width: 100%;
-        //     @include navUlStyle($navWidthLinkSmall, $navWidthLinkSmallLast, $navFontColorActive);
-        // };
-        // @include mQ($mediumDevice) {
-        //     float: right;
-        //     @include navUlStyle($navWidthLinkMedium, $navWidthLinkMediumLast, $navFontColorActive);
-        // };
-        // @include mQ($largeDevice) {
-        //     @include navUlStyle($navWidthLinkLarge, $navWidthLinkLargeLast, $navFontColorActive);
-        // };
     }
-    // NAV HORIZONTAL
+    // LINKS SIDE CATEGORIES NAV
     ul.sidebar-nav > li > a {
         color: $navFontColor;
         text-decoration: none;
+        width: 100%;
         @include navLinkHover(true, $sideNavFontColorActive);
+        @include navLinkStyle(
+            $sideNavHeightMedium,
+            $sideNavFontSizeLinkMedium,
+            10px,
+            $sideNavFontColorActive
+        );
         @include mQ($smallDevice) {
             @include navLinkStyle(
                 $sideNavHeightSmall,
