@@ -1,16 +1,9 @@
 @import "../variables.scss";
-
-@mixin panelDrugHeading($color, $bgColor) {
-    color: $color;
-    background-color: transparentize($bgColor, 0);
-    border-radius: 0;
-    border: $divideLineWidth solid $color;
-}
+@import "../mixins.scss";
 
 div.panel {
-    border-radius: 0;
-    border: 0;
     border-left: $divideLineWidth solid $divideLineColor;
+    @include resetBorder;
 
     div.sale-tab {
         @include panelDrugHeading(

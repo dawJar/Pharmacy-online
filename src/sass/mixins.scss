@@ -4,7 +4,7 @@
 @mixin setFullWidth {
     width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 1px;
 }
 // END OVERALL
 
@@ -70,7 +70,16 @@
 // END NAVBAR
 
 // PANEL DRUGS
-
+@mixin panelDrugHeading($color, $bgColor) {
+    @include resetBorder;
+    color: $color;
+    background-color: transparentize($bgColor, 0);
+    border: $divideLineWidth solid $color;
+}
+@mixin resetBorder {
+    border-radius: 0;
+    border: 0;
+}
 // END PANEL DRUGS
 
 // MEDIA QUERIES
@@ -82,7 +91,7 @@
     }
     @else if length($args) {
          @media screen and (min-width: nth($args, 1)) and (max-width: nth($args, 2)){
-            @content;
+             @content;
         }
     }
 }
