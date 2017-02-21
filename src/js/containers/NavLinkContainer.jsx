@@ -25,7 +25,7 @@ class NavLinkContainer extends Component {
         return (
             <li>
                 <Link to={ linkPath } activeStyle={ linkActiveStyle } onClick={ this.handleClick }>
-                    {children || linkName}
+                    { children || linkName }
                 </Link>
             </li>
         );

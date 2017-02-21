@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-// NAVBAR
+// NAVBAR HORIZONTAL
 @mixin navLinkBasic($height, $fontSize, $padding) {
     display: block;
     position: relative;
@@ -11,17 +11,17 @@
     color: $navFontColor;
     font-size: $fontSize;
 }
-@mixin navLinkStyle($height, $fontSize, $padding) {
+@mixin navLinkStyle($height, $fontSize, $padding, $color) {
     @include navLinkBasic($height, $fontSize, $padding);
-    @include navLinkHover(true);
+    @include navLinkHover(true, $color);
 }
-@mixin navBasketStyle($height, $fontSize, $padding) {
+@mixin navBasketStyle($height, $fontSize, $padding, $color) {
     @include navLinkBasic($height, $fontSize, $padding);
-    @include navLinkHover(false);
+    @include navLinkHover(false, $color);
 }
-@mixin navLinkHover($link) {
+@mixin navLinkHover($link, $hoverColor) {
     &:hover {
-        color: $navFontColorActive;
+        color: $hoverColor;
         @if $link == true {
             background-color: $navBackgroundColor;
         }
@@ -60,6 +60,40 @@
     }
 }
 // END NAVBAR
+
+
+// SIDEBAR NAV
+
+// @mixin sideNavActiveClass {
+//     .active {
+//         border: 0;
+//         @content;
+//         * { color: red !important; }
+//     }
+// }
+// @mixin sideNavUlStyle($width) {
+//     @include sideNavActiveClass {
+//         border-bottom: solid 2px red;
+//     };
+//     li {
+//         width: $width;
+//         a {
+//             &:link, &:visited, &:active {
+//                 background-color: $navBackgroundColor;
+//             }
+//         }
+//     }
+// }
+// @mixin sideNavActiveClass {
+//     .active {
+//         border: 0;
+//         @content;
+//         * { color: $sideNavFontColorActive !important; }
+//     }
+// }
+
+// END SIDEBAR NAV
+
 
 // MEDIA QUERIES
 @mixin mQ($args...) {

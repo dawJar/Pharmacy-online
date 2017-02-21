@@ -7,14 +7,29 @@ span.shopping-cart {
   display: none;
 
   @include mQ($smallDevice) {
-    @include navBasketStyle($navHeightSmall, $navSizeShoppingCart, $navPaddingSmall);
+    @include navBasketStyle(
+        $navHeightSmall,
+        $navSizeShoppingCart,
+        $navPaddingSmall,
+        $navFontColorActive
+    );
   };
   @include mQ($mediumDevice) {
     margin: 0 auto;
-    @include navBasketStyle($navHeightMedium, $navSizeShoppingCart, 0);
+    @include navBasketStyle(
+        $navHeightMedium,
+        $navSizeShoppingCart,
+        0,
+        $navFontColorActive
+    );
   };
   @include mQ($largeDevice) {
-    @include navBasketStyle($navHeightLarge, $navSizeShoppingCart, 0);
+    @include navBasketStyle(
+        $navHeightLarge,
+        $navSizeShoppingCart,
+        0,
+        $navFontColorActive
+    );
   };
 }
 

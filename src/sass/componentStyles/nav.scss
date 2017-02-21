@@ -10,12 +10,27 @@ nav.navbar {
     div.navbar-header {
         a {
             margin-left: $navHeaderMarginLeft;
-            @include navBasketStyle($navHeightXS, $navFontSizeHeaderXS, 0);
+            @include navBasketStyle(
+                $navHeightXS,
+                $navFontSizeHeaderXS,
+                0,
+                $navFontColorActive
+            );
             @include mQ($mediumDevice) {
-                 @include navBasketStyle($navHeightMedium, $navFontSizeHeaderMedium, $navPaddingMedium);
+                 @include navBasketStyle(
+                     $navHeightMedium,
+                     $navFontSizeHeaderMedium,
+                     $navPaddingMedium,
+                     $navFontColorActive
+                 );
             };
             @include mQ($largeDevice) {
-                 @include navBasketStyle($navHeightLarge, $navFontSizeHeaderLarge, $navPaddingLarge);
+                 @include navBasketStyle(
+                     $navHeightLarge,
+                     $navFontSizeHeaderLarge,
+                     $navPaddingLarge,
+                     $navFontColorActive
+                 );
             };
         }
         span.icon-bar {
@@ -31,28 +46,55 @@ nav.navbar {
         };
         @include mQ($smallDevice, $mediumDevice - 1) {
             width: 100%;
-            @include navUlStyle($navWidthLinkSmall, $navWidthLinkSmallLast, $navFontColorActive);
+            @include navUlStyle(
+                $navWidthLinkSmall,
+                $navWidthLinkSmallLast,
+                $navFontColorActive
+            );
         };
         @include mQ($mediumDevice) {
             float: right;
-            @include navUlStyle($navWidthLinkMedium, $navWidthLinkMediumLast, $navFontColorActive);
+            @include navUlStyle(
+                $navWidthLinkMedium,
+                $navWidthLinkMediumLast,
+                $navFontColorActive
+            );
         };
         @include mQ($largeDevice) {
-            @include navUlStyle($navWidthLinkLarge, $navWidthLinkLargeLast, $navFontColorActive);
+            @include navUlStyle(
+                $navWidthLinkLarge,
+                $navWidthLinkLargeLast,
+                $navFontColorActive
+            );
         };
     }
-
+    // NAV HORIZONTAL
     ul.navbar-nav > li > a {
         color: $navFontColor;
-        @include navLinkHover(true);
+        @include navLinkHover(true, $navFontColorActive);
         @include mQ($smallDevice) {
-            @include navLinkStyle($navHeightSmall, $navFontSizeLinkSmall, 0);
+            @include navLinkStyle(
+                $navHeightSmall,
+                $navFontSizeLinkSmall,
+                0,
+                $navFontColorActive
+            );
         };
         @include mQ($mediumDevice) {
-             @include navLinkStyle($navHeightMedium, $navFontSizeLinkMedium, $navPaddingMedium);
+             @include navLinkStyle(
+                 $navHeightMedium,
+                 $navFontSizeLinkMedium,
+                 $navPaddingMedium,
+                 $navFontColorActive
+            );
         };
         @include mQ($largeDevice) {
-             @include navLinkStyle($navHeightLarge, $navFontSizeLinkLarge, $navPaddingLarge);
+             @include navLinkStyle(
+                 $navHeightLarge,
+                 $navFontSizeLinkLarge,
+                 $navPaddingLarge,
+                 $navFontColorActive
+            );
         };
     }
     // NAV CONTAINER SMALL DEV ++
@@ -63,4 +105,45 @@ nav.navbar {
             padding: 0;
         }
     };
+    // LINKS SIDE CATEGORIES NAV
+    ul.sidebar-nav {
+        box-sizing: border-box !important;
+        text-align: left;
+        // @include sideNavUlStyle($navWidthLinkSmall);
+
+        // @include navActiveClass {
+        //     border: solid 2px ;
+        // };
+
+        // @include mQ($smallDevice, $mediumDevice - 1) {
+        //     width: 100%;
+        //     @include navUlStyle($navWidthLinkSmall, $navWidthLinkSmallLast, $navFontColorActive);
+        // };
+        // @include mQ($mediumDevice) {
+        //     float: right;
+        //     @include navUlStyle($navWidthLinkMedium, $navWidthLinkMediumLast, $navFontColorActive);
+        // };
+        // @include mQ($largeDevice) {
+        //     @include navUlStyle($navWidthLinkLarge, $navWidthLinkLargeLast, $navFontColorActive);
+        // };
+    }
+    // NAV HORIZONTAL
+    ul.sidebar-nav > li > a {
+        color: $navFontColor;
+        @include navLinkHover(true, $sideNavFontColorActive);
+        @include mQ($smallDevice) {
+            @include navLinkStyle(
+            $navHeightSmall,
+            $navFontSizeLinkSmall,
+            0,
+            $sideNavFontColorActive
+        );
+        };
+        // @include mQ($mediumDevice) {
+        //      @include navLinkStyle($navHeightMedium, $navFontSizeLinkMedium, $navPaddingMedium);
+        // };
+        // @include mQ($largeDevice) {
+        //      @include navLinkStyle($navHeightLarge, $navFontSizeLinkLarge, $navPaddingLarge);
+        // };
+    }
 }
