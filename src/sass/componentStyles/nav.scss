@@ -5,6 +5,7 @@
 nav.navbar {
     border-radius: 0;
     background-color: $navBackgroundColor;
+    border-bottom: 1px solid #eee;
 
     // HEADER, TOGGLE BTN
     div.navbar-header {
@@ -71,7 +72,10 @@ nav.navbar {
     // NAV HORIZONTAL
     ul.navbar-nav > li > a {
         color: $navFontColor;
-        @include navLinkHover(true, $navFontColorActive);
+        @include navLinkHover(
+            true,
+            $navFontColorActive
+        );
         @include mQ($smallDevice) {
             @include navLinkStyle(
                 $navHeightSmall,
@@ -130,20 +134,31 @@ nav.navbar {
     // NAV HORIZONTAL
     ul.sidebar-nav > li > a {
         color: $navFontColor;
+        text-decoration: none;
         @include navLinkHover(true, $sideNavFontColorActive);
         @include mQ($smallDevice) {
             @include navLinkStyle(
-            $navHeightSmall,
-            $navFontSizeLinkSmall,
-            0,
-            $sideNavFontColorActive
-        );
+                $sideNavHeightSmall,
+                $sideNavFontSizeLinkSmall,
+                0,
+                $sideNavFontColorActive
+            );
         };
-        // @include mQ($mediumDevice) {
-        //      @include navLinkStyle($navHeightMedium, $navFontSizeLinkMedium, $navPaddingMedium);
-        // };
-        // @include mQ($largeDevice) {
-        //      @include navLinkStyle($navHeightLarge, $navFontSizeLinkLarge, $navPaddingLarge);
-        // };
+        @include mQ($mediumDevice) {
+             @include navLinkStyle(
+                 $sideNavHeightMedium,
+                 $sideNavFontSizeLinkMedium,
+                 0,
+                 $sideNavFontColorActive
+             );
+        };
+        @include mQ($largeDevice) {
+             @include navLinkStyle(
+                 $sideNavHeightLarge,
+                 $sideNavFontSizeLinkLarge,
+                 0,
+                 $sideNavFontColorActive
+             );
+        };
     }
 }
