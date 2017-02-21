@@ -2,8 +2,8 @@
 @import "../mixins.scss";
 
 div.panel {
-    border-left: $divideLineWidth solid $divideLineColor;
     @include resetBorder;
+    border-left: $divideLineWidth solid $divideLineColor;
 
     div.sale-tab {
         @include panelDrugHeading(

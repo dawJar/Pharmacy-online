@@ -14,7 +14,7 @@ const ButtonGroup = ({ showAsShoppingCart, ...otherProps }) => {
     // ];
 
     return (
-      <div className="btn-group" role="group">
+      <div>
 
           { (showAsShoppingCart) ?
                 <ButtonControlContainer

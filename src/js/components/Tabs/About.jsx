@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../../sass/componentStyles/tabContentStyle.scss';
+import '../../../sass/componentStyles/tabContent.scss';
 
 const About = () => (
     <h1>about</h1>

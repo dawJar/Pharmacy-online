@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import '../../../sass/componentStyles/tabContentStyle.scss';
+import '../../../sass/componentStyles/tabContent.scss';
 
 import DrugContainer from '../../containers/DrugContainer';
 import LatestResultsContainer from '../../containers/LatestResultsContainer';
