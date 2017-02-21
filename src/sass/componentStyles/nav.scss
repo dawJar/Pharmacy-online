@@ -51,7 +51,8 @@ nav.navbar {
             @include navUlStyle(
                 $navWidthLinkSmall,
                 $navWidthLinkSmallLast,
-                $navFontColorActive
+                $navFontColorActive,
+                $navHeightSmall
             );
         };
         @include mQ($mediumDevice) {
@@ -59,14 +60,16 @@ nav.navbar {
             @include navUlStyle(
                 $navWidthLinkMedium,
                 $navWidthLinkMediumLast,
-                $navFontColorActive
+                $navFontColorActive,
+                $navHeightMedium
             );
         };
         @include mQ($largeDevice) {
             @include navUlStyle(
                 $navWidthLinkLarge,
                 $navWidthLinkLargeLast,
-                $navFontColorActive
+                $navFontColorActive,
+                $navHeightMedium
             );
         };
     }

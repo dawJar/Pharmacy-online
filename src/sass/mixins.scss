@@ -46,7 +46,7 @@
         * { color: $navFontColorActive !important; }
     }
 }
-@mixin navUlStyle($width, $widthLast, $underlineColor) {
+@mixin navUlStyle($width, $widthLast, $underlineColor, $linkHeigth) {
     @include navActiveClass {
         border-bottom: solid 2px $navFontColorActive;
     };
@@ -57,12 +57,13 @@
                 background-color: $navBackgroundColor;
             }
         }
-        @include underlineBlock($underlineColor);
+        @include overlineBlock($underlineColor, $linkHeigth);
         &:last-child {
             border: 0;
             width: $widthLast;
             &:last-child {
-                @include underlineBlock($transparent);
+                // no overline animations for basket
+                @include overlineBlock($transparent,  $linkHeigth);
             }
         }
     }

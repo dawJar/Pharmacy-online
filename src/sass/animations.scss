@@ -1,12 +1,11 @@
-
-@mixin underlineBlock($underlineColor) {
+@mixin overlineBlock($underlineColor, $height) {
   &::before {
     content: "";
     position: absolute;
     width: 100%;
     z-index: 1;
     height: 2px;
-    bottom: -1px;
+    bottom: $height - 1;
     left: 0;
     background-color: $underlineColor;
     visibility: hidden;
