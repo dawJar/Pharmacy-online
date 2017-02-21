@@ -1,0 +1,5 @@
+@import "../mixins.scss";
+
+div.container-fluid {
+    @include setFullWidth;
+}

@@ -1,5 +1,13 @@
 @import "./variables.scss";
 
+// OVERALL
+@mixin setFullWidth {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+// END OVERALL
+
 // NAVBAR HORIZONTAL
 @mixin navLinkBasic($height, $fontSize, $padding) {
     display: block;
@@ -7,7 +15,7 @@
     min-height: $height;
     padding: 0 $padding;
     line-height: $height;
-    transition: all 0.4s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
     color: $navFontColor;
     font-size: $fontSize;
 }
@@ -60,6 +68,10 @@
     }
 }
 // END NAVBAR
+
+// PANEL DRUGS
+
+// END PANEL DRUGS
 
 // MEDIA QUERIES
 @mixin mQ($args...) {

@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import '../../../sass/componentStyles/tabContentStyle.scss';
+
 import DrugContainer from '../../containers/DrugContainer';
 import LatestResultsContainer from '../../containers/LatestResultsContainer';
 import TypeaheadElement from '../TypeaheadElement';

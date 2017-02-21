@@ -114,6 +114,13 @@ nav.navbar {
     ul.sidebar-nav {
         box-sizing: border-box !important;
         text-align: left;
+        // padding-left: 10px;
+        @include mQ($smallDevice) {
+            padding-left: 15px;
+        };
+        @include mQ($largeDevice) {
+            padding-left: 34px;
+        };
     }
     // LINKS SIDE CATEGORIES NAV
     ul.sidebar-nav > li > a {

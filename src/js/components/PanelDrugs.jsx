@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../../sass/componentStyles/panelDrugs.scss';
+
 import * as constants from '../constants/AppConstants';
 
 import DrugContainer from '../containers/DrugContainer';

@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import '../../../sass/componentStyles/tabContentStyle.scss';
+
 import CategoriesNav from '../CategoriesNav';
 import Jumbotron from '../Jumbotron';
 import PanelDrugs from '../PanelDrugs';
