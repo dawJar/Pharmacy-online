@@ -49,7 +49,7 @@ CategoriesNav.defaultProps = {
         }
     ],
     linkActiveStyle: {
-        color: '#3B0090',
+        color: '#A740FF',
         backgroundColor: 'rgba(0, 0, 0, 0)'
     }
 }

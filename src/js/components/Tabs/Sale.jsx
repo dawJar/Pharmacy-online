@@ -8,7 +8,7 @@ import PanelDrugs from '../PanelDrugs';
 const Sale = (props) => (
     <div className="container-fluid">
 
-        <Jumbotron/>
+        {/* <Jumbotron/> */}
 
         <PanelDrugs
           showOnSale={ true }

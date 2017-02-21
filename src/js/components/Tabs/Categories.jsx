@@ -6,6 +6,10 @@ import CategoriesNav from '../CategoriesNav';
 import Jumbotron from '../Jumbotron';
 import PanelDrugs from '../PanelDrugs';
 
+const divPaddingRight = {
+    paddingRight: 0
+}
+
 const Categories = ({ children, params, ...otherProps }) => {
 
     let { category } = params;
@@ -13,12 +17,12 @@ const Categories = ({ children, params, ...otherProps }) => {
                                               btnShowMore: true,
                                               ...otherProps
                                              });
-    let renderPanelDrugs = category !== undefined;
+    // let renderPanelDrugs = category !== undefined;
 
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-xs-12 col-sm-2">
+                <div className="col-xs-12 col-sm-2" style={ divPaddingRight }>
 
                     <CategoriesNav { ...otherProps } />
 
@@ -26,7 +30,8 @@ const Categories = ({ children, params, ...otherProps }) => {
                 <div className="col-xs-12 col-sm-10">
 
                     {/* PanelDrugs component */}
-                    { (renderPanelDrugs) ?  childrenToRender : null }
+                    {/* { (renderPanelDrugs) ?  childrenToRender : null } */}
+                    { childrenToRender }
 
                 </div>
             </div>

@@ -1,4 +1,27 @@
+@import "../variables.scss";
 
 div.panel {
-  border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    border-left: $divideLineWidth solid $divideLineColor;
+    // background-color: #fff;
+
+    div.panel-default {
+
+    }
+
+    div.panel-heading {
+        color: $sideNavFontColorActive;
+        background-color: #fff !important;
+        // background-color: $sideNavFontColorActive;
+
+        // background-color: transparentize(
+        //         lighten($sideNavFontColorActive, 10),
+        //          0.3
+        // );
+        border-radius: 0;
+        border: 1px solid $sideNavFontColorActive;
+        // border-bottom: $divideLineWidth solid $divideLineColor;
+    }
+
 }

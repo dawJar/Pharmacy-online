@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 
-const PanelHeading = ({ heading, params }) => (
+import '../../sass/componentStyles/panelDrugs.scss';
+
+const PanelHeading = ({ heading }) => (
     <div className="panel-heading">
         { heading || 'all' }
     </div>

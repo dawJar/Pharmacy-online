@@ -14,26 +14,32 @@ const PanelDrugs = ({
     btnShowMore,
     heading,
     params,
+    whichPanelStyle,
     ...otherProps
-}) => (
-    <div className="panel panel-success">
+}) => {
+    
+    // TODO: IMPLEMENT STYLE TYPE FOR EACH CATEGORY TAB!!!!
+    let panelStyle = 'panel panel-default ' + whichPanelStyle;
 
-        <PanelHeading heading={ heading || params.category } />
+    return (
+        <div className={ panelStyle } >
 
-        <div className="panel-body">
+            <PanelHeading heading={ heading || params.category } />
 
-            <DrugContainer { ...otherProps }>
-                <DrugList />
-            </DrugContainer>
+            <div className="panel-body">
 
-            { (btnShowMore) ?
-              <ButtonControlContainer { ...otherProps } control={ constants.BTN_CONTROL.SHOW_MORE } >
-                show more...
-              </ButtonControlContainer>
-             : null }
+                <DrugContainer { ...otherProps }>
+                    <DrugList />
+                </DrugContainer>
 
+                { (btnShowMore) ?
+                  <ButtonControlContainer { ...otherProps } control={ constants.BTN_CONTROL.SHOW_MORE } >
+                    show more...
+                  </ButtonControlContainer>
+                 : null }
+
+            </div>
         </div>
-    </div>
-);
-
+    );
+}
 export default PanelDrugs;

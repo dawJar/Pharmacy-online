@@ -4,8 +4,9 @@
 
 nav.navbar {
     border-radius: 0;
-    background-color: $navBackgroundColor;
-    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    border-bottom: $divideLineWidth solid $divideLineColor;
+    margin-bottom: 16px;
 
     // HEADER, TOGGLE BTN
     div.navbar-header {
@@ -117,9 +118,11 @@ nav.navbar {
         // padding-left: 10px;
         @include mQ($smallDevice) {
             padding-left: 15px;
+            margin-right: 0;
         };
         @include mQ($largeDevice) {
             padding-left: 34px;
+            margin-right: 0;
         };
     }
     // LINKS SIDE CATEGORIES NAV
@@ -143,20 +146,20 @@ nav.navbar {
             );
         };
         @include mQ($mediumDevice) {
-             @include navLinkStyle(
-                 $sideNavHeightMedium,
-                 $sideNavFontSizeLinkMedium,
-                 0,
-                 $sideNavFontColorActive
-             );
+            @include navLinkStyle(
+                $sideNavHeightMedium,
+                $sideNavFontSizeLinkMedium,
+                0,
+                $sideNavFontColorActive
+            );
         };
         @include mQ($largeDevice) {
-             @include navLinkStyle(
-                 $sideNavHeightLarge,
-                 $sideNavFontSizeLinkLarge,
-                 0,
-                 $sideNavFontColorActive
-             );
+            @include navLinkStyle(
+                $sideNavHeightLarge,
+                $sideNavFontSizeLinkLarge,
+                0,
+                $sideNavFontColorActive
+            );
         };
     }
 }
