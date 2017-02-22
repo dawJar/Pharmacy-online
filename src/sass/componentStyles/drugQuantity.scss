@@ -1,37 +1,43 @@
 @import "../variables.scss";
 @import "../mixins.scss";
 
-
+// quantity element
 div.drug-quantity-container {
+    @include centeredFlexbox;
     margin-bottom: $buttonControlMarginBottom;
     margin-left: $buttonControlMarginLeft;
     margin-right: -12px;
     height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 div.quantity-of-drug {
     text-align: center;
 }
 div.quantity-decrement, div.quantity-increment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centeredFlexbox;
 }
-span.glyphicon-minus-sign, span.glyphicon-plus-sign {
-    cursor: pointer;
-    &::before {
-        font-size: 16px;
-    }
-}
+
 span.glyphicon-minus-sign {
+    @include glyphiconControlStyle($incDecFontSize, $saleTabColor);
+}
+span.glyphicon-plus-sign {
+    @include glyphiconControlStyle($incDecFontSize, $navFontColorActive);
+}
+// next prev element
+div.next-prev-button {
+    @include centeredFlexbox;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    border: 1px solid $divideLineColor;
+    border-radius: 50%;
     &:hover {
+        border: 1px solid $saleTabColor;
         color: $saleTabColor;
     }
 }
-span.glyphicon-plus-sign {
-    &:hover {
-        color: $navFontColorActive;
-    }
+span.glyphicon-menu-right {
+    @include glyphiconControlStyle($nextPrevFontSize, $saleTabColor);
+}
+span.glyphicon-menu-left {
+    @include glyphiconControlStyle($nextPrevFontSize, $saleTabColor);
 }

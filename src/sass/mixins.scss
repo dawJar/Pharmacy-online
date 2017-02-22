@@ -5,6 +5,11 @@
     width: 100%;
     margin: 0 auto;
 }
+@mixin centeredFlexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 // END OVERALL
 
 // NAVBAR HORIZONTAL
@@ -102,6 +107,15 @@
         background-color: $mainBackgroundColor;
         border-color: $darken;
         color: $darken;
+    }
+}
+@mixin glyphiconControlStyle($fontSize, $colorHover) {
+    cursor: pointer;
+    &::before {
+        font-size: $fontSize;
+    }
+    &:hover {
+        color: $colorHover;
     }
 }
 // END BUTTONS

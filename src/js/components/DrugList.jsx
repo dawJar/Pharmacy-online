@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+import '../../sass/componentStyles/drug.scss';
+
 import Drug from './Drug';
 import ButtonNextPrev from './ButtonNextPrev';
 
@@ -14,7 +16,8 @@ const DrugList = ({
 }) => {
 
     let checkFilter = (visibilityFilter === 'shopping_cart');
-
+    let newClassNameForRow = 'row';
+    newClassNameForRow += (showOnSale) ? ' row-as-flex' : '';
     // current visible drug on sale in "carousel"
     let drugOnSale = drugs.map((drug) => <Drug
                                             key={drug.id}
@@ -22,8 +25,7 @@ const DrugList = ({
                                             { ...drug }
                                             { ...otherProps } />);
 
-// TODO: duplicaled showAsShoppingCart and filterIsShoppingCart!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+// TODO: duplicaled showAsShoppingCart and filterIsShoppingCart!
     // shows 4 as default in categories with "btn show more"
     // shows all in shopping-cart depends on checkFilter
     let drugsToShow = drugs.slice(0, (checkFilter) ? drugs.length : drugsPerPage)
@@ -36,14 +38,16 @@ const DrugList = ({
 
     return (
         <div className="panel-group">
-            <div className="row">
+            <div className={ newClassNameForRow }>
 
                 { (showOnSale) ?
-                    <ButtonNextPrev
-                        setClassName="col-xs-1"
-                        direction="left"
-                        onClickPrevNext={ onClickPrevNext }
-                    /> : null
+                    <div className="col-xs-1">
+                        <ButtonNextPrev
+                            setClassName="next-prev-button"
+                            direction="left"
+                            onClickPrevNext={ onClickPrevNext }
+                        />
+                    </div> : null
                 }
 
                 <div className={ showOnSale ? "col-xs-10" : "col-xs-12"}>
@@ -54,11 +58,13 @@ const DrugList = ({
                 </div>
 
                 { (showOnSale) ?
-                    <ButtonNextPrev
-                        setClassName="col-xs-1"
-                        direction="right"
-                        onClickPrevNext={ onClickPrevNext }
-                    /> : null
+                    <div className="col-xs-1">
+                        <ButtonNextPrev
+                            setClassName="col-xs-1 next-prev-button"
+                            direction="right"
+                            onClickPrevNext={ onClickPrevNext }
+                        />
+                    </div> : null
                 }
             </div>
         </div>
