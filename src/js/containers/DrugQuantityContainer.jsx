@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as constants from '../constants/AppConstants';
 
+import '../../sass/componentStyles/drugQuantity.scss';
+
 import { inreaseQuantityOfDrug, decreaseQuantityOfDrug } from '../actions/actions';
 
 import ButtonNextPrev from '../components/ButtonNextPrev';
@@ -26,11 +28,11 @@ class DrugQuantityContainer extends Component {
     }
 
     incOrDecreaseValueInShoppingCart (
-      incOrDec,
-      dispatch,
-      drugID,
-      drugPrice,
-      quantityById
+        incOrDec,
+        dispatch,
+        drugID,
+        drugPrice,
+        quantityById
     ) {
 
         // check decremetaion
@@ -54,24 +56,28 @@ class DrugQuantityContainer extends Component {
         let quantityOfDrugID = quantityById[drugID - 1];
 
         return (
-            <div className="row">
+            <div className="row pull-right drug-quantity">
                 <ButtonNextPrev
-                  onClickPrevNext={ this.handleClickNextPrev }
-                  filterIsShoppingCart
-                  direction={ constants.LEFT }
-                  plusMinus={ constants.MINUS }
-                  { ...otherProps } />
+                    setClassName="col-xs-3"
+                    onClickPrevNext={ this.handleClickNextPrev }
+                    filterIsShoppingCart
+                    direction={ constants.LEFT }
+                    plusMinus={ constants.MINUS }
+                    { ...otherProps }
+                />
 
-                <p className="col-xs-10">
-                  { quantityOfDrugID }
+                <p className="col-xs-6">
+                    { quantityOfDrugID }
                 </p>
 
                 <ButtonNextPrev
-                  onClickPrevNext={ this.handleClickNextPrev }
-                  filterIsShoppingCart
-                  direction={ constants.RIGTH }
-                  plusMinus={ constants.PLUS }
-                  { ...otherProps } />
+                    setClassName="col-xs-3"
+                    onClickPrevNext={ this.handleClickNextPrev }
+                    filterIsShoppingCart
+                    direction={ constants.RIGTH }
+                    plusMinus={ constants.PLUS }
+                    { ...otherProps }
+                />
             </div>
         );
     }

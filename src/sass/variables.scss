@@ -3,17 +3,25 @@ $mainBackgroundColor: #fff;
 $transparent: rgba(0, 0, 0, 0);
 $divideLineWidth: 1px;
 $divideLineColor: #BBBBBB;
+$saleTabColor: #B22909;
+$categoriesTabColor: #A740FF;
+$searchTabColor: #B2A53D;
+$basketTabColor: #4514CC;
+$maxMainContentWidth: 1040px;
+
+// BASKET
+$h2FontSize: 22px;
+
+// BUTTON CONTROL
+$buttonControlMarginBottom: 24px;
+$buttonControlMarginLeft: 16px;
+$buttonControlBorderRadius: 16px;
 
 // NAVBAR
 $navCountLinks: 5;
 $navBackgroundColor: #fff;
 $navFontColor: #2E3233;
 $navFontColorActive: #7BB480;
-$saleTabColor: #B22909;
-$categoriesTabColor: #A740FF;
-$basketTabColor: #1957FF;
-$searchTabColor: #1957FF;
-// $basketTabColor: #4514CC;
 // nav height
   $navHeightXS: 50px;
   $navHeightSmall: 65px;
@@ -52,6 +60,8 @@ $searchTabColor: #1957FF;
   $sideNavFontSizeLinkMedium: 13px;
   $sideNavFontSizeLinkLarge: 15px;
 // END NAVBAR
+
+
 
 // MEDIA QUERY BREAKPOINTS
   $smallDevice: 768px;

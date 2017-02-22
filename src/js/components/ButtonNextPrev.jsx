@@ -16,15 +16,15 @@ class ButtonNextPrev extends Component {
   }
 
   render () {
-    let { direction, filterIsShoppingCart, plusMinus } = this.props;
+    let { direction, filterIsShoppingCart, plusMinus, setClassName } = this.props;
 
     let createGlyphiconStyle = (filterIsShoppingCart) ?
           plusMinus : 'menu-' + direction;
 
     return (
-      <div className="col-xs-1" onClick={ this.handleClick }>
-        <span className={ "glyphicon glyphicon-" +  createGlyphiconStyle }></span>
-      </div>
+        <div className={ setClassName } onClick={ this.handleClick }>
+            <span className={ "glyphicon glyphicon-" +  createGlyphiconStyle }></span>
+        </div>
     );
   }
 }

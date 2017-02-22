@@ -66,7 +66,7 @@ class ButtonControlContainer extends Component {
   render () {
     let { children, whichPanelStyle, btnShowMore } = this.props;
     let btnShowMoreStyle = (btnShowMore !== undefined) ? ' show-more' : '';
-    let newClassName = 'btn btn-default pull-right '
+    let newClassName = 'btn pull-right '
                         + whichPanelStyle
                         + btnShowMoreStyle;
     return (

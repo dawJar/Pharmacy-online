@@ -4,13 +4,13 @@ import Drug from './Drug';
 import ButtonNextPrev from './ButtonNextPrev';
 
 const DrugList = ({
-  drugs,
-  showOnSale,
-  drugIndex,
-  drugsPerPage,
-  visibilityFilter,
-  onClickPrevNext,
-  ...otherProps
+    drugs,
+    showOnSale,
+    drugIndex,
+    drugsPerPage,
+    visibilityFilter,
+    onClickPrevNext,
+    ...otherProps
 }) => {
 
     let checkFilter = (visibilityFilter === 'shopping_cart');
@@ -38,7 +38,13 @@ const DrugList = ({
         <div className="panel-group">
             <div className="row">
 
-                { (showOnSale) ? <ButtonNextPrev direction="left" onClickPrevNext={ onClickPrevNext } /> : null }
+                { (showOnSale) ?
+                    <ButtonNextPrev
+                        setClassName="col-xs-1"
+                        direction="left"
+                        onClickPrevNext={ onClickPrevNext }
+                    /> : null
+                }
 
                 <div className={ showOnSale ? "col-xs-10" : "col-xs-12"}>
                     { (showOnSale) ?
@@ -47,7 +53,13 @@ const DrugList = ({
                     }
                 </div>
 
-                { (showOnSale) ? <ButtonNextPrev direction="right" onClickPrevNext={ onClickPrevNext } /> : null }
+                { (showOnSale) ?
+                    <ButtonNextPrev
+                        setClassName="col-xs-1"
+                        direction="right"
+                        onClickPrevNext={ onClickPrevNext }
+                    /> : null
+                }
             </div>
         </div>
     );

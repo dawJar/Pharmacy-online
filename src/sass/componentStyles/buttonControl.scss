@@ -1,39 +1,21 @@
 @import "../variables.scss";
+@import "../mixins.scss";
 
-
-button.btn-default {
-    margin-bottom: 16px;
-    border-radius: 16px;
-    &:hover {
-        background-color: #fff;
-    }
-}
 
 button.sale-tab {
-    border-color: $saleTabColor;
-    &:hover {
-        border-color: lighten($saleTabColor, 10);
-    }
+    @include buttonControlStyle($saleTabColor, $buttonControlBorderRadius);
 }
 button.basket-tab {
-    border-color: $basketTabColor;
-    &:hover {
-        border-color: darken($basketTabColor, 10) !important;
-    }
+    @include buttonControlStyle($basketTabColor, $buttonControlBorderRadius);
 }
 button.categories-tab {
-    border-color: $categoriesTabColor;
-    &:hover {
-        border-color: darken($categoriesTabColor, 10) !important;
-    }
+    @include buttonControlStyle($categoriesTabColor, $buttonControlBorderRadius);
 }
 button.search-tab {
-    border-color: $searchTabColor;
-    &:hover {
-        border-color: darken($searchTabColor, 10) !important;
-    }
+    @include buttonControlStyle($searchTabColor, $buttonControlBorderRadius);
 }
 button.show-more {
     width: 70%;
+    margin-bottom: 0;
     box-sizing: border-box;
 }

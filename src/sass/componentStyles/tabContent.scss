@@ -1,4 +1,6 @@
 @import "../mixins.scss";
+@import "../variables.scss";
+
 
 div.container-fluid {
     @include setFullWidth;
@@ -6,5 +8,14 @@ div.container-fluid {
 }
 
 div.main-content {
-    max-width: 1040px;
+    max-width: $maxMainContentWidth;
+}
+
+div.empty-basket-container {
+    text-align: center;
+
+    h2 {
+        text-align: center;
+        font-size: $h2FontSize;
+    }
 }

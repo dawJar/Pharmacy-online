@@ -5,7 +5,6 @@ import '../../sass/componentStyles/drug.scss';
 import Image from './Image';
 import DrugDetails from './DrugDetails';
 import DrugControls from './DrugControls';
-import DrugQuantityContainer from '../containers/DrugQuantityContainer';
 
 
 const Drug = ({

@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import * as constants from '../constants/AppConstants';
 
+import '../../sass/componentStyles/buttonControl.scss';
+
 import ButtonControlContainer from '../containers/ButtonControlContainer';
 
 
@@ -19,27 +21,21 @@ const ButtonGroup = ({
                     Remove
                 </ButtonControlContainer> : null
             }
-
-            {/* TODO: show as one component  */}
             { (!showAsShoppingCart) ?
-                <div>
-                    <ButtonControlContainer
-                        control={ constants.BTN_CONTROL.ADD_TO_CART }
-                        { ...otherProps }
-                    >
-                        Add to cart
-                    </ButtonControlContainer>
-                </div> : null
+                <ButtonControlContainer
+                    control={ constants.BTN_CONTROL.ADD_TO_CART }
+                    { ...otherProps }
+                >
+                    Add to cart
+                </ButtonControlContainer> : null
             }
             { (!showAsShoppingCart && !removeDetails) ?
-                <div>
-                    <ButtonControlContainer
-                        control={ constants.BTN_CONTROL.DETAILS }
-                        { ...otherProps }
-                    >
-                        Details
-                    </ButtonControlContainer>
-                </div> : null
+                <ButtonControlContainer
+                    control={ constants.BTN_CONTROL.DETAILS }
+                    { ...otherProps }
+                >
+                    Details
+                </ButtonControlContainer> : null
             }
         </div>
     );

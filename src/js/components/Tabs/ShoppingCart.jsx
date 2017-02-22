@@ -3,7 +3,9 @@ import React, { PropTypes } from 'react';
 import '../../../sass/componentStyles/tabContent.scss';
 
 import PanelDrugs from '../PanelDrugs';
-import NavLinkContainer from '../../containers/NavLinkContainer';
+import EmptyShoppingCart from '../EmptyShoppingCart';
+import TotalPrice from '../TotalPrice';
+
 
 const divPaddingTop = {
     paddingTop: 0
@@ -11,8 +13,6 @@ const divPaddingTop = {
 
 const ShoppingCart = ({
     addedIds,
-    totalPrice,
-    linksData,
     ...otherProps
 }) => {
 
@@ -20,30 +20,19 @@ const ShoppingCart = ({
 
     return (
         <div className="container-fluid main-content">
-            <div>
-                { (!emptyPanel) ?
-                    null :
-                    <div>
-                        <h2>Your shopping cart is empty.</h2>
-                        Check our
-                        <NavLinkContainer data={ linksData } >
-                            main page
-                        </NavLinkContainer>
-                    </div>
-                }
-            </div>
-            { (!emptyPanel) ?
-              <PanelDrugs
-                showOnSale={ false }
-                heading="Basket"
-                whichPanelStyle='basket-tab'
-                { ...otherProps }/> : null
+            { (emptyPanel) ?
+                <EmptyShoppingCart { ...otherProps } /> : null
             }
-            {
-              (!emptyPanel) ?
-              <div>
-                <p>total: { totalPrice }</p>
-              </div> : null
+            { (!emptyPanel) ?
+                <PanelDrugs
+                    showOnSale={ false }
+                    heading="Basket"
+                    whichPanelStyle='basket-tab'
+                    { ...otherProps }
+                /> : null
+            }
+            { (!emptyPanel) ?
+                <TotalPrice { ...otherProps } /> : null
             }
         </div>
     )

@@ -82,6 +82,30 @@
 }
 // END PANEL DRUGS
 
+// BUTTONS
+@mixin buttonControlStyle($color, $radius) {
+    margin-bottom: $buttonControlMarginBottom;
+    margin-left: $buttonControlMarginLeft;
+    border-radius: $radius;
+    background-color: $mainBackgroundColor;
+    border-color: $color;
+
+    $darken: lighten($color, 10);
+    $lighten: lighten($color, 10);
+
+    &:hover {
+        background-color: $mainBackgroundColor;
+        border-color: $lighten;
+        color: $lighten;
+    }
+    &:active {
+        background-color: $mainBackgroundColor;
+        border-color: $darken;
+        color: $darken;
+    }
+}
+// END BUTTONS
+
 // MEDIA QUERIES
 @mixin mQ($args...) {
     @if length($args) == 1{
