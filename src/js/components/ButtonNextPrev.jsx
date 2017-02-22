@@ -1,32 +1,40 @@
 import React, { PropTypes, Component } from 'react';
 
+import '../../sass/componentStyles/buttonControl.scss';
+
+
 class ButtonNextPrev extends Component {
 
-  constructor (props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick () {
-    let { onClickPrevNext, filterIsShoppingCart, direction, plusMinus } = this.props;
-    if (filterIsShoppingCart) {
-       return onClickPrevNext(plusMinus, filterIsShoppingCart);
+    constructor (props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
-    onClickPrevNext(direction);
-  }
 
-  render () {
-    let { direction, filterIsShoppingCart, plusMinus, setClassName } = this.props;
+    handleClick () {
+        let { onClickPrevNext, filterIsShoppingCart, direction, plusMinus } = this.props;
+        if (filterIsShoppingCart) {
+            return onClickPrevNext(plusMinus, filterIsShoppingCart);
+        }
+        onClickPrevNext(direction);
+    }
 
-    let createGlyphiconStyle = (filterIsShoppingCart) ?
-          plusMinus : 'menu-' + direction;
+    render () {
+        let {
+            direction,
+            filterIsShoppingCart,
+            plusMinus,
+            setClassName
+        } = this.props;
 
-    return (
-        <div className={ setClassName } onClick={ this.handleClick }>
-            <span className={ "glyphicon glyphicon-" +  createGlyphiconStyle }></span>
-        </div>
-    );
-  }
+        let createGlyphiconStyle = (filterIsShoppingCart) ?
+              plusMinus + '-sign' : 'menu-' + direction;
+
+        return (
+            <div className={ setClassName } onClick={ this.handleClick }>
+                <span className={ "glyphicon glyphicon-" +  createGlyphiconStyle }></span>
+            </div>
+        );
+    }
 }
 
 export default ButtonNextPrev;

@@ -20,10 +20,10 @@ class DrugQuantityContainer extends Component {
         let { dispatch, drugID, drugPrice, quantityById } = this.props;
 
         this.incOrDecreaseValueInShoppingCart(value,
-          dispatch,
-          drugID - 1,
-          drugPrice,
-          quantityById
+            dispatch,
+            drugID - 1,
+            drugPrice,
+            quantityById
         );
     }
 
@@ -46,19 +46,19 @@ class DrugQuantityContainer extends Component {
 
     render () {
         let {
-          drugID,
-          drugPrice,
-          quantityById,
-          filterIsShoppingCart,
-          ...otherProps
+            drugID,
+            drugPrice,
+            quantityById,
+            filterIsShoppingCart,
+            ...otherProps
         } = this.props;
 
         let quantityOfDrugID = quantityById[drugID - 1];
 
         return (
-            <div className="row pull-right drug-quantity">
+            <div className="row pull-right drug-quantity-container">
                 <ButtonNextPrev
-                    setClassName="col-xs-3"
+                    setClassName="col-xs-4 quantity-decrement"
                     onClickPrevNext={ this.handleClickNextPrev }
                     filterIsShoppingCart
                     direction={ constants.LEFT }
@@ -66,12 +66,12 @@ class DrugQuantityContainer extends Component {
                     { ...otherProps }
                 />
 
-                <p className="col-xs-6">
+                <div className="col-xs-4 quantity-of-drug">
                     { quantityOfDrugID }
-                </p>
+                </div>
 
                 <ButtonNextPrev
-                    setClassName="col-xs-3"
+                    setClassName="col-xs-4 quantity-increment"
                     onClickPrevNext={ this.handleClickNextPrev }
                     filterIsShoppingCart
                     direction={ constants.RIGTH }
@@ -85,7 +85,6 @@ class DrugQuantityContainer extends Component {
 
 const mapStateToProps = state => {
     let { cartReducer: { quantityById } } = state;
-
     return {
         quantityById
     }
