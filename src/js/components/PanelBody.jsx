@@ -19,12 +19,16 @@ const PanelBody = ({
             </DrugContainer>
 
             { (btnShowMore) ?
-              <ButtonControlContainer
-                  control={ constants.BTN_CONTROL.SHOW_MORE }
-                  { ...otherProps }
-              >
-                  show more...
-              </ButtonControlContainer>
+                <div className="show-more-container">
+                    <ButtonControlContainer
+                        control={ constants.BTN_CONTROL.SHOW_MORE }
+                        whichPanelStyle='show-more'
+                        btnShowMore
+                        { ...otherProps }
+                    >
+                        show more...
+                    </ButtonControlContainer>
+                </div>
              : null }
         </div>
     );

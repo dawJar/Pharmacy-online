@@ -10,13 +10,10 @@ import DrugQuantityContainer from '../containers/DrugQuantityContainer';
 
 const Drug = ({
     filterIsShoppingCart,
-    stylesForSalesTab,
     ...otherProps
 }) => {
-    // let insertClassName = (stylesForSalesTab) ? 'sale-drugs' : '';
 
     return (
-        // <div className={ 'row drug-style ' + insertClassName }>
         <div className='row drug-style '>
             <Image />
             <DrugDetails { ...otherProps } />

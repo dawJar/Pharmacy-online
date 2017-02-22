@@ -5,7 +5,11 @@ import Drug from './Drug';
 
 
 const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => (
-      <Drug { ...drugs[idToShow] } />
+      <Drug
+          { ...drugs[idToShow] }
+          { ...otherProps }
+          removeDetails
+      />
 );
 
 export default SelectedDrug;

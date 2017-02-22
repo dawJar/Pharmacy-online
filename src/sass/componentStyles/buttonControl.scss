@@ -1,0 +1,39 @@
+@import "../variables.scss";
+
+
+button.btn-default {
+    margin-bottom: 16px;
+    border-radius: 16px;
+    &:hover {
+        background-color: #fff;
+    }
+}
+
+button.sale-tab {
+    border-color: $saleTabColor;
+    &:hover {
+        border-color: lighten($saleTabColor, 10);
+    }
+}
+button.basket-tab {
+    border-color: $basketTabColor;
+    &:hover {
+        border-color: darken($basketTabColor, 10) !important;
+    }
+}
+button.categories-tab {
+    border-color: $categoriesTabColor;
+    &:hover {
+        border-color: darken($categoriesTabColor, 10) !important;
+    }
+}
+button.search-tab {
+    border-color: $searchTabColor;
+    &:hover {
+        border-color: darken($searchTabColor, 10) !important;
+    }
+}
+button.show-more {
+    width: 70%;
+    box-sizing: border-box;
+}

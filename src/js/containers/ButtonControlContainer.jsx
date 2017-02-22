@@ -3,13 +3,15 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import * as constants from '../constants/AppConstants';
 
+import '../../sass/componentStyles/buttonControl.scss';
+
 import { setLinkData } from '../reducers/visibilityReducer';
 import {
-  setDrugsPerPage,
-  addToCart,
-  removeFromCart,
-  setVisibilityFilter,
-  addIdToLatest
+    setDrugsPerPage,
+    addToCart,
+    removeFromCart,
+    setVisibilityFilter,
+    addIdToLatest
 } from '../actions/actions';
 
 
@@ -62,11 +64,15 @@ class ButtonControlContainer extends Component {
   }
 
   render () {
-    const { children } = this.props;
-
+    let { children, whichPanelStyle, btnShowMore } = this.props;
+    let btnShowMoreStyle = (btnShowMore !== undefined) ? ' show-more' : '';
+    let newClassName = 'btn btn-default pull-right '
+                        + whichPanelStyle
+                        + btnShowMoreStyle;
     return (
-      <button className="btn btn-info"
-              onClick={ this.handleClick }>
+      <button className={ newClassName }
+              onClick={ this.handleClick }
+      >
         { children }
       </button>
     )

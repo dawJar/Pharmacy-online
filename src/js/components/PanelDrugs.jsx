@@ -12,7 +12,6 @@ const PanelDrugs = ({
     ...otherProps
 }) => {
     let newClassName = 'panel panel-default ' + whichPanelStyle;
-    let isItSaleTab = (whichPanelStyle === 'sale-tab');
 
     return (
         <div className={ newClassName } >
@@ -21,7 +20,7 @@ const PanelDrugs = ({
                 whichPanelStyle={ whichPanelStyle }
             />
             <PanelBody
-                stylesForSalesTab={ isItSaleTab }
+                whichPanelStyle={ whichPanelStyle }
                 { ...otherProps }
             />
         </div>

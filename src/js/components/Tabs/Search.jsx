@@ -25,8 +25,11 @@ const Search = ({
             </DrugContainer>
 
             { (selectedDrug) ?
-                <DrugContainer forceFilterAll>
-                  <SelectedDrug idToShow={ selectedDrugId } />
+                <DrugContainer
+                    forceFilterAll
+                    whichPanelStyle='search-tab'
+                >
+                    <SelectedDrug idToShow={ selectedDrugId } />
                 </DrugContainer> : null
             }
 

@@ -1,6 +1,8 @@
-div.panel-body {
+@import "../variables.scss";
 
-}
+// div.panel-body {
+//
+// }
 div.panel-group {
     margin: 0;
 }
@@ -9,6 +11,10 @@ div.drug-style {
     margin: 8px 0;
 }
 // drugs in category tab
-div.sale-drugs {
-    
+// div.sale-drugs {
+//
+// }
+div.show-more-container {
+    display: flex;
+    justify-content: center;
 }
