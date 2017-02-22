@@ -19,7 +19,7 @@ const ShoppingCart = ({
     let emptyPanel = addedIds.length === 0;
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid main-content">
             <div>
                 { (!emptyPanel) ?
                     null :

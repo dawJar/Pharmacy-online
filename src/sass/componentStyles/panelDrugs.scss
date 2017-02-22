@@ -3,7 +3,6 @@
 
 div.panel {
     @include resetBorder;
-    border-left: $divideLineWidth solid $divideLineColor;
 
     div.sale-tab {
         @include panelDrugHeading(
@@ -26,6 +25,14 @@ div.panel {
             $mainBackgroundColor
         );
     }
+}
 
-
+div.panel.sale-tab {
+    border-bottom: $divideLineWidth solid $divideLineColor;
+}
+div.panel.categories-tab {
+    border-left: $divideLineWidth solid $divideLineColor;
+}
+div.panel.basket-tab {
+    border-bottom: $divideLineWidth solid $divideLineColor;
 }

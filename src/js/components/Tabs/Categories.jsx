@@ -21,7 +21,7 @@ const Categories = ({ children, params, ...otherProps }) => {
     // let renderPanelDrugs = category !== undefined;
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid main-content">
             <div className="row">
                 <div className="col-xs-12 col-sm-2" style={ divPaddingRight }>
 

@@ -18,7 +18,7 @@ const Search = ({
     let selectedDrugId = id;
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid main-content">
 
             <DrugContainer>
                 <TypeaheadElement { ...otherProps } />

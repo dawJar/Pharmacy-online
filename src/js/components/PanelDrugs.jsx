@@ -2,45 +2,24 @@ import React, { Component } from 'react';
 
 import '../../sass/componentStyles/panelDrugs.scss';
 
-import * as constants from '../constants/AppConstants';
-
-import DrugContainer from '../containers/DrugContainer';
-import DrugList from './DrugList';
-import Drug from './Drug';
 import PanelHeading from './PanelHeading';
-import ButtonControlContainer from '../containers/ButtonControlContainer';
+import PanelBody from './PanelBody';
 
 const PanelDrugs = ({
-    btnShowMore,
     heading,
     params,
     whichPanelStyle,
     ...otherProps
 }) => {
-
-    // TODO: IMPLEMENT STYLE TYPE FOR EACH CATEGORY TAB!!!!
+    let newClassName = 'panel panel-default ' + whichPanelStyle;
 
     return (
-        <div className='panel panel-default' >
-
+        <div className={ newClassName } >
             <PanelHeading
                 heading={ heading || params.category }
                 whichPanelStyle={ whichPanelStyle }
             />
-
-            <div className="panel-body">
-
-                <DrugContainer { ...otherProps }>
-                    <DrugList />
-                </DrugContainer>
-
-                { (btnShowMore) ?
-                  <ButtonControlContainer { ...otherProps } control={ constants.BTN_CONTROL.SHOW_MORE } >
-                    show more...
-                  </ButtonControlContainer>
-                 : null }
-
-            </div>
+            <PanelBody { ...otherProps } />
         </div>
     );
 }

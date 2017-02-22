@@ -69,7 +69,7 @@ nav.navbar {
                 $navWidthLinkLarge,
                 $navWidthLinkLargeLast,
                 $navFontColorActive,
-                $navHeightMedium
+                $navHeightLarge
             );
         };
     }
@@ -120,11 +120,11 @@ nav.navbar {
         text-align: left;
         // padding-left: 10px;
         @include mQ($smallDevice) {
-            padding-left: 15px;
+            padding: 0 8px;
             margin-right: 0;
         };
         @include mQ($largeDevice) {
-            padding-left: 34px;
+            padding-left: 0 17px;
             margin-right: 0;
         };
     }

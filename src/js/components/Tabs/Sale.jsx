@@ -6,7 +6,7 @@ import Jumbotron from '../Jumbotron';
 import PanelDrugs from '../PanelDrugs';
 
 const Sale = (props) => (
-    <div className="container-fluid">
+    <div className="container-fluid main-content">
 
         {/* <Jumbotron/> */}
 
