@@ -3,6 +3,24 @@
 @import "./mixins.scss";
 @import "./animations.scss";
 
-body {
-  font-family: arial;
+html, body {
+    height: 100%;
+    font-family: arial;
+}
+div.main-content-wrapper, div#content {
+    height: 100%;
+}
+.nav-with-content-wrapper {
+  min-height: 100%;
+	margin-bottom: -120px;
+}
+.nav-with-content-wrapper:after {
+  content: "";
+  display: block;
+}
+.main-footer, .nav-with-content-wrapper:after {
+	height: 120px;
+}
+.main-footer {
+  background: tomato;
 }

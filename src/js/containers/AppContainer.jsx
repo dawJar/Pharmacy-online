@@ -8,16 +8,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../../sass/style.scss';
 
 import Nav from '../components/Nav.jsx';
+import Footer from '../components/Footer.jsx';
 
 const AppContainer = ({ children, ...otherProps }) => {
 
     let childrenToShow = React.cloneElement(children, { ...otherProps });
 
     return (
-      <div>
-          <Nav { ...otherProps }/>
-          { childrenToShow }
-      </div>
+        <div className="main-content-wrapper">
+            <div className="nav-with-content-wrapper">
+                <Nav { ...otherProps }/>
+                { childrenToShow }
+            </div>
+            <Footer />
+        </div>
     );
 }
 
