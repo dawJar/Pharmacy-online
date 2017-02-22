@@ -23,13 +23,13 @@ const ShoppingCart = ({
             <div>
                 { (!emptyPanel) ?
                     null :
-                    <p>
+                    <div>
                         <h2>Your shopping cart is empty.</h2>
                         Check our
                         <NavLinkContainer data={ linksData } >
                             main page
                         </NavLinkContainer>
-                    </p>
+                    </div>
                 }
             </div>
             { (!emptyPanel) ?

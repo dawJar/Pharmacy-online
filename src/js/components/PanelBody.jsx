@@ -1,9 +1,9 @@
 import React from 'react';
-
+import '../../sass/componentStyles/drug.scss';
 import * as constants from '../constants/AppConstants';
 
-import DrugContainer from '../containers/DrugContainer';
 import DrugList from './DrugList';
+import DrugContainer from '../containers/DrugContainer';
 import ButtonControlContainer from '../containers/ButtonControlContainer';
 
 

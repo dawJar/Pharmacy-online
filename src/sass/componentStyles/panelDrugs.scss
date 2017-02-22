@@ -27,12 +27,9 @@ div.panel {
     }
 }
 
-div.panel.sale-tab {
+div.panel.sale-tab, div.panel.basket-tab {
     border-bottom: $divideLineWidth solid $divideLineColor;
 }
 div.panel.categories-tab {
     border-left: $divideLineWidth solid $divideLineColor;
-}
-div.panel.basket-tab {
-    border-bottom: $divideLineWidth solid $divideLineColor;
 }
