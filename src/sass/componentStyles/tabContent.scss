@@ -4,7 +4,7 @@
 
 div.container-fluid {
     @include setFullWidth;
-    padding: 0;
+    padding: 0 8px;
 }
 
 div.main-content {
@@ -18,4 +18,13 @@ div.empty-basket-container {
         text-align: center;
         font-size: $h2FontSize;
     }
+}
+
+div.panel-items-in-categories {
+    padding: 0;
+    padding-left: 16px;
+}
+
+div.sidenav-with-categories {
+    padding: 0;
 }

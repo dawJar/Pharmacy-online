@@ -22,12 +22,12 @@ const Categories = ({ children, params, ...otherProps }) => {
     return (
         <div className="container-fluid main-content">
             <div className="row">
-                <div className="col-xs-12 col-sm-2" style={ divPaddingRight }>
+                <div className="col-xs-12 col-sm-2 sidenav-with-categories" style={ divPaddingRight }>
 
                     <CategoriesNav { ...otherProps } />
 
                 </div>
-                <div className="col-xs-12 col-sm-10">
+                <div className="col-xs-12 col-sm-10 panel-items-in-categories">
 
                     {/* PanelDrugs component */}
                     {/* { (renderPanelDrugs) ?  childrenToRender : null } */}
