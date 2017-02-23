@@ -12,3 +12,10 @@ div.search-tab-heading {
         color: $searchTabColor;
     }
 }
+
+div.underscore-selected-drug {
+    height: 0;
+    width: $underlineContentPctWidth;
+    margin-top: 14px;
+    border-bottom: 1px solid $searchTabColor;
+}

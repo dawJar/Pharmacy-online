@@ -1,11 +1,9 @@
 @import "../variables.scss";
 @import "../mixins.scss";
 
-span.total-price {
-    // text-decoration: underline;
-}
+
 p.total-price-container {
-    width: 60%;
+    width: $underlineContentPctWidth;
     padding: 16px 30px;
     text-align: right;
     border-bottom: 1px solid $basketTabColor;
