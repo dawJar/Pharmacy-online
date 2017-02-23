@@ -1,0 +1,13 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+div.search-tab-heading {
+    border: 1px solid $searchTabColor;
+    height: 68px;
+    @include centeredFlexbox;
+    p.search-heading {
+        padding-top: 9px;
+        color: $searchTabColor;
+    }
+}

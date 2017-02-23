@@ -10,7 +10,7 @@ const TypeaheadElement = ({ drugs }) => (
     <div>
         <Typeahead
             autoFocus={ true }
-            clearButton={ true }
+            // clearButton={ true }
             maxResults={ 5 }
             minLength={ 3 }
             options={ drugs }
