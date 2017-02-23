@@ -65,10 +65,10 @@ $navFontColorActive: #7BB480;
 // END NAVBAR
 
 // FOOTER
-$mainFooterHeightXS: $navHeightXS - 20px;
-$mainFooterHeightSmall: $navHeightSmall - 20px;
-$mainFooterHeightMedium: $navHeightMedium - 20px;
-$mainFooterHeightLarge: $navHeightLarge - 20px;
+$mainFooterHeight: 50px;
+$mainFooterFontSize: 14px;
+$mainFooterPaddingTop: 14px;
+$mainFooterPaddingRightLeft: 16px;
 // END FOOTER
 
 // MEDIA QUERY BREAKPOINTS

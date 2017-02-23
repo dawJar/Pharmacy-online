@@ -14,19 +14,10 @@ div.main-content-wrapper, div#content {
 
 div.nav-with-content-wrapper {
     min-height: 100%;
-    margin-bottom: -$mainFooterHeightXS;
+    margin-bottom: -$mainFooterHeight;
     nav.navbar {
         margin: -1px 0;
     }
-    @include mQ($smallDevice) {
-        margin-bottom: -$mainFooterHeightSmall;
-    };
-    @include mQ($mediumDevice) {
-        margin-bottom: -$mainFooterHeightMedium;
-    };
-    @include mQ($largeDevice) {
-        margin-bottom: -$mainFooterHeightLarge;
-    };
 }
 
 div.nav-with-content-wrapper:after {
@@ -35,16 +26,7 @@ div.nav-with-content-wrapper:after {
 }
 
 footer.main-footer, div.nav-with-content-wrapper:after {
-    height: $mainFooterHeightXS - 11px;
-    @include mQ($smallDevice) {
-        height: $mainFooterHeightSmall;
-    };
-    @include mQ($mediumDevice) {
-        height: $mainFooterHeightMedium;
-    };
-    @include mQ($largeDevice) {
-        height: $mainFooterHeightLarge;
-    };
+    height: $mainFooterHeight;
 }
 
 footer.main-footer {
@@ -53,5 +35,8 @@ footer.main-footer {
 
 div.content-main-footer {
     max-width: $maxMainContentWidth;
+    font-size: $mainFooterFontSize;
+    padding-top: $mainFooterPaddingTop;
+    padding: $mainFooterPaddingTop $mainFooterPaddingRightLeft 0 $mainFooterPaddingRightLeft;
     margin: 0 auto;
 }
