@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import '../../../sass/componentStyles/tabContent.scss';
 
 import CategoriesNav from '../CategoriesNav';
-import Jumbotron from '../Jumbotron';
 import PanelDrugs from '../PanelDrugs';
 
 const divPaddingRight = {

@@ -7,7 +7,7 @@ const NavToggle = () => (
     <div className="navbar-header">
         <ToggleBtn/>
         <Link to="/" className="navbar-brand hidden-sm">
-            WebSiteName
+            pharmacy online
         </Link>
     </div>
 );

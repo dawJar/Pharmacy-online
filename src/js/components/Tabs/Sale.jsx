@@ -2,14 +2,11 @@ import React, {PropTypes} from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
 
-import Jumbotron from '../Jumbotron';
+import SaleTabContent from '../SaleTabContent';
 import PanelDrugs from '../PanelDrugs';
 
 const Sale = (props) => (
     <div className="container-fluid main-content">
-
-        {/* <Jumbotron/> */}
-
         <PanelDrugs
             showOnSale={ true }
             btnShowMore={ false }
@@ -17,7 +14,7 @@ const Sale = (props) => (
             whichPanelStyle='sale-tab'
             { ...props }
         />
-
+      <SaleTabContent/>
     </div>
 );
 

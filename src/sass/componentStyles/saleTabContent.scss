@@ -1,0 +1,17 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+span.sale-content-glyph {
+    color: $saleTabColor;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+h3.sale-content-heading {
+    margin-bottom: 12px;
+}
+
+p.sale-content-paragraph {
+    text-align: justify;
+}

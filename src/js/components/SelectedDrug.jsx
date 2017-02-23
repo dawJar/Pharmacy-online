@@ -13,7 +13,7 @@ const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => (
               { ...otherProps }
               removeDetails
           />
-          <div className="underscore-selected-drug pull-right"></div>
+        <div className="underscore-element pull-right"></div>
       </div>
 );
 

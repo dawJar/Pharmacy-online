@@ -40,3 +40,12 @@ div.content-main-footer {
     padding: $mainFooterPaddingTop $mainFooterPaddingRightLeft 0 $mainFooterPaddingRightLeft;
     margin: 0 auto;
 }
+
+div.underscore-element-sale {
+    @include underscoreDivElement($saleTabColor);
+    margin-bottom: 24px;
+}
+
+div.underscore-element {
+    @include underscoreDivElement($searchTabColor);
+}
