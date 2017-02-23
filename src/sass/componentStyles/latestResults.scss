@@ -4,11 +4,11 @@
 
 div.latest-results-row {
     margin-bottom: 23px;
+    border-bottom: 1px solid $divideLineColor;
 }
 
 div.latest-result-item-container {
     height: 100%;
-    border-bottom: 1px solid $divideLineColor;
 }
 
 p.latest-result-item {
