@@ -5,9 +5,14 @@ const Footer = () => {
 
     return (
         <footer className="main-footer">
-            <div className='wsad'>
-
-                footer
+            <div className="content-main-footer">
+                <p className="pull-left">
+                    @2017&nbsp;&nbsp;|
+                    &nbsp;&nbsp;subscribe&nbsp;us
+                </p>
+                <p className="pull-right">
+                    created by dejvid
+                </p>
             </div>
         </footer>
     );

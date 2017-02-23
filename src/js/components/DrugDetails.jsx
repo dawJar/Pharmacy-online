@@ -8,7 +8,7 @@ const DrugDetails = ({
 }) => {
 
     return (
-      <div className="col-xs-6 col-sm-5 col-md-7">
+      <div className="col-xs-7 col-sm-5 col-md-7">
           <h3>{ drugName }</h3>
           <p>onsale: { (onSale) ? 'sale' : 'not on sale' }</p>
           <p>id: { id }</p>

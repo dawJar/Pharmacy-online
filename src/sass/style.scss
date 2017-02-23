@@ -7,20 +7,51 @@ html, body {
     height: 100%;
     font-family: arial;
 }
+
 div.main-content-wrapper, div#content {
     height: 100%;
 }
-.nav-with-content-wrapper {
-  min-height: 100%;
-	margin-bottom: -120px;
+
+div.nav-with-content-wrapper {
+    min-height: 100%;
+    margin-bottom: -$mainFooterHeightXS;
+    nav.navbar {
+        margin: -1px 0;
+    }
+    @include mQ($smallDevice) {
+        margin-bottom: -$mainFooterHeightSmall;
+    };
+    @include mQ($mediumDevice) {
+        margin-bottom: -$mainFooterHeightMedium;
+    };
+    @include mQ($largeDevice) {
+        margin-bottom: -$mainFooterHeightLarge;
+    };
 }
-.nav-with-content-wrapper:after {
-  content: "";
-  display: block;
+
+div.nav-with-content-wrapper:after {
+    content: "";
+    display: block;
 }
-.main-footer, .nav-with-content-wrapper:after {
-	height: 120px;
+
+footer.main-footer, div.nav-with-content-wrapper:after {
+    height: $mainFooterHeightXS - 11px;
+    @include mQ($smallDevice) {
+        height: $mainFooterHeightSmall;
+    };
+    @include mQ($mediumDevice) {
+        height: $mainFooterHeightMedium;
+    };
+    @include mQ($largeDevice) {
+        height: $mainFooterHeightLarge;
+    };
 }
-.main-footer {
-  background: tomato;
+
+footer.main-footer {
+    border-top: 1px solid $divideLineColor;
+}
+
+div.content-main-footer {
+    max-width: $maxMainContentWidth;
+    margin: 0 auto;
 }

@@ -64,7 +64,12 @@ $navFontColorActive: #7BB480;
   $sideNavFontSizeLinkLarge: 15px;
 // END NAVBAR
 
-
+// FOOTER
+$mainFooterHeightXS: $navHeightXS - 20px;
+$mainFooterHeightSmall: $navHeightSmall - 20px;
+$mainFooterHeightMedium: $navHeightMedium - 20px;
+$mainFooterHeightLarge: $navHeightLarge - 20px;
+// END FOOTER
 
 // MEDIA QUERY BREAKPOINTS
   $smallDevice: 768px;

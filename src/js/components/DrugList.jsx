@@ -60,7 +60,7 @@ const DrugList = ({
                 { (showOnSale) ?
                     <div className="col-xs-1">
                         <ButtonNextPrev
-                            setClassName="col-xs-1 next-prev-button"
+                            setClassName="next-prev-button pull-right"
                             direction="right"
                             onClickPrevNext={ onClickPrevNext }
                         />
