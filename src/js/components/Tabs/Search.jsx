@@ -7,11 +7,12 @@ import LatestResultsContainer from '../../containers/LatestResultsContainer';
 import SearchHeading from '../SearchHeading';
 import SelectedDrug from '../SelectedDrug';
 
+
 const Search = ({
-     params: { productID },
-     location: { query, query: { id } },
-     children,
-     ...otherProps
+    params: { productID },
+    location: { query, query: { id } },
+    children,
+    ...otherProps
 }) => {
 
     let selectedDrug = query && id;
@@ -19,8 +20,9 @@ const Search = ({
 
     return (
         <div className="container-fluid main-content">
-
             <SearchHeading />
+
+            <LatestResultsContainer />
 
             { (selectedDrug) ?
                 <DrugContainer
@@ -30,9 +32,6 @@ const Search = ({
                     <SelectedDrug idToShow={ selectedDrugId } />
                 </DrugContainer> : null
             }
-
-            <LatestResultsContainer />
-
         </div>
     );
 }

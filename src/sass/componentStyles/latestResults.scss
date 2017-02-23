@@ -1,0 +1,24 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+div.latest-results-row {
+    margin-bottom: 23px;
+}
+
+div.latest-result-item-container {
+    height: 100%;
+    border-bottom: 1px solid $divideLineColor;
+}
+
+p.latest-result-item {
+    cursor: pointer;
+    padding: 0 8px;
+    border-top: 1px solid $divideLineColor;
+    font-size: 12px;
+    &:hover {
+        $darken: darken($searchTabColor, 10);
+        color: $darken;
+        border-top: 1px solid $darken;
+    }
+}

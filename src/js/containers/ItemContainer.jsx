@@ -29,10 +29,12 @@ class ItemContainer extends Component {
     }
 
     render () {
-      let { children, productID } = this.props;
+      let { children, productID, setClassName } = this.props;
+      let newClassName = setClassName || '';
 
       return (
-        <p onClick={ this.handleClickItem } >
+        <p className={ newClassName }
+            onClick={ this.handleClickItem } >
             { children }
         </p>
       );

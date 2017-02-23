@@ -1,25 +1,27 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import '../../sass/componentStyles/latestResults.scss';
+
 import DrugContainer from '../containers/DrugContainer';
 import LatestResult from '../components/LatestResult';
 
 
 const LatestResultsContainer = ({
-  latestResults,
-  latestResultsLength
+    latestResults,
+    latestResultsLength
 }) => {
     let latestResultsToRender = latestResults.map((result, i) =>
         <DrugContainer key={ i } >
             <LatestResult
-              resultID={ result }
-              resultLength={ latestResultsLength }
+                resultID={ result }
+                resultLength={ latestResultsLength }
             />
         </DrugContainer>
     )
 
     return (
-        <div className="row">
+        <div className="row latest-results-row">
             { latestResultsToRender }
         </div>
     );

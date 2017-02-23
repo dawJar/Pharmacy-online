@@ -8,12 +8,11 @@ import DrugControls from './DrugControls';
 
 
 const Drug = ({
-    filterIsShoppingCart,
     ...otherProps
 }) => {
 
     return (
-        <div className='row drug-style '>
+        <div className='row drug-style'>
             <Image />
             <DrugDetails { ...otherProps } />
             <DrugControls { ...otherProps } />
