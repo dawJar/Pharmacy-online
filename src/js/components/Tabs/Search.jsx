@@ -1,12 +1,10 @@
 import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
-// TODO: ADD TO SEARCH HEADING COMPONENT
-import '../../../sass/componentStyles/search.scss';
 
 import DrugContainer from '../../containers/DrugContainer';
 import LatestResultsContainer from '../../containers/LatestResultsContainer';
-import TypeaheadElement from '../TypeaheadElement';
+import SearchHeading from '../SearchHeading';
 import SelectedDrug from '../SelectedDrug';
 
 const Search = ({
@@ -40,18 +38,3 @@ const Search = ({
 }
 
 export default Search;
-
-
-const SearchHeading = (props) => {
-
-    return (
-        <div className="row search-tab-heading">
-            <p className="col-xs-2 col-sm-1 search-heading">Search: </p>
-            <div className="col-xs-10 col-sm-11">
-                <DrugContainer>
-                    <TypeaheadElement { ...props } />
-                </DrugContainer>
-            </div>
-        </div>
-    );
-}

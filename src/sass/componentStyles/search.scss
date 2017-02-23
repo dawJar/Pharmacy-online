@@ -3,9 +3,10 @@
 
 
 div.search-tab-heading {
+    @include centeredFlexbox;
     border: 1px solid $searchTabColor;
     height: 68px;
-    @include centeredFlexbox;
+    margin-bottom: 23px;
     p.search-heading {
         padding-top: 9px;
         color: $searchTabColor;
