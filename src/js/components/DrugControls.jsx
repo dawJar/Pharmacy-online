@@ -12,7 +12,7 @@ const DrugControls = ({
 }) => {
 
     return (
-        <div className="col-xs-12 col-sm-3 col-md-2">
+        <div className="col-xs-12 col-sm-12 col-md-2">
             { (showAsShoppingCart) ?
                 <DrugQuantityContainer
                     drugID={ id }

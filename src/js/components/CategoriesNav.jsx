@@ -7,7 +7,7 @@ import NavLinks from './Nav/NavLinks';
 
 const CategoriesNav = (props) => (
     <nav className="navbar">
-        <div className="container-fluid">
+        <div className="container-fluid sidenav-categories">
             <NavLinks { ...props } />
         </div>
     </nav>

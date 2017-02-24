@@ -7,10 +7,6 @@ const SaleTabParagraph = ({
     lastContainerStyle,
     paragraphText
 }) => {
-    console.log(containerHeading,
-    iconGlyph,
-    lastContainerStyle,
-    paragraphText);
     let newGlyphStyle = `glyphicon glyphicon-${iconGlyph} sale-content-glyph`;
     let newContainerStyle = (lastContainerStyle) ?
                                 'col-xs-12 col-sm-12 col-md-4' :
