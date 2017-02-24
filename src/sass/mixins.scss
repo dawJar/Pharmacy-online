@@ -96,6 +96,7 @@
 
 // BUTTONS
 @mixin buttonControlStyle($color, $radius) {
+    margin-top: 12px;
     margin-bottom: $buttonControlMarginBottom;
     margin-left: $buttonControlMarginLeft;
     border-radius: $radius;

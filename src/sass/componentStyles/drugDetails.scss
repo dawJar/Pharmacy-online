@@ -1,2 +1,21 @@
 @import "../variables.scss";
 @import "../mixins.scss";
+
+h3.heading-drug-details {
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+table.table-details {
+    margin-top: 24px;
+    padding-left: 12px;
+
+    th.table-details-header {
+        padding: 12px 10px 0 10px;
+    }
+
+    td.table-details-data {
+        padding-top: 8px;
+        text-align: justify;
+    }
+}
