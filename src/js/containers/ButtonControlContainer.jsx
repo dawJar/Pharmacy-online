@@ -79,4 +79,12 @@ class ButtonControlContainer extends Component {
     }
 }
 
+ButtonControlContainer.PropTypes = {
+    setDrugsPerPage: PropTypes.number.isRequired,
+    addToCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired,
+    setVisibilityFilter: PropTypes.func.isRequired,
+    addIdToLatest: PropTypes.func.isRequired
+};
+
 export default connect()(ButtonControlContainer);

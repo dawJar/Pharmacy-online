@@ -27,12 +27,6 @@ const LatestResultsContainer = ({
     );
 }
 
-LatestResultsContainer.propTypes = {
-    latestResults: PropTypes.arrayOf(
-        PropTypes.number.isRequired
-    )
-}
-
 const mapStateToProps = state => {
     let { searchReducer: { latestResults } } = state;
 
@@ -40,6 +34,13 @@ const mapStateToProps = state => {
         latestResultsLength: latestResults.length,
         latestResults
     }
+}
+
+LatestResultsContainer.propTypes = {
+  latestResultsLength: PropTypes.number.isRequired,
+  latestResults: PropTypes.arrayOf(
+    PropTypes.number.isRequired
+  )
 }
 
 export default connect(mapStateToProps)(LatestResultsContainer)

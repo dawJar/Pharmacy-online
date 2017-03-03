@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 
 import { setLinkData } from '../reducers/visibilityReducer';
 import { setVisibilityFilter, addIdToLatest } from '../actions/actions';
@@ -40,5 +39,11 @@ class ItemContainer extends Component {
       );
     }
 }
+
+ItemContainer.PropTypes = {
+    children: PropTypes.object.isRequired,
+    productID: PropTypes.number.isRequired,
+    setClassName: PropTypes.string.isRequired
+};
 
 export default connect()(ItemContainer);

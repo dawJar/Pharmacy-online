@@ -90,6 +90,13 @@ const mapStateToProps = state => {
     }
 }
 
+DrugQuantityContainer.PropTypes = {
+    drugID: PropTypes.number.isRequired,
+    drugPrice: PropTypes.number.isRequired,
+    quantityById: PropTypes.number.isRequired,
+    filterIsShoppingCart: PropTypes.bool.isRequired
+};
+
 export default connect(
   mapStateToProps
 )(DrugQuantityContainer);
