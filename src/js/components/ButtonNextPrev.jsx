@@ -37,4 +37,12 @@ class ButtonNextPrev extends Component {
     }
 }
 
+ButtonNextPrev.PropTypes = {
+    direction: PropTypes.string.isRequired,
+    filterIsShoppingCart: PropTypes.bool.isRequired,
+    plusMinus: PropTypes.string.isRequired,
+    setClassName: PropTypes.string.isRequired,
+    onClickPrevNext: PropTypes.func.isRequired
+};
+
 export default ButtonNextPrev;

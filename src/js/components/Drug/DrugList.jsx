@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/drug.scss';
+import '../../../sass/componentStyles/drug.scss';
 
 import Drug from './Drug';
-import ButtonNextPrev from './ButtonNextPrev';
+import ButtonNextPrev from '../ButtonNextPrev';
+
 
 const DrugList = ({
     drugs,

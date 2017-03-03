@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 
-import ItemContainer from '../containers/ItemContainer';
+import ItemContainer from '../../containers/ItemContainer';
 
 
 const TypeaheadElement = ({ drugs }) => (

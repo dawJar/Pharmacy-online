@@ -1,9 +1,10 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
 
 import SaleTabContent from '../SaleTabContent';
 import PanelDrugs from '../PanelDrugs';
+
 
 const Sale = (props) => (
     <div className="container-fluid main-content">
@@ -14,7 +15,7 @@ const Sale = (props) => (
             whichPanelStyle='sale-tab'
             { ...props }
         />
-      <SaleTabContent/>
+      <SaleTabContent />
     </div>
 );
 

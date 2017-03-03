@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as AppActions from '../actions/actions';
@@ -26,7 +26,8 @@ const AppContainer = ({ children, ...otherProps }) => {
 }
 
 AppContainer.propTypes = {
-    actions: PropTypes.object.isRequired
+    actions: PropTypes.object.isRequired,
+    children: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => {

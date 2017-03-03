@@ -40,10 +40,14 @@ const ShoppingCart = ({
 
 ShoppingCart.defaultProps = {
     linksData: {
-            linkPath: "/sale",
-            linkName: "Sale!",
-            linkFilter: "SHOW_ON_SALE"
+        linkPath: "/sale",
+        linkName: "Sale!",
+        linkFilter: "SHOW_ON_SALE"
     }
-}
+};
+
+ShoppingCart.PropTypes = {
+    addedIds: PropTypes.array.isRequired
+};
 
 export default ShoppingCart;

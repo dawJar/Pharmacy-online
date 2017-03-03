@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/shoppingCart.scss';
 
@@ -13,9 +13,9 @@ const NavLinks = ({
     basket,
     ...otherProps
 }) => {
-
-    const links = linksData.map((li, i) => {
-        return <NavLinkContainer key={i} data={ li } { ...otherProps } />
+  
+    let links = linksData.map((li, i) => {
+        return <NavLinkContainer key={ i } data={ li } { ...otherProps } />
     });
 
     return (
@@ -30,5 +30,12 @@ const NavLinks = ({
         </div>
     );
 }
+
+NavLinks.propTypes = {
+    showAsSidebar: PropTypes.bool.isRequired,
+    showBasket: PropTypes.bool.isRequired,
+    linksData: PropTypes.arrayOf(PropTypes.object.isRequired),
+    basket: PropTypes.object.isRequired
+};
 
 export default NavLinks;

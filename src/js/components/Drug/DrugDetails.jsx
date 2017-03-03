@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/drugDetails.scss';
+import '../../../sass/componentStyles/drugDetails.scss';
 
 import DrugDetailsAll from './DrugDetailsAll';
 import DrugDetailsSelected from './DrugDetailsSelected';
@@ -41,5 +41,10 @@ const DrugDetails = ({
       </div>
     );
 }
+
+DrugDetails.PropTypes = {
+    drugName: PropTypes.string.isRequired,
+    whichPanelStyle: PropTypes.string.isRequired
+};
 
 export default DrugDetails;

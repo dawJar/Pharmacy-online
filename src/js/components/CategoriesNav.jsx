@@ -5,6 +5,7 @@ import '../../sass/componentStyles/nav.scss';
 import NavToggle from './Nav/NavToggle';
 import NavLinks from './Nav/NavLinks';
 
+
 const CategoriesNav = (props) => (
     <nav className="navbar">
         <div className="container-fluid sidenav-categories">
@@ -51,7 +52,8 @@ CategoriesNav.defaultProps = {
     linkActiveStyle: {
         color: '#A740FF',
         backgroundColor: 'rgba(0, 0, 0, 0)'
-    }
+    },
+    basket: {}
 }
 
 export default CategoriesNav;

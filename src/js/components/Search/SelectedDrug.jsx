@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/search.scss';
+import '../../../sass/componentStyles/search.scss';
 
-import DrugContainer from '../containers/DrugContainer';
-import Drug from './Drug';
+import DrugContainer from '../../containers/DrugContainer';
+import Drug from '../Drug/Drug';
 
 
 const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => (

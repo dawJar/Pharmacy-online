@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/latestResults.scss';
+import '../../../sass/componentStyles/latestResults.scss';
 
-import ItemContainer from '../containers/ItemContainer';
+import ItemContainer from '../../containers/ItemContainer';
 
 
 const LatestResult = ({
@@ -26,5 +26,6 @@ const LatestResult = ({
         </div>
     );
 }
+
 
 export default LatestResult;

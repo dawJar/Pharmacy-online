@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import '../../sass/componentStyles/latestResults.scss';
 
-import DrugContainer from '../containers/DrugContainer';
-import LatestResult from '../components/LatestResult';
+import DrugContainer from './DrugContainer';
+import LatestResult from '../components/Search/LatestResult';
 
 
 const LatestResultsContainer = ({

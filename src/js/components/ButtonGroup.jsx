@@ -10,36 +10,38 @@ const ButtonGroup = ({
     showAsShoppingCart,
     removeDetails,
     ...otherProps
-}) => {
-    return (
-        <div>
-            { (showAsShoppingCart) ?
-                <ButtonControlContainer
-                    control={ constants.BTN_CONTROL.REMOVE }
-                    { ...otherProps }
-                >
-                    Remove
-                </ButtonControlContainer> : null
-            }
-            { (!showAsShoppingCart) ?
-                <ButtonControlContainer
-                    control={ constants.BTN_CONTROL.ADD_TO_CART }
-                    { ...otherProps }
-                >
-                    Add to cart
-                </ButtonControlContainer> : null
-            }
-            { (!showAsShoppingCart && !removeDetails) ?
-                <ButtonControlContainer
-                    control={ constants.BTN_CONTROL.DETAILS }
-                    { ...otherProps }
-                >
-                    Details
-                </ButtonControlContainer> : null
-            }
-        </div>
-    );
-}
+}) => (
+    <div>
+        { (showAsShoppingCart) ?
+            <ButtonControlContainer
+                control={ constants.BTN_CONTROL.REMOVE }
+                { ...otherProps }
+            >
+                Remove
+            </ButtonControlContainer> : null
+        }
+        { (!showAsShoppingCart) ?
+            <ButtonControlContainer
+                control={ constants.BTN_CONTROL.ADD_TO_CART }
+                { ...otherProps }
+            >
+                Add to cart
+            </ButtonControlContainer> : null
+        }
+        { (!showAsShoppingCart && !removeDetails) ?
+            <ButtonControlContainer
+                control={ constants.BTN_CONTROL.DETAILS }
+                { ...otherProps }
+            >
+                Details
+            </ButtonControlContainer> : null
+        }
+    </div>
+);
 
+ButtonGroup.PropTypes = {
+    showAsShoppingCart: PropTypes.bool.isRequired,
+    removeDetails: PropTypes.bool.isRequired
+};
 
 export default ButtonGroup;

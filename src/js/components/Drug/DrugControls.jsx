@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import ButtonGroup from './ButtonGroup';
-import DrugQuantityContainer from '../containers/DrugQuantityContainer';
+import ButtonGroup from '../ButtonGroup';
+import DrugQuantityContainer from '../../containers/DrugQuantityContainer';
 
 
 const DrugControls = ({
@@ -29,5 +29,11 @@ const DrugControls = ({
         </div>
     );
 }
+
+DrugControls.PropTypes = {
+  id: PropTypes.number.isRequired,
+  drugPrice: PropTypes.number.isRequired,
+  showAsShoppingCart: PropTypes.bool.isRequired
+};
 
 export default DrugControls;

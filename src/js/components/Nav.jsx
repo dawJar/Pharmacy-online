@@ -5,13 +5,14 @@ import '../../sass/componentStyles/nav.scss';
 import NavToggle from './Nav/NavToggle';
 import NavLinks from './Nav/NavLinks';
 
+
 const Nav = (props) => (
     <nav className="navbar">
         <div className="container-fluid">
 
             <NavToggle />
             <NavLinks { ...props } />
-            
+
         </div>
     </nav>
 );

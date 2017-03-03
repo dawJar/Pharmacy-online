@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
 import ToggleBtn from './ToggleBtn';
+
 
 const NavToggle = () => (
     <div className="navbar-header">
@@ -13,7 +14,3 @@ const NavToggle = () => (
 );
 
 export default NavToggle;
-
-// NavToggle.propTypes = {
-//     actions: PropTypes.object.isRequired
-// }

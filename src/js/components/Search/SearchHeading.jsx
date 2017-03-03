@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/search.scss';
+import '../../../sass/componentStyles/search.scss';
 
-import DrugContainer from '../containers/DrugContainer';
+import DrugContainer from '../../containers/DrugContainer';
 import TypeaheadElement from './TypeaheadElement';
 
 

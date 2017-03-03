@@ -4,12 +4,11 @@ import '../../../sass/componentStyles/tabContent.scss';
 
 import DrugContainer from '../../containers/DrugContainer';
 import LatestResultsContainer from '../../containers/LatestResultsContainer';
-import SearchHeading from '../SearchHeading';
-import SelectedDrug from '../SelectedDrug';
+import SearchHeading from '../Search/SearchHeading';
+import SelectedDrug from '../Search/SelectedDrug';
 
 
 const Search = ({
-    params: { productID },
     location: { query, query: { id } },
     children,
     ...otherProps
@@ -35,5 +34,10 @@ const Search = ({
         </div>
     );
 }
+
+Search.PropTypes = {
+    children: PropTypes.object.isRequired,
+    location: PropTypes.objectOf(PropTypes.number.isRequired)
+};
 
 export default Search;
