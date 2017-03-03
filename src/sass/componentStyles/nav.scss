@@ -12,6 +12,12 @@ nav.navbar {
     border-bottom: $divideLineWidth solid $divideLineColor;
     margin-bottom: 15px;
 
+    // div.navbar-collapse {
+    //     @include mQ(0, $smallDevice) {
+    //         margin-left: -200px;
+    //     };
+    // }
+
     // HEADER, TOGGLE BTN
     div.navbar-header {
         box-sizing: border-box;
@@ -81,6 +87,7 @@ nav.navbar {
     // NAV HORIZONTAL
     ul.navbar-nav > li > a {
         color: $navFontColor;
+        // text-align: left;
         @include navLinkHover(
             true,
             $navFontColorActive
