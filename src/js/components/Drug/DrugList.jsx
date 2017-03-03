@@ -72,4 +72,13 @@ const DrugList = ({
     );
 }
 
+DrugList.PropTypes = {
+    drugs: PropTypes.arrayOf(PropTypes.object.isRequired),
+    showOnSale: PropTypes.bool.isRequired,
+    drugIndex: PropTypes.number.isRequired,
+    drugsPerPage: PropTypes.number.isRequired,
+    visibilityFilter: PropTypes.string.isRequired,
+    onClickPrevNext: PropTypes.func.isRequired,
+};
+
 export default DrugList;

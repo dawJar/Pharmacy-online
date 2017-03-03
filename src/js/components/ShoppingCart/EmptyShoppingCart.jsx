@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import NavLinkContainer from '../../containers/NavLinkContainer';
 
@@ -12,5 +12,9 @@ const EmptyShoppingCart = ({ linksData }) => (
         </NavLinkContainer>
     </div>
 );
+
+EmptyShoppingCart.PropTypes = {
+    linksData: PropTypes.object.isRequired
+};
 
 export default EmptyShoppingCart;

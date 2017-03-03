@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 
 const SaleTabParagraph = ({
@@ -7,10 +7,12 @@ const SaleTabParagraph = ({
     lastContainerStyle,
     paragraphText
 }) => {
+
     let newGlyphStyle = `glyphicon glyphicon-${iconGlyph} sale-content-glyph`;
     let newContainerStyle = (lastContainerStyle) ?
                                 'col-xs-12 col-sm-12 col-md-4' :
                                 'col-xs-12 col-sm-6 col-md-4';
+
     return (
         <div className={ newContainerStyle } >
             <span className={ newGlyphStyle } ></span>
@@ -22,5 +24,12 @@ const SaleTabParagraph = ({
         </div>
     );
 }
+
+SaleTabParagraph.PropTypes = {
+    containerHeading: PropTypes.string.isRequired,
+    iconGlyph: PropTypes.string.isRequired,
+    lastContainerStyle: PropTypes.bool.isRequired,
+    paragraphText: PropTypes.string.isRequired
+};
 
 export default SaleTabParagraph;

@@ -45,4 +45,15 @@ const DrugDetailsAll = ({
     </table>
 );
 
+DrugDetailsAll.PropTypes = {
+  drugCategory: PropTypes.string.isRequired,
+  drugCompany: PropTypes.string.isRequired,
+  drugPrice: PropTypes.number.isRequired,
+  drugCurrency: PropTypes.string.isRequired,
+  fdaCode: PropTypes.string.isRequired,
+  drugExpiration: PropTypes.string.isRequired,
+  drugDescription: PropTypes.string.isRequired,
+  drugHowToUse: PropTypes.string.isRequired
+};
+
 export default DrugDetailsAll;

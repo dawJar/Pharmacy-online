@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/totalPrice.scss';
 
@@ -10,5 +10,9 @@ const TotalPrice = ({ totalPrice }) => (
         &nbsp; pln
     </p>
 );
+
+TotalPrice.PropTypes = {
+    totalPrice: PropTypes.number.isRequired
+};
 
 export default TotalPrice;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/drug.scss';
 import * as constants from '../../constants/AppConstants';
@@ -34,5 +34,9 @@ const PanelBody = ({
         </div>
     );
 }
+
+PanelBody.PropTypes = {
+    btnShowMore: PropTypes.bool.isRequired
+};
 
 export default PanelBody;

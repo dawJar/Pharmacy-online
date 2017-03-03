@@ -2,7 +2,11 @@ import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/panelDrugs.scss';
 
-const PanelHeading = ({ heading, whichPanelStyle }) => {
+
+const PanelHeading = ({
+    heading,
+    whichPanelStyle
+}) => {
 
     let newClassName = 'panel-heading ' + whichPanelStyle;
 
@@ -12,5 +16,10 @@ const PanelHeading = ({ heading, whichPanelStyle }) => {
         </div>
     );
 }
+
+PanelHeading.PropTypes = {
+    heading: PropTypes.string.isRequired, 
+    whichPanelStyle: PropTypes.string.isRequired
+};
 
 export default PanelHeading;

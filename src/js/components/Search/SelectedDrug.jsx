@@ -6,7 +6,11 @@ import DrugContainer from '../../containers/DrugContainer';
 import Drug from '../Drug/Drug';
 
 
-const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => (
+const SelectedDrug = ({
+    idToShow,
+    drugs,
+    ...otherProps
+}) => (
       <div>
           <Drug
               { ...drugs[idToShow] }
@@ -16,5 +20,10 @@ const SelectedDrug = ({ idToShow, drugs, ...otherProps }) => (
         <div className="underscore-element pull-right"></div>
       </div>
 );
+
+SelectedDrug.PropTypes = {
+    idToShow: PropTypes.number.isRequired,
+    drugs: PropTypes.arrayOf(PropTypes.object.isRequired)
+};
 
 export default SelectedDrug;

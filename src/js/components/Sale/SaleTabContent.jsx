@@ -9,6 +9,7 @@ const SaleTabContent = ({
     bottomContainers,
     defaultLorem
 }) => {
+
     let renderBottomContainers = bottomContainers.map((container, i) =>
         <SaleTabParagraph key={ i }
             containerHeading = { container.containerHeading }
@@ -17,6 +18,7 @@ const SaleTabContent = ({
             paragraphText = { defaultLorem }
         />
     );
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -45,6 +47,6 @@ SaleTabContent.defaultProps = {
         },
     ],
     defaultLorem: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.'
-}
+};
 
 export default SaleTabContent;

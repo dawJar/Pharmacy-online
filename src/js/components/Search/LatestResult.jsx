@@ -11,6 +11,7 @@ const LatestResult = ({
     resultLength,
     ...otherProps
 }) => {
+
     let newClassName = `col-sm-${12 / resultLength} latest-result-item-container`;
     let currentDrugName = drugs[resultID].drugName;
 
@@ -27,5 +28,10 @@ const LatestResult = ({
     );
 }
 
+LatestResult.PropTypes = {
+    drugs: PropTypes.arrayOf(PropTypes.object.isRequired),
+    resultID: PropTypes.number.isRequired,
+    resultLength: PropTypes.number.isRequired
+};
 
 export default LatestResult;

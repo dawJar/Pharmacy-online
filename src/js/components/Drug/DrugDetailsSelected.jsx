@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const DrugDetailsSelected = ({
     drugCategory,
@@ -31,5 +31,14 @@ const DrugDetailsSelected = ({
         </tbody>
     </table>
 );
+
+DrugDetailsSelected.PropTypes = {
+    drugCategory: PropTypes.string.isRequired,
+    drugCompany: PropTypes.string.isRequired,
+    drugPrice: PropTypes.number.isRequired,
+    drugCurrency: PropTypes.string.isRequired,
+    onSale: PropTypes.bool.isRequired,
+    saleTab: PropTypes.string.isRequired
+};
 
 export default DrugDetailsSelected;

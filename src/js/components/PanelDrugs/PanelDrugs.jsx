@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/panelDrugs.scss';
 
 import PanelHeading from './PanelHeading';
 import PanelBody from './PanelBody';
 
+
 const PanelDrugs = ({
+    params: { category },
     heading,
-    params,
     whichPanelStyle,
     ...otherProps
 }) => {
-    let newClassName = 'panel panel-default ' + whichPanelStyle;
 
+    let newClassName = 'panel panel-default ' + whichPanelStyle;
+    
     return (
         <div className={ newClassName } >
             <PanelHeading
-                heading={ heading || params.category }
+                heading={ heading || category }
                 whichPanelStyle={ whichPanelStyle }
             />
             <PanelBody
@@ -26,4 +28,11 @@ const PanelDrugs = ({
         </div>
     );
 }
+
+PanelDrugs.PropTypes = {
+    heading: PropTypes.string.isRequired,
+    params: PropTypes.objectOf(PropTypes.string.isRequired),
+    whichPanelStyle: PropTypes.string.isRequired
+};
+
 export default PanelDrugs;

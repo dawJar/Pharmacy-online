@@ -1,6 +1,4 @@
 import React, { PropTypes } from 'react';
-import { browserHistory } from 'react-router';
-import { connect } from 'react-redux';
 import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
 
 import ItemContainer from '../../containers/ItemContainer';
@@ -28,5 +26,9 @@ const TypeaheadElement = ({ drugs }) => (
         />
     </div>
 );
+
+TypeaheadElement.PropTypes = {
+    drugs: PropTypes.arrayOf(PropTypes.object.isRequired)
+};
 
 export default TypeaheadElement;
