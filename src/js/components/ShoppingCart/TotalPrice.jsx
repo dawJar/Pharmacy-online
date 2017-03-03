@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../sass/componentStyles/totalPrice.scss';
+import '../../../sass/componentStyles/totalPrice.scss';
 
 
 const TotalPrice = ({ totalPrice }) => (

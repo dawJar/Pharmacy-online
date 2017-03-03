@@ -2,8 +2,8 @@ import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
 
-import CategoriesNav from '../CategoriesNav';
-import PanelDrugs from '../PanelDrugs';
+import CategoriesNav from '../Nav/CategoriesNav';
+import PanelDrugs from '../PanelDrugs/PanelDrugs';
 
 
 const divPaddingRight = {

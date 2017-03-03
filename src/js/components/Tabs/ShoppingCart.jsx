@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
 
-import PanelDrugs from '../PanelDrugs';
-import EmptyShoppingCart from '../EmptyShoppingCart';
-import TotalPrice from '../TotalPrice';
+import PanelDrugs from '../PanelDrugs/PanelDrugs';
+import EmptyShoppingCart from '../ShoppingCart/EmptyShoppingCart';
+import TotalPrice from '../ShoppingCart/TotalPrice';
 
 
 const divPaddingTop = {

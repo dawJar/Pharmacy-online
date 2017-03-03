@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../../sass/componentStyles/drug.scss';
 
-import Image from '../Image';
+import Image from './Image';
 import DrugDetails from './DrugDetails';
 import DrugControls from './DrugControls';
 

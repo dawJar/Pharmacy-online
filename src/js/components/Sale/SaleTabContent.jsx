@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../sass/componentStyles/saleTabContent.scss';
+import '../../../sass/componentStyles/saleTabContent.scss';
 
 import SaleTabParagraph from './SaleTabParagraph';
 

@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import * as constants from '../constants/AppConstants';
+import * as constants from '../../constants/AppConstants';
 
-import '../../sass/componentStyles/buttonControl.scss';
+import '../../../sass/componentStyles/buttonControl.scss';
 
-import ButtonControlContainer from '../containers/ButtonControlContainer';
+import ButtonControlContainer from '../../containers/ButtonControlContainer';
 
 
 const ButtonGroup = ({

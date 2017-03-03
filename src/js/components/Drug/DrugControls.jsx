@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import ButtonGroup from '../ButtonGroup';
+import ButtonGroup from '../Buttons/ButtonGroup';
 import DrugQuantityContainer from '../../containers/DrugQuantityContainer';
 
 

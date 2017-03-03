@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-import '../../sass/componentStyles/buttonControl.scss';
+import '../../../sass/componentStyles/buttonControl.scss';
 
 
 class ButtonNextPrev extends Component {

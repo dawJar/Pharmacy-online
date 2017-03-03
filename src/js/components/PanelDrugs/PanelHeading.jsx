@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 
-import '../../sass/componentStyles/panelDrugs.scss';
+import '../../../sass/componentStyles/panelDrugs.scss';
 
 const PanelHeading = ({ heading, whichPanelStyle }) => {
-    
+
     let newClassName = 'panel-heading ' + whichPanelStyle;
 
     return (

@@ -7,7 +7,7 @@ import store from '../store/configureStore';
 import AppContainer from './AppContainer';
 import Sale from '../components/Tabs/Sale';
 import Categories from '../components/Tabs/Categories';
-import PanelDrugs from '../components/PanelDrugs';
+import PanelDrugs from '../components/PanelDrugs/PanelDrugs';
 import Search from '../components/Tabs/Search';
 import About from '../components/Tabs/About';
 import ShoppingCart from '../components/Tabs/ShoppingCart';

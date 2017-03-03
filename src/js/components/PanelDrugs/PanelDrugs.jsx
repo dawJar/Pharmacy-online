@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../../sass/componentStyles/panelDrugs.scss';
+import '../../../sass/componentStyles/panelDrugs.scss';
 
 import PanelHeading from './PanelHeading';
 import PanelBody from './PanelBody';

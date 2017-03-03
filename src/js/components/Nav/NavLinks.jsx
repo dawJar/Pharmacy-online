@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import '../../../sass/componentStyles/shoppingCart.scss';
 
 import NavLinkContainer from '../../containers/NavLinkContainer';
-import Basket from '../Basket';
+import Basket from '../ShoppingCart/Basket';
 
 
 const NavLinks = ({
@@ -13,7 +13,7 @@ const NavLinks = ({
     basket,
     ...otherProps
 }) => {
-  
+
     let links = linksData.map((li, i) => {
         return <NavLinkContainer key={ i } data={ li } { ...otherProps } />
     });

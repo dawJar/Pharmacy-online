@@ -1,9 +1,9 @@
 import React from 'react';
 
-import '../../sass/componentStyles/nav.scss';
+import '../../../sass/componentStyles/nav.scss';
 
-import NavToggle from './Nav/NavToggle';
-import NavLinks from './Nav/NavLinks';
+import NavToggle from './NavToggle';
+import NavLinks from './NavLinks';
 
 
 const CategoriesNav = (props) => (

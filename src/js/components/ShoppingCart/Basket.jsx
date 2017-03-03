@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavLinkContainer from '../containers/NavLinkContainer';
+import NavLinkContainer from '../../containers/NavLinkContainer';
 
 
 const Basket = (props) => (

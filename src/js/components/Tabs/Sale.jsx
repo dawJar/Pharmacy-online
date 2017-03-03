@@ -2,8 +2,8 @@ import React from 'react';
 
 import '../../../sass/componentStyles/tabContent.scss';
 
-import SaleTabContent from '../SaleTabContent';
-import PanelDrugs from '../PanelDrugs';
+import SaleTabContent from '../Sale/SaleTabContent';
+import PanelDrugs from '../PanelDrugs/PanelDrugs';
 
 
 const Sale = (props) => (

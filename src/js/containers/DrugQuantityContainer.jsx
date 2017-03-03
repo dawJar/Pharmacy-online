@@ -6,7 +6,7 @@ import '../../sass/componentStyles/drugQuantity.scss';
 
 import { inreaseQuantityOfDrug, decreaseQuantityOfDrug } from '../actions/actions';
 
-import ButtonNextPrev from '../components/ButtonNextPrev';
+import ButtonNextPrev from '../components/Buttons/ButtonNextPrev';
 
 
 class DrugQuantityContainer extends Component {
