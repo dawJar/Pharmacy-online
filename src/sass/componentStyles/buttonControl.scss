@@ -15,6 +15,6 @@ button.search-tab {
     @include buttonControlStyle($searchTabColor, $buttonControlBorderRadius);
 }
 button.show-more {
-    width: 70%;
+    width: $underlineContentPctWidth;
     margin-bottom: 0;
 }

@@ -6,11 +6,9 @@ div.container-fluid {
     @include setFullWidth;
     padding: 0 8px;
 }
-
 div.main-content {
     max-width: $maxMainContentWidth;
 }
-
 div.empty-basket-container {
     text-align: center;
 
@@ -19,14 +17,12 @@ div.empty-basket-container {
         font-size: $h2FontSize;
     }
 }
-
 div.panel-items-in-categories {
     padding: 0;
     @include mQ($smallDevice){
         padding-left: 16px;
     };
 }
-
 div.sidenav-with-categories {
     padding: 0;
 }

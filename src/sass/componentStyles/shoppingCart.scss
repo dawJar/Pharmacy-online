@@ -5,6 +5,7 @@
 span.shopping-cart {
   @include growElement($navSizeShoppingCartHover);
   display: none;
+  margin-bottom: 1px;
 
   @include mQ($smallDevice) {
     @include navBasketStyle(
@@ -16,6 +17,7 @@ span.shopping-cart {
   };
   @include mQ($mediumDevice) {
     margin: 0 auto;
+    margin-bottom: 2px;
     @include navBasketStyle(
         $navHeightMedium,
         $navSizeShoppingCart,

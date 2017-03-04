@@ -3,36 +3,31 @@
 @import "./mixins.scss";
 @import "./animations.scss";
 
+
 html, body {
     height: 100%;
     font-family: arial;
 }
-
 div.main-content-wrapper, div#content {
     height: 100%;
 }
-
 div.nav-with-content-wrapper {
     min-height: 100%;
     margin-bottom: -$mainFooterHeight;
     nav.navbar {
-        margin: -1px 0;
+        margin: -$divideLineWidth 0;
     }
 }
-
 div.nav-with-content-wrapper:after {
     content: "";
     display: block;
 }
-
 footer.main-footer, div.nav-with-content-wrapper:after {
     height: $mainFooterHeight;
 }
-
 footer.main-footer {
-    border-top: 1px solid $divideLineColor;
+    border-top: $divideLineWidth solid $divideLineColor;
 }
-
 div.content-main-footer {
     max-width: $maxMainContentWidth;
     font-size: $mainFooterFontSize;
@@ -40,11 +35,9 @@ div.content-main-footer {
     padding: $mainFooterPaddingTop $mainFooterPaddingRightLeft 0 $mainFooterPaddingRightLeft;
     margin: 0 auto;
 }
-
 div.underscore-element-sale {
     @include underscoreDivElement($saleTabColor);
 }
-
 div.underscore-element {
     @include underscoreDivElement($searchTabColor);
 }

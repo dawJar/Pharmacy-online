@@ -1,6 +1,7 @@
 @import "../variables.scss";
 @import "../mixins.scss";
 
+
 div.panel {
     @include resetBorder;
 
@@ -26,7 +27,6 @@ div.panel {
         );
     }
 }
-
 div.panel.sale-tab, div.panel.basket-tab {
     border-bottom: $divideLineWidth solid $divideLineColor;
 }

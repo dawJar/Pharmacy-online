@@ -1,5 +1,6 @@
 @import "./variables.scss";
 
+
 // OVERALL
 @mixin setFullWidth {
     width: 100%;
@@ -14,7 +15,7 @@
     height: 0;
     width: $underlineContentPctWidth;
     margin-top: 14px;
-    border-bottom: 1px solid $color;
+    border-bottom: $divideLineWidth solid $color;
     margin-bottom: 24px;
 }
 // END OVERALL
@@ -102,6 +103,7 @@
     border-radius: $radius;
     background-color: $mainBackgroundColor;
     border-color: $color;
+    border-width: $divideLineWidth;
 
     $darken: lighten($color, 10);
     $lighten: lighten($color, 10);

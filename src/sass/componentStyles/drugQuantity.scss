@@ -1,12 +1,10 @@
 @import "../variables.scss";
 @import "../mixins.scss";
 
+
 // quantity element
 div.drug-quantity-container {
     @include centeredFlexbox;
-    // margin-bottom: $buttonControlMarginBottom;
-    // margin-left: $buttonControlMarginLeft;
-    // margin-right: -12px;
     margin: 12px -12px $buttonControlMarginBottom $buttonControlMarginLeft;
     height: 32px;
 }
@@ -29,10 +27,10 @@ div.next-prev-button {
     cursor: pointer;
     height: 36px;
     width: 36px;
-    border: 1px solid $divideLineColor;
+    border: $divideLineWidth solid $divideLineColor;
     border-radius: 50%;
     &:hover {
-        border: 1px solid $saleTabColor;
+        border: $divideLineWidth solid $saleTabColor;
         color: $saleTabColor;
     }
 }

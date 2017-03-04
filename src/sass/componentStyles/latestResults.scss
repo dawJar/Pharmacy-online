@@ -4,7 +4,7 @@
 
 div.latest-results-row {
     margin-bottom: 23px;
-    border-bottom: 1px solid $divideLineColor;
+    border-bottom: $divideLineWidth solid $divideLineColor;
 }
 
 div.latest-result-item-container {
@@ -14,11 +14,11 @@ div.latest-result-item-container {
 p.latest-result-item {
     cursor: pointer;
     padding: 0 8px;
-    border-top: 1px solid $divideLineColor;
+    border-top: $divideLineWidth solid $divideLineColor;
     font-size: 12px;
     &:hover {
         $darken: darken($searchTabColor, 10);
         color: $darken;
-        border-top: 1px solid $darken;
+        border-top: $divideLineWidth solid $darken;
     }
 }

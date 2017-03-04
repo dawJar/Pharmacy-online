@@ -4,9 +4,10 @@
 
 div.search-tab-heading {
     @include centeredFlexbox;
-    border: 1px solid $searchTabColor;
+    border: $divideLineWidth solid $searchTabColor;
     height: 68px;
     margin-bottom: 23px;
+
     p.search-heading {
         padding-top: 9px;
         color: $searchTabColor;

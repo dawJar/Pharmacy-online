@@ -4,8 +4,8 @@
     position: absolute;
     width: 100%;
     z-index: 1;
-    height: 1px;
-    bottom: $height - 2;
+    height: $divideLineWidth;
+    bottom: $height - 3;
     left: 0;
     background-color: $underlineColor;
     visibility: hidden;

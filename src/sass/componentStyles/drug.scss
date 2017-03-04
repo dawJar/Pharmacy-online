@@ -3,6 +3,10 @@
 
 div.panel-group {
     margin: 0;
+
+    div.col-xs-1 {
+        padding: 0; 
+    }
 }
 div.drug-style {
     margin: 8px 0;

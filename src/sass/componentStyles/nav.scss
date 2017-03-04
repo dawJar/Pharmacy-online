@@ -2,13 +2,13 @@
 @import "../mixins.scss";
 @import "../animations.scss";
 
-.container-fluid > .navbar-header { margin: -1px; }
+.container-fluid > .navbar-header { margin: -$divideLineWidth; }
 .nav-with-content-wrapper > .container-fluid { margin-top: 24px; }
 .row { margin: 0; }
 nav.navbar {
     // margin: 0;
     border-radius: 0;
-    background-color: #fff;
+    background-color: $mainBackgroundColor;
     border-bottom: $divideLineWidth solid $divideLineColor;
     margin-bottom: 15px;
 
