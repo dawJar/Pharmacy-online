@@ -10,7 +10,7 @@ const TypeaheadElement = ({ drugs }) => (
             autoFocus={ true }
             // clearButton={ true }
             maxResults={ 5 }
-            minLength={ 3 }
+            minLength={ 2 }
             options={ drugs }
             labelKey={option => `${option.drugName}`}
             renderMenuItemChildren={ option => {
