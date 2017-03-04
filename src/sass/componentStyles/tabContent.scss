@@ -22,7 +22,9 @@ div.empty-basket-container {
 
 div.panel-items-in-categories {
     padding: 0;
-    padding-left: 16px;
+    @include mQ($smallDevice){
+        padding-left: 16px;
+    };
 }
 
 div.sidenav-with-categories {
