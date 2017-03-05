@@ -1,92 +1,70 @@
-var webpack = require('webpack');
-var merge = require('webpack-merge');
+var debug             = process.env.NODE_ENV !== "production";
+var webpack           = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var NpmInstallPlugin = require('npm-install-webpack-plugin');
-var autoprefixer = require('autoprefixer');
+var path              = require('path');
+// var babelrc           = require('./.babelrc');
 
-var TARGET = process.env.npm_lifecycle_event;
-console.log("target event is " + TARGET);
+module.exports = {
+    context: __dirname,
+    entry: './src/js/index.js',
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+    output: {
+        path: __dirname + '/dist',
+        filename: 'bundle.js'
+    },
 
-var common = {
-  cache: true,
-  debug: true,
-  entry: './src/js/index.js',
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  output: {
-    filename: 'index.js',
-    sourceMapFilename: '[file].map'
-  },
-  module: {
-    loaders: [{
-      test: /\.js[x]?$/,
-      loaders: ['babel-loader?presets[]=es2015&presets[]=react'],
-      exclude: /(node_modules|bower_components)/
-    }, {
-      test: /\.css$/,
-      loaders: ['style', 'css']
-    }, {
-      test: /\.scss$/,
-      loaders: ['style', 'css', 'postcss', 'sass']
-    }, {
-      test: /\.less$/,
-      loaders: ['style', 'css', 'less']
-    }, {
-      test: /\.woff$/,
-      loader: "url-loader?limit=10000&mimetype=application/font-woff&name=[path][name].[ext]"
-    }, {
-      test: /\.woff2$/,
-      loader: "url-loader?limit=10000&mimetype=application/font-woff2&name=[path][name].[ext]"
-    }, {
-      test: /\.(eot|ttf|svg|gif|png)$/,
-      loader: "file-loader"
-    }, {
-      test: /\.json$/,
-      loader: 'json-loader'
-    }]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    })
-  ],
-  postcss: function() {
-    return [autoprefixer({
-      browsers: ['last 3 versions']
-    })];
-  }
-};
-
-if (TARGET === 'dev' || !TARGET) {
-  module.exports = merge(common, {
-    devtool: 'eval-source-map',
+    module: {
+        loaders: [{
+            test: /\.js[x]?$/,
+            exclude: /(node_modules|bower_components)/,
+            loaders: ['babel-loader?presets[]=es2015&presets[]=react&presets[]=stage-0'],
+        }, {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader']
+        }, {
+            test: /\.scss$/,
+            loaders: ['style-loader', 'css-loader', 'sass-loader']
+        }, {
+            test: /\.woff$/,
+            loader: "url-loader?prefix=font/&limit=5000"
+        }, {
+            test: /\.woff2$/,
+            loader: "url-loader?prefix=font/&limit=5000"
+        }, {
+            test: /\.(eot|ttf|svg|gif|png)$/,
+            loader: "file-loader"
+        }, {
+            test: /\.json$/,
+            loader: 'json-loader'
+        }
+        ]
+    },
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: { warnings: false },
+            output: { comments: false },
+        }),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            title: 'webpack-ejs-template',
+            template: './src/index-template.ejs'
+        })
+    ],
     devServer: {
-      historyApiFallback: true
-    },
-    output: {
-      publicPath: 'http://localhost:8090/assets'
-    },
-    plugins: [
-      new NpmInstallPlugin({
-        save: true // --save
-      })
-    ]
-  });
-}
-
-if (TARGET === 'build') {
-  module.exports = merge(common, {
-    devtool: 'source-map',
-    output: {
-      path: './dist'
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: 'Webpack-react',
-        template: './src/index-template.ejs'
-      })
-    ]
-  });
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 9000
+    }
 }
