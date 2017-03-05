@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Router, Route, IndexRoute, Redirect, browserHistory} from 'react-router';
-import {Provider} from 'react-redux';
+import React from 'react';
+import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
 
 import store from '../store/configureStore';
 

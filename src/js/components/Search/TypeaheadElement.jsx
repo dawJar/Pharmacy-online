@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
-import { Typeahead, Menu, MenuItem } from 'react-bootstrap-typeahead';
+import { Typeahead } from 'react-bootstrap-typeahead';
+
+import '../../../sass/componentStyles/typeahead.scss';
 
 import ItemContainer from '../../containers/ItemContainer';
 

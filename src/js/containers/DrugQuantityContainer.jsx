@@ -47,9 +47,7 @@ class DrugQuantityContainer extends Component {
     render () {
         let {
             drugID,
-            drugPrice,
             quantityById,
-            filterIsShoppingCart,
             ...otherProps
         } = this.props;
 

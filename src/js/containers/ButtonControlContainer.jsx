@@ -53,6 +53,9 @@ class ButtonControlContainer extends Component {
                   quantityById[newDrugID] : null;
               dispatch(removeFromCart(newDrugID, drugPrice, quantityOfDrugID));
               break;
+
+          default:
+              console.log('smthing gone wrong');
       }
     }
 

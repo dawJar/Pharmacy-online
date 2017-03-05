@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { RECEIVE_DRUGS, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes';
+import { RECEIVE_DRUGS } from '../constants/ActionTypes';
 
 export const fetchDrugs = (state = [], action) => {
     switch (action.type) {

@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../../../sass/componentStyles/nav.scss';
 
-import NavToggle from './NavToggle';
 import NavLinks from './NavLinks';
 
 

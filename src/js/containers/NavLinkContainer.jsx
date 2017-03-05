@@ -15,7 +15,7 @@ class NavLinkContainer extends Component {
     handleClick () {
         let { data, dispatch, addId } = this.props;
         let { linkFilter } = data;
-        dispatch(setVisibilityFilter(data.linkFilter));
+        dispatch(setVisibilityFilter(linkFilter));
         (addId) ? dispatch(addIdToLatest(addId)) : null;
     }
 

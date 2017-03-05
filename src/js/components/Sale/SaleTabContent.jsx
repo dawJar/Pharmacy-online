@@ -12,10 +12,10 @@ const SaleTabContent = ({
 
     let renderBottomContainers = bottomContainers.map((container, i) =>
         <SaleTabParagraph key={ i }
-            containerHeading = { container.containerHeading }
-            iconGlyph = { container.iconGlyph }
-            lastContainerStyle = { container.lastContainerStyle }
-            paragraphText = { defaultLorem }
+            containerHeading={ container.containerHeading }
+            iconGlyph={ container.iconGlyph }
+            lastContainerStyle={ container.lastContainerStyle }
+            paragraphText={ defaultLorem }
         />
     );
 

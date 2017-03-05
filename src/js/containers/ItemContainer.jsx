@@ -28,7 +28,7 @@ class ItemContainer extends Component {
     }
 
     render () {
-      let { children, productID, setClassName } = this.props;
+      let { children, setClassName } = this.props;
       let newClassName = setClassName || '';
 
       return (

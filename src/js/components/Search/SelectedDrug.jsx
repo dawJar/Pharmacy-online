@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 
 import '../../../sass/componentStyles/search.scss';
 
-import DrugContainer from '../../containers/DrugContainer';
 import Drug from '../Drug/Drug';
 
 

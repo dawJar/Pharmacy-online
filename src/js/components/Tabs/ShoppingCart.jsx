@@ -7,10 +7,6 @@ import EmptyShoppingCart from '../ShoppingCart/EmptyShoppingCart';
 import TotalPrice from '../ShoppingCart/TotalPrice';
 
 
-const divPaddingTop = {
-    paddingTop: 0
-}
-
 const ShoppingCart = ({
     addedIds,
     ...otherProps

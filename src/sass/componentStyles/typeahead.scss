@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+
+div.bootstrap-typeahead,
+div.bootstrap-typeahead-input,
+input.bootstrap-typeahead-input-main,
+input.bootstrap-typeahead-input-hint {
+    background-color: $mainBackgroundColor;
+
+    &:hover {
+        background-color: $mainBackgroundColor;
+    }
+    li:hover {
+        background-color: $mainBackgroundColor;
+    }
+};
+
+ul.dropdown-menu > li > a {
+    background-color: $mainBackgroundColor;
+    &:hover {
+        background-color: $mainBackgroundColor;
+    }
+    &:focus {
+        background-color: $mainBackgroundColor;
+    }
+}
