@@ -2,15 +2,10 @@
 Simple online shop
 ## Demo
 https://pharmacy-online.herokuapp.com
-### Technologies used
+## Technologies used
+### Client side
 * React + Redux
 * Bootstrap 3
 * Sass
-
-#### run project:
-```
-npm install
-```
-```
-npm start
-```
+### Tools
+* Webpack
